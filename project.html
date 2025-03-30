@@ -39,48 +39,22 @@
             <section class="project">
             <h2>Research Projects</h2>
             <p>
-              I am passionate about developing algorithms for robots that can learn to perform complex tasks in the real world.
-              Here are some of the projects I have worked on:
+              I am passionate about developing algorithms for robots to perform complex tasks in the real world.
+              Here are the projects I have worked on:
             </p>
           <div class="project-list">
 
               <div class="project-item">
                   <div class="project-header">
                       <a href="#" class="project-title" onclick="toggleDescription(this)">
-                          Pixel-to-Action Control
+                          Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process
                           <span class="toggle-icon">▼</span>
                       </a>
                   </div>
                   <div class="project-description">
                       <!-- <div class="video-text-container"> -->
                           <p>
-                            Learning pixel-to-action control policies is challenging due to the high-dimensional
-                            and partially observable nature of the problem. This work
-                            combines deep learning with first-principle
-                            physics through differentiable simulation to
-                            enable autonomous navigation of multiple
-                            aerial robots through complex environments at
-                            high speed. Our approach optimizes a neural
-                            network control policy directly by
-                            backpropagating loss gradients through the
-                            robot simulation using a simple point-mass
-                            physics model and a depth rendering engine.
-                            Despite this simplicity, our method excels in
-                            challenging tasks for both multi-agent and
-                            single-agent applications with zero-shot
-                            sim-to-real transfer. In multi-agent
-                            scenarios, our system demonstrates
-                            self-organized behavior, enabling autonomous
-                            coordination without communication or
-                            centralized planning - an achievement not
-                            seen in existing traditional or
-                            learning-based methods. In real-world forest
-                            environments, it navigates at speeds up to 20
-                            m/s. All these capabilities are deployed on a
-                            budget-friendly $21 computer, costing less
-                            than 5% of a GPU-equipped board used in
-                            existing systems.
-
+                           Proposed a global-map-free navigation framework for efficient autonomous robot navigation in complex terrains. The framework employs Sparse Gaussian Processes (SGP) to extract geometric features—such as curvature, gradient, and elevation—from point cloud data. GPU acceleration is used during feature extraction to ensure real-time performance. These features are integrated into a high-resolution local traversability map using a spatial-temporal Bayesian Gaussian Kernel Inference method that fuses historical and real-time data with slope, flatness, gradient, and uncertainty metrics. Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared to traditional methods. The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot. Source code available at \href{https://github.com/ZJU-FAST-Lab/FSGP_BGK}{github.com/ZJU-FAST-Lab/FSGP\_BGK}.
                           </p>
                           <video class="project-video" autoplay loop muted playsinline>
                               <source src="videos/vision_swarm.mp4" type="video/mp4">
