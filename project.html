@@ -89,26 +89,18 @@
               <div class="project-item">
                   <div class="project-header">
                       <a href="#" class="project-title" onclick="toggleDescription(this)">
-                          Quadruped Locomotion
+                          Aerial-Ground drone and quad-fisheye drone
                           <span class="toggle-icon">▼</span>
                       </a>
                   </div>
                   <div class="project-description">
                       <div class="video-text-container">
-                          <p>
-                              This project presents one of the
-                              earlist successful applications of differentiable
-                              simulation for real-world quadruped locomotion.
-                              Differentiable simulation promises
-                              fast convergence and stable training by computing
-                              low-variance first-order gradients using robot
-                              dynamics. However, its usage for legged robots is
-                              still limited to simulation. The main challenge
-                              lies in the complex optimization landscape of
-                              robotic tasks due to discontinuous dynamics. This
-                              work proposes a new differentiable simulation
-                              framework to overcome these challenges.
-                          </p>
+                         <p>
+                          Developed an aerial-ground autonomous navigation system for drones using FAST-LIO and <a href="https://github.com/ZJU-FAST-Lab/ego-planner">ego-planner</a>. 
+                          Achieved point cloud map relay sharing during exploration. Designed and built a quad-fisheye-based localization drone inspired by <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt">OmniNxt</a>, 
+                          implementing VIO-based localization using <a href="https://docs.openvins.com/">OpenVINS</a>.
+                        </p>
+
                           <video class="project-video project-video-small" autoplay loop muted playsinline>
                               <source src="videos/cheetah.mp4" type="video/mp4">
                           </video>
@@ -120,23 +112,19 @@
               <div class="project-item">
                   <div class="project-header">
                       <a href="#" class="project-title" onclick="toggleDescription(this)">
-                          Optimal Control for Agile Flight
+                          Autonomous Flight and Swarm
                           <span class="toggle-icon">▼</span>
                       </a>
                   </div>
                   <div class="project-description">
                       <!-- <div class="video-text-container"> -->
                           <p>
-                            This project aims to design an optimal controller for agile drone flight. Model
-                            Predictive Control (MPC) provides near optimal performance by leveraging models and numerical
-                            optimization. However, a key challenge lies in defining an effective loss function with
-                            well-tuned hyperparameters, which is task-specific and difficult to search.
-                            To address this, we introduce a policy-search-for-model-predictive-control
-                            framework that employs policy search to automatically search high-level decision
-                            variables for MPC. Specifically, we formulate MPC as a parameterized controller, where
-                            traditionally hard-to-optimize decision variables are represented as high-level policies
-                            and learned through policy search. This approach enables MPC to adapt to changing environments.
+                            Deployed lightweight drones equipped with VIO (<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion">VINS-fusion</a>) and autonomous flight using ego-planner. 
+                            Conducted multi-drone VIO experiments using <a href="https://github.com/VIS4ROB-lab/covins">COVINS-G</a> and tested DM-VIO, ORB SLAM, and ALOAM.
+                            Constructed an autonomous drone swarm employing a lidar-based <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">ego-swarm algorithm</a>, 
+                            enabling independent flight in both outdoor sparse-feature environments and indoor structured settings.
                           </p>
+
                           <video class="project-video" autoplay loop muted playsinline>
                               <source src="videos/highmpc.mp4" type="video/mp4">
                           </video>
@@ -147,21 +135,99 @@
               <div class="project-item">
                   <div class="project-header">
                       <a href="#" class="project-title" onclick="toggleDescription(this)">
-                          Building Superhuman Game Agent for Gran Turismo Sport
+                          Signal detection based on autonomous flight
                           <span class="toggle-icon">▼</span>
                       </a>
                   </div>
                   <div class="project-description">
                       <div class="video-text-container">
                           <p>
-                            Back in 2019, SONY wanted to develop a superhuman game agent for Gran Turismo Sport.
-                            The goal was to develop a neural network policy that can drive a car in the game at superhuman
-                            performance. The director of SONY AI in Zurich approached to us and asked for help.
-                            I took a leading role of this project and worked closely with two Master students.
-                            We applied reinforcement learning to train a neural network policy that can drive a car in the game
-                            at superhuman performance. Later, SONY AI continued this project and made a significant progress,
-                            resulting in a publication in <a href="https://www.nature.com/articles/s41586-021-04357-7">Nature</a>.
-                            More importantly, SONY developed a commericaillized version of the game agent, called <a href="https://www.gran-turismo.com/us/gran-turismo-sophy/project/">GT Sophy</a>.
+                            Developed a WiFi signal detection software for aerial-ground robots using PyQt and Linux networ interfaces.Air-Ground Robot Communication Planning Mesh Networking Problem
+                            (Transmission of odometer information as well as map packets) with bandwidth, communication conditions and UAV energy as constraints for FUEL and ego-planner based UAV cluster
+                            exploration problem.(It's a subject I'm planning to do in the future,I referenced the subT Challenge paper and methods,I considered trajectory optimisation and drop points for mobile relay nodes)
+                           （This idea is inspired by MRS Group of CTU,from Professor Saska's paper)
+                
+                          </p>
+                          <video class="project-video project-video-small" autoplay loop muted playsinline>
+                              <source src="videos/gt.mp4" type="video/mp4">
+                          </video>
+                      </div>
+                  </div>
+              </div>
+              <div class="project-item">
+                  <div class="project-header">
+                      <a href="#" class="project-title" onclick="toggleDescription(this)">
+                          2023 HKUST (GZ) Red Bird Challenge Camp
+                          <span class="toggle-icon">▼</span>
+                      </a>
+                  </div>
+                  <div class="project-description">
+                      <div class="video-text-container">
+                          <p>
+                            The future of unmanned transport technology is rapidly developing, and the
+                            scale of unmanned devices is expanding, while at the same time, labour costs are rising and the
+                            demand for logistics is gradually increasing. Against this background, a project is proposed that
+                            aims to achieve efficient logistics and distribution by integrating multiple unmanned devices so
+                            that they can operate in concert and relay distribution under different demands. The project is
+                            built on the carrier of the company, designed the company's organisational and system structure,
+                            job division of labour, profit model. Technically, it solves the intelligent site selection problem of
+                            the station of unmanned equipment, the path planning problem of unmanned equipment
+                            receiving and distribution, as well as the intelligent communication and environment perception
+                            problem between the equipment and the system security and interaction problem, and finally
+                            carries out the pre-study of technical feasibility. 
+                            Responsible for :
+                            Implemented RRT and RRT* path planning and navigation for a quadruped robot in Gazebo; performed rendering simulations for both drones and quadruped robots using Blender.
+                            Conducted GPS spoofing experiments using HackRF, validated spoofing on simulated target robots, and performed market research on potential solutions.
+                            Market research, technical feasibility research, and technical organisation design of the company;
+                            Awards:
+                            2023 Outstanding Camper, Redbird Challenge Camp, HKUST
+                          </p>
+                          <video class="project-video project-video-small" autoplay loop muted playsinline>
+                              <source src="videos/gt.mp4" type="video/mp4">
+                          </video>
+                      </div>
+                  </div>
+              </div>
+
+                          <div class="project-item">
+                  <div class="project-header">
+                      <a href="#" class="project-title" onclick="toggleDescription(this)">
+                          2021-2023 National University Robotics Competition RoboMaster Championship, Single Match, League Match 
+                          <span class="toggle-icon">▼</span>
+                      </a>
+                  </div>
+                  <div class="project-description">
+                      <div class="video-text-container">
+                          <p>
+                          Project Introduction ： National University Robotics Competition RoboMaster is a robotics event
+                          jointly sponsored by the Central Committee of the Communist Youth League, the All-China
+                          Federation of Schools and Colleges, the Chinese Academy of Engineering and the Shenzhen
+                          Municipal People's Government, and initiated and hosted by DJI, as a global shooting
+                          confrontation robotics competition.
+                          Responsible for matters :
+                          1.Laboratory creation: I have communicated and negotiated with the college and school
+                          leaders for many times, applied for funding, and completed the formation of the robotics
+                          laboratory from zero to one. 2023 seasons of collaboration with multiple schools, the team includes
+                          CAUC, SCU, SWU, DGUT, THU and other colleges and universities, the size of the team of about 40
+                          people.
+                          2.Team Management: Adopt Coding and Flying Book to carry out scientific project management
+                          and acceptance of results; establish laboratory safety acceptance system.
+                          3.Financial investment management: establish a triple financial purchase reimbursement process
+                          of team leader-captain-teacher, and successfully securing motor sponsorship from \href{https://en.directdrive.com/}{DirectDrive} .
+                          4. Robot electronic control debugging: PID parameter debugging of each part of motor under
+                          freeRTOS, robustness verification, application of cascaded PID control or a dual-degree-of-freedom gimbal, application of inverse kinematics
+                          solution of McNamee wheel and omnidirectional wheel.
+                          5. Wiring design: Completed the topology design and actual wiring (signals and power supply) for
+                          the Infantry, Hero, and Sentry robots.
+                          6. Robot algorithm debugging: assisted the vision team in camera selection, calibration（used Matlab and kalibar）,
+                          system environment construction by Docker,completed the joint calibration of LIDAR and multi-camera sensor fusion;
+                          conducting radar calibration, designed and deployed target detection algorithms using both traditional OpenCV and YOLO on ROS, 
+                          performed pose estimation, Gazebo simulation, and utilized 3D printing.
+                          Awards：
+                          3rd place in the National \href{https://www.robomaster.com/en-US}{RoboMaster} (Championship) competition, 2023 (supported by \textbf{DJI})
+                          2nd place in the National RoboMaster 3v3 League (Shanxi Division) competition, 2023 (supported by \textbf{DJI})
+                          3rd place in the National RoboMaster 3v3 League competition, 2022 (supported by \textbf{DJI})
+                
                           </p>
                           <video class="project-video project-video-small" autoplay loop muted playsinline>
                               <source src="videos/gt.mp4" type="video/mp4">
@@ -173,24 +239,23 @@
               <div class="project-item">
                   <div class="project-header">
                       <a href="#" class="project-title" onclick="toggleDescription(this)">
-                          Real-world Reinforcement Learning for Inverted Pendulum
+                          2018 FIRST Robotics Competition (FTC)
                           <span class="toggle-icon">▼</span>
                       </a>
                   </div>
                   <div class="project-description">
                       <div class="video-text-container">
                           <p>
-                            Back in 2018, reinforcement learning for real-world robotic tasks was still in its infancy.
-                            During my master thesis, I developed a model-free reinforcement learning
-                            algorithm for the inverted pendulum task. The goal is to train a neural network policy to
-                            balance the Furuta pendulum in the real world. The policy is trained using Information-Loss-Bounded
-                            Policy Optimization with a reward function that penalizes the distance between the pendulum and
-                            the upright position. After training the policy in simulation, we then fine-tuned it in the real world.
-                            The policy is able to balance the inverted pendulum in the real world, despite the presence of
-                            various disturbances. The Furuta-Pendulum is a rotational inverted pendulum, an
-                            under-actuated system invented by Katsuhisa Furuta and colleagues at Tokyo Institute
-                            of Technology in 1992. Since then, it has become a standard research platform for
-                            demonstrating performance of linear and non-linear control laws.
+                            Project Description : A youth robotics event under FIRST, supported by NASA and Qualcomm, to
+                            develop robots that can perform fetching (sucking up specific targets as well as grasping specific
+                            targets) and support both automatic and manual control;
+                            Responsibilities:
+                            1.Responsible for external liaison, completing the overall writing of engineering notes and
+                            communicating with the competition organising committee.
+                            2. Participate in the mechanical construction of the robot and assist in soildworks simulation
+                            design.
+                            Awards:
+                            Individual Award & Incentive Award, 2018 FIRST Robotics Competition (Suzhou )
                           </p>
                           <video class="project-video project-video-small" autoplay loop muted playsinline>
                               <source src="videos/pendulum.mp4" type="video/mp4">
