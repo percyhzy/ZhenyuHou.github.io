@@ -54,7 +54,11 @@
                   <div class="project-description">
                       <!-- <div class="video-text-container"> -->
                           <p>
-                           Proposed a global-map-free navigation framework for efficient autonomous robot navigation in complex terrains. The framework employs Sparse Gaussian Processes (SGP) to extract geometric features—such as curvature, gradient, and elevation—from point cloud data. GPU acceleration is used during feature extraction to ensure real-time performance. These features are integrated into a high-resolution local traversability map using a spatial-temporal Bayesian Gaussian Kernel Inference method that fuses historical and real-time data with slope, flatness, gradient, and uncertainty metrics. Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared to traditional methods. The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot. Source code available at \href{https://github.com/ZJU-FAST-Lab/FSGP_BGK}{github.com/ZJU-FAST-Lab/FSGP\_BGK}.
+                           Proposed a global-map-free navigation framework for efficient autonomous robot navigation in complex terrains. 
+                           The framework employs Sparse Gaussian Processes (SGP) to extract geometric features—such as curvature, gradient, and elevation—from point cloud data. GPU acceleration is used during feature extraction to ensure real-time performance. 
+                           These features are integrated into a high-resolution local traversability map using a spatial-temporal Bayesian Gaussian Kernel Inference method that fuses historical and real-time data with slope, flatness, gradient, and uncertainty metrics. 
+                           Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared to traditional methods. The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot. 
+                           Source code available at <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK">github.com/ZJU-FAST-Lab/FSGP\_BGK</a>.
                           </p>
                           <video class="project-video" autoplay loop muted playsinline>
                               <source src="videos/IROSVideo.mp4" type="video/mp4">
@@ -66,30 +70,19 @@
               <div class="project-item">
                   <div class="project-header">
                       <a href="#" class="project-title" onclick="toggleDescription(this)">
-                          Reaching the Limit in Autonomous Drone Racing
+                          Autonomous Exploration in Simulator
                           <span class="toggle-icon">▼</span>
                       </a>
                   </div>
-                  <div class="project-description">
-                      <!-- <div class="video-text-container"> -->
-                          <p>
-                            How can we push a robot to its absolut limits in the physical world?
-                            We developed one of the world fastest autonomous drone and pushed this machine to its maximum performance
-                            in the real world, achieving a peak acceleration greater than 12g and
-                            a peak velocity of 108 km/h.
-                            The key to our success is a neural network policy trained with reinforcement learning.
-                            Our neural network policy achieved superhuman control performance within minutes of training on
-                            a standard workstation. Additinally, our study indicates that the fundamental advantage of
-                            reinforcement learning over optimal control is not that
-                            it optimizes its objective better but that it optimizes a better objective.
-                            RL can directly optimize a task-level objective and can leverage domain randomization
-                            to cope with model uncertainty, allowing the discovery of more robust control responses.
-                          </p>
-                          <video class="project-video" autoplay loop muted playsinline>
-                              <source src="videos/splits.mp4" type="video/mp4">
-                          </video>
-                      <!-- </div> -->
-                  </div>
+<div class="project-description">
+  <p>
+    Tested the <a href="https://github.com/ZJU-FAST-Lab/FastSim?tab=readme-ov-file">FastSim simulator</a>, integrating it with drone localization (using <a href="https://github.com/hku-mars/FAST_LIO">Fast-LIO</a>) and autonomous exploration (using <a href="https://github.com/HKUST-Aerial-Robotics/FUEL">FUEL</a>) algorithms for both structured and unstructured dark environments.
+  </p>
+  <video class="project-video" autoplay loop muted playsinline>
+    <source src="videos/splits.mp4" type="video/mp4">
+  </video>
+</div>
+
               </div>
 
 
