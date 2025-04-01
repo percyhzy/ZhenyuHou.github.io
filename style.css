@@ -173,10 +173,6 @@ hr {
     flex-grow: 1;
 }
 
-.publication-details {
-    flex-grow: 1;
-}
-
 .publication-meta {
     display: flex;
     align-items: center;
@@ -343,16 +339,15 @@ hr {
     position: relative;
 }
 
+/* 修改后的 .inline-text-image：使图片上下排列显示 */
 .inline-text-image {
-    float: right;
-    margin-left: 10px;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    display: block;            /* 去除浮动，改为块级元素 */
+    margin: 30px auto 10px;     /* 上边距30px，下边距10px，左右自动居中 */
     width: 400px;
     max-width: 40%;
     border-radius: 0px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    shape-outside: circle(90%);
+    /* 删除了 float 和 shape-outside */
 }
 
 .story-image {
@@ -389,4 +384,5 @@ hr {
         padding: 20px;
     }
 }
+
 
