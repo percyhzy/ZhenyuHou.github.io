@@ -339,7 +339,7 @@ hr {
     position: relative;
 }
 
-/* 修改后的 .inline-text-image：使图片上下排列显示 */
+/* 针对部分图片单独垂直排列的样式（如 Gap Year 部分），保留原 .inline-text-image */
 .inline-text-image {
     display: block;            /* 去除浮动，改为块级元素 */
     margin: 30px auto 10px;     /* 上边距30px，下边距10px，左右自动居中 */
@@ -347,7 +347,21 @@ hr {
     max-width: 40%;
     border-radius: 0px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    /* 删除了 float 和 shape-outside */
+}
+
+/* 新增的 .image-row 样式，用于水平排列图片 */
+.image-row {
+  display: flex;              /* 启用 Flex 布局 */
+  justify-content: center;    /* 水平居中对齐 */
+  gap: 10px;                  /* 图片间隔 */
+  margin-bottom: 20px;        /* 与下方文字的间距 */
+}
+
+.image-row img {
+  max-width: 30%;             /* 每张图片最多占父容器宽度的 30% */
+  height: auto;               /* 保持图片原比例 */
+  border-radius: 5px;         /* 可选：添加圆角 */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* 可选：添加阴影效果 */
 }
 
 .story-image {
@@ -373,16 +387,15 @@ hr {
         flex-direction: column;
         align-items: center;
     }
-
     .sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #e0e0e0;
     }
-
     .main-content {
         padding: 20px;
     }
 }
+
 
 
