@@ -8,7 +8,7 @@ html, body {
     background-color: #f4f4f4;
     font-weight: 300;
     letter-spacing: 0.02em;
-    font-size: 16px; /* Reduced from default */
+    font-size: 16px;
 }
 
 h1, h2 {
@@ -21,14 +21,14 @@ h1 {
     border-bottom: 2px solid #3498db;
     padding-bottom: 10px;
     margin-top: 0;
-    font-size: 2.2rem; /* Slightly smaller heading */
+    font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
 h2 {
     color: #2980b9;
     margin-top: 20px;
-    font-size: 1.6rem; /* Slightly smaller section headers */
+    font-size: 1.6rem;
     margin-bottom: 0.75rem;
 }
 
@@ -39,7 +39,7 @@ a {
 }
 
 a:hover {
-    color: #024b8d;  /* Slightly darker blue on hover */
+    color: #024b8d;
 }
 
 section {
@@ -70,7 +70,7 @@ hr {
     background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;  /* Change from center to start */
+    align-items: flex-start;
     padding: 1.5rem;
     box-sizing: border-box;
 }
@@ -122,9 +122,9 @@ hr {
 
 .main-content p {
     margin-bottom: 1rem;
-    font-size: 0.95em; /* Slightly smaller paragraphs */
+    font-size: 0.95em;
     text-align: justify;
-    hyphens: auto; /* Optional: helps with better justification */
+    hyphens: auto;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
 }
@@ -163,10 +163,10 @@ hr {
 }
 
 .publication-thumbnail {
-    width: 100px;  /* Adjust size as needed */
-    height: 100px;  /* Make it square */
-    object-fit: cover;  /* Ensures image covers the area without distortion */
-    border-radius: 8px;  /* Optional: adds rounded corners */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .publication-details {
@@ -191,8 +191,8 @@ hr {
 .publication-venue-links {
     display: flex;
     align-items: center;
-    gap: 15px; /* Increased gap between venue and links */
-    margin-top: 3px; /* Optional: add a bit of vertical spacing */
+    gap: 15px;
+    margin-top: 3px;
 }
 
 .projects .project-list {
@@ -205,7 +205,7 @@ hr {
     border: 1px solid #e0e0e0;
     margin-bottom: 10px;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     padding: 10px;
 }
 
@@ -228,7 +228,7 @@ hr {
 }
 
 .project-title:hover {
-    color: #007bff; /* A nice blue color for hover, adjust as needed */
+    color: #007bff;
 }
 
 .project-title .toggle-icon {
@@ -259,6 +259,7 @@ hr {
 .project-description.active {
     display: block;
 }
+
 .project-title {
     cursor: pointer;
     user-select: none;
@@ -269,7 +270,7 @@ hr {
     height: auto;
     margin-bottom: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .project-image {
@@ -292,7 +293,7 @@ hr {
 }
 
 .project-video-small {
-    width: 500px;  /* Adjust size as needed */
+    width: 500px;
     flex-shrink: 0;
 }
 
@@ -339,29 +340,35 @@ hr {
     position: relative;
 }
 
-/* 针对部分图片单独垂直排列的样式（如 Gap Year 部分），保留原 .inline-text-image */
+/* 针对部分图片需要独立垂直排列 */
 .inline-text-image {
-    display: block;            /* 去除浮动，改为块级元素 */
-    margin: 30px auto 10px;     /* 上边距30px，下边距10px，左右自动居中 */
+    display: block;
+    margin: 30px auto 10px;
     width: 400px;
     max-width: 40%;
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* 新增的 .image-row 样式，用于水平排列图片 */
+/* 优化后的 .image-row 使用 CSS Grid 布局 */
 .image-row {
-  display: flex;              /* 启用 Flex 布局 */
-  justify-content: center;    /* 水平居中对齐 */
-  gap: 10px;                  /* 图片间隔 */
-  margin-bottom: 20px;        /* 与下方文字的间距 */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .image-row img {
-  max-width: 30%;             /* 每张图片最多占父容器宽度的 30% */
-  height: auto;               /* 保持图片原比例 */
-  border-radius: 5px;         /* 可选：添加圆角 */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);  /* 可选：添加阴影效果 */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-row img:hover {
+  transform: scale(1.05);
 }
 
 .story-image {
@@ -396,6 +403,7 @@ hr {
         padding: 20px;
     }
 }
+
 
 
 
