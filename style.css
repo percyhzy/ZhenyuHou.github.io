@@ -53,7 +53,7 @@ hr {
     margin: 2rem 0;
 }
 
-/* 容器布局：sidebar + main-content */
+/* 容器布局 */
 .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -126,7 +126,7 @@ hr {
     -moz-hyphens: auto;
 }
 
-/* 缩略图网格（仅 about.html 用） */
+/* About 页面用的缩略图 */
 .thumbnail-instructions {
     font-size: 0.9em;
     color: #555;
@@ -134,23 +134,23 @@ hr {
 }
 
 .thumbnail-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .thumbnail-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .thumbnail-grid img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* Lightbox2 关闭按钮 */
@@ -199,7 +199,7 @@ hr {
     display: block;
 }
 
-/* 确保视频、图片不会溢出 */
+/* 确保视频和图片不超出容器 */
 .main-content img,
 .project-video,
 .project-video-small {
@@ -207,27 +207,6 @@ hr {
     height: auto;
 }
 
-/* 新增：媒体容器，用于视频和平台图片并排显示 */
-.media-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 10px;
-    flex-wrap: wrap; /* 小屏时可自动换行 */
-}
-
-/* 让视频和图片在大屏幕上平分空间 */
-.side-by-side {
-    width: 48%; /* 自行调节：越小则图片更小 */
-    flex: 1 1 auto;
-}
-
-.platform-image {
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* 响应式 */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -240,9 +219,5 @@ hr {
     }
     .main-content {
         padding: 10px;
-    }
-    /* 移动端：让视频和图片上下堆叠 */
-    .side-by-side {
-        width: 100% !important;
     }
 }
