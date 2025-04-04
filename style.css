@@ -340,60 +340,25 @@ hr {
     position: relative;
 }
 
-/* 针对部分图片需要独立垂直排列 */
-.inline-text-image {
-    display: block;
-    margin: 30px auto 10px;
-    width: 400px;
-    max-width: 40%;
-    border-radius: 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* 优化后的 .image-row 使用 CSS Grid 布局 */
-.image-row {
+/* 新增：缩略图网格布局 */
+.thumbnail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
   margin-bottom: 20px;
 }
 
-/* 每张图片外的容器，保持统一长宽比 */
-.image-container {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16/9;
-}
-
-.image-row img {
+.thumbnail-grid img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: cover; /* 若不想裁剪，可改为 contain，但可能会有留白 */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
-.image-row img:hover {
+.thumbnail-grid img:hover {
   transform: scale(1.05);
-}
-
-.story-image {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.story-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.story-image figcaption {
-    margin-top: 10px;
-    font-style: italic;
-    color: #666;
 }
 
 @media (max-width: 768px) {
