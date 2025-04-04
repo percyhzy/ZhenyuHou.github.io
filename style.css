@@ -61,13 +61,11 @@ hr {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
-    /* 不使用 flex-wrap，避免主内容换行导致排版乱 */
     display: flex;
     gap: 20px;
 }
 
-/* 侧边栏 */
+/* Sidebar */
 .sidebar {
     width: 220px;
     background-color: #f8f9fa;
@@ -113,7 +111,7 @@ hr {
     color: #004080;
 }
 
-/* 主内容 */
+/* Main content */
 .main-content {
     flex: 1;
     min-width: 300px;
@@ -155,7 +153,7 @@ hr {
   transform: scale(1.05);
 }
 
-/* Lightbox2 关闭按钮覆盖：提高 z-index 确保可点击 */
+/* Lightbox2 关闭按钮 */
 .lb-close,
 .lb-data .lb-close {
     z-index: 10000 !important;
@@ -164,7 +162,7 @@ hr {
     right: 10px;
 }
 
-/* 项目页面的样式 */
+/* 项目页面样式 */
 .project-list {
     display: flex;
     flex-direction: column;
@@ -198,10 +196,10 @@ hr {
 }
 
 .project-description {
-    display: block; /* 默认展开，可根据需要改为 none */
+    display: block;
 }
 
-/* 让视频、图片在主内容中不会溢出 */
+/* 确保视频、图片不会溢出 */
 .main-content img,
 .project-video,
 .project-video-small {
@@ -209,7 +207,22 @@ hr {
     height: auto;
 }
 
-/* 较小屏幕下的自适应 */
+/* 新增：媒体容器，用于视频和平台图片并排显示 */
+.media-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.platform-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 响应式 */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
