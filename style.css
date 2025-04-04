@@ -1,239 +1,273 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Merriweather', 'Georgia', serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    font-size: 16px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research Projects - Zhenyu Hou</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile-image-container">
+                <img src="images/me.jpg" alt="Yunlong Song" class="profile-image">
+            </div>
+            <div class="sidebar-links">
+                <a href="https://scholar.google.com/citations?user=AQu2ugsAAAAJ&hl=en" title="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="https://github.com/percyhzy" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <br>
+            <a href="index.html" title="Home">Home</a>
+            <br>
+            <a href="project.html" title="Projects">Research Projects</a>
+            <br>
+            <a href="about.html" title="about">About Me</a>
+        </div>
 
-h1, h2 {
-    font-family: 'Lora', 'Times New Roman', serif;
-    font-weight: 500;
-    color: #2c3e50;
-}
+        <!-- Main content -->
+        <div class="main-content">
+            <section class="project">
+              <h2>Research Projects</h2>
+              <p>
+                I am passionate about developing algorithms for robots to perform complex tasks in the real world.
+                Here are the projects I have worked on:
+              </p>
 
-h1 {
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-    margin-top: 0;
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-}
+              <div class="project-list">
+                  <!-- 项目 1 -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                          <p>
+                           Proposed a global-map-free navigation framework for efficient autonomous robot navigation in complex terrains. 
+                           The framework employs Sparse Gaussian Processes (SGP) to extract geometric features—such as curvature, gradient, and elevation—from point cloud data. GPU acceleration is used during feature extraction to ensure real-time performance. 
+                           These features are integrated into a high-resolution local traversability map using a spatial-temporal Bayesian Gaussian Kernel Inference method that fuses historical and real-time data with slope, flatness, gradient, and uncertainty metrics. 
+                           Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared to traditional methods. The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot. 
+                           Source code available at <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK">github.com/ZJU-FAST-Lab/FSGP_BGK</a>.
+                          </p>
+                          <video class="project-video" autoplay loop muted playsinline>
+                              <source src="videos/IROS2025Percy.mp4" type="video/mp4">
+                          </video>
+                      </div>
+                  </div>
 
-h2 {
-    color: #2980b9;
-    margin-top: 20px;
-    font-size: 1.6rem;
-    margin-bottom: 0.75rem;
-}
+                  <!-- 项目 2 -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              Autonomous Exploration in Simulator
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                        <p>
+                          Tested the <a href="https://github.com/ZJU-FAST-Lab/FastSim?tab=readme-ov-file">FastSim simulator</a>, integrating it with drone localization (using <a href="https://github.com/hku-mars/FAST_LIO">Fast-LIO</a>) and autonomous exploration (using <a href="https://github.com/HKUST-Aerial-Robotics/FUEL">FUEL</a>) algorithms for both structured and unstructured dark environments.
+                        </p>
+                        <video class="project-video" autoplay loop muted playsinline>
+                          <source src="videos/splits.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                  </div>
 
-a {
-    text-decoration: none;
-    color: #0366d6;
-    transition: color 0.3s ease;
-}
+                  <!-- 项目 3 -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              Aerial-Ground drone and quad-fisheye drone
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                          <div class="video-text-container">
+                             <p>
+                              Developed an aerial-ground autonomous navigation system for drones using FAST-LIO and <a href="https://github.com/ZJU-FAST-Lab/ego-planner">ego-planner</a>. 
+                              Achieved point cloud map relay sharing during exploration. Designed and built a quad-fisheye-based localization drone inspired by <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt">OmniNxt</a>, 
+                              implementing VIO-based localization using <a href="https://docs.openvins.com/">OpenVINS</a>.
+                            </p>
+                            <video class="project-video project-video-small" autoplay loop muted playsinline>
+                                <source src="videos/Rofly.mp4" type="video/mp4">
+                            </video>
+                          </div>
+                      </div>
+                  </div>
 
-a:hover {
-    color: #024b8d;
-}
+                  <!-- 项目 4：Autonomous Flight and Swarm -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              Autonomous Flight and Swarm
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                          <p>
+                            Deployed lightweight drones equipped with VIO (<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion">VINS-fusion</a>) and autonomous flight using ego-planner. 
+                            Conducted multi-drone VIO experiments using <a href="https://github.com/VIS4ROB-lab/covins">COVINS-G</a> and tested DM-VIO, ORB SLAM, and ALOAM.
+                            Constructed an autonomous drone swarm employing a lidar-based <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">ego-swarm algorithm</a>, 
+                            enabling independent flight in both outdoor sparse-feature environments and indoor structured settings.
+                          </p>
+                          <!-- 新增媒体容器，实现视频与图片并排显示 -->
+                          <div class="media-container">
+                              <video class="project-video" autoplay loop muted playsinline>
+                                  <source src="videos/AutonomousFlight.mp4" type="video/mp4">
+                              </video>
+                              <img class="platform-image" src="images/fisheye.jpg" alt="Fisheye Drone">
+                          </div>
+                      </div>
+                  </div>
 
-section {
-    margin-bottom: 2rem;
-}
+                  <!-- 项目 5 -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              Signal detection based on autonomous flight
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                          <div class="video-text-container">
+                              <p>
+                                Developed a WiFi signal detection software for aerial-ground robots using PyQt and Linux network interfaces. Air-Ground Robot Communication Planning Mesh Networking Problem
+                                (Transmission of odometer information as well as map packets) with bandwidth, communication conditions and UAV energy as constraints for FUEL and ego-planner based UAV cluster
+                                exploration problem. (This idea is inspired by MRS Group of CTU, from Professor Saska's paper)
+                              </p>
+                              <video class="project-video project-video-small" autoplay loop muted playsinline>
+                                  <source src="videos/gt.mp4" type="video/mp4">
+                              </video>
+                          </div>
+                      </div>
+                  </div>
 
-hr {
-    border: none;
-    height: 1px;
-    background-color: #e1e4e8;
-    margin: 2rem 0;
-}
+                  <!-- 项目 6 -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              2023 HKUST (GZ) Red Bird Challenge Camp
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                          <div class="video-text-container">
+                              <p>
+                                The future of unmanned transport technology is rapidly developing, and the scale of unmanned devices is expanding, while labour costs are rising and demand for logistics is increasing. Against this background, a project was proposed to achieve efficient logistics and distribution by integrating multiple unmanned devices so that they can operate in concert and relay distribution under different demands.
+                                <br><br>
+                                <strong>Responsible for:</strong><br>
+                                Implemented RRT and RRT* path planning and navigation for a quadruped robot in Gazebo; performed rendering simulations for both drones and quadruped robots using Blender. Conducted GPS spoofing experiments using HackRF, validated spoofing on simulated target robots, and performed market research on potential solutions. Also responsible for technical feasibility research and organisational design.
+                                <br><br>
+                                <strong>Awards:</strong><br>
+                                2023 Outstanding Camper, Redbird Challenge Camp, HKUST
+                              </p>
+                              <video class="project-video project-video-small" autoplay loop muted playsinline>
+                                  <source src="videos/gt.mp4" type="video/mp4">
+                              </video>
+                          </div>
+                      </div>
+                  </div>
 
-/* 容器布局：sidebar + main-content */
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    gap: 20px;
-}
+                  <!-- 项目 7 -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              2021-2023 National University Robotics Competition RoboMaster Championship
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                          <div class="video-text-container">
+                              <p>
+                                Project Introduction: National University Robotics Competition RoboMaster is a robotics event jointly sponsored by several prestigious organizations and hosted by DJI.
+                                <br><br>
+                                <strong>Responsible for:</strong><br>
+                                1. Laboratory creation: Negotiated with leaders and secured funding to build the robotics lab from scratch (collaboration with multiple schools, ~40 people).<br>
+                                2. Team Management: Managed the project using Coding and Feishu; established lab safety systems.<br>
+                                3. Financial management: Established a triple approval process, obtaining motor sponsorship from <a href="https://en.directdrive.com/">DirectDrive</a>.<br>
+                                4. Robot control debugging: Tuned PID parameters under freeRTOS, applied cascaded PID control and inverse kinematics for mecanum/omni wheels.<br>
+                                5. Wiring design: Completed design and actual wiring for Infantry, Hero, and Sentry robots.<br>
+                                6. Algorithm debugging: Assisted in camera selection, calibration, LIDAR and multi-camera fusion, radar calibration, YOLO detection on ROS, 3D printing, and Gazebo simulation.
+                                <br><br>
+                                <strong>Awards:</strong><br>
+                                3rd place in the National <a href="https://www.robomaster.com/en-US">RoboMaster</a> Championship, 2023 (supported by DJI)<br>
+                                2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (supported by DJI)<br>
+                                3rd place in the National RoboMaster 3v3 League, 2022 (supported by DJI)
+                              </p>
+                              <video class="project-video project-video-small" autoplay loop muted playsinline>
+                                  <source src="videos/gt.mp4" type="video/mp4">
+                              </video>
+                          </div>
+                      </div>
+                  </div>
 
-/* Sidebar */
-.sidebar {
-    width: 220px;
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-    box-sizing: border-box;
-}
+                  <!-- 项目 8 -->
+                  <div class="project-item">
+                      <div class="project-header">
+                          <a href="#" class="project-title" onclick="toggleDescription(this)">
+                              2018 FIRST Robotics Competition (FTC)
+                              <span class="toggle-icon">▼</span>
+                          </a>
+                      </div>
+                      <div class="project-description">
+                          <div class="video-text-container">
+                              <p>
+                                <strong>Project Description:</strong> A youth robotics event under FIRST, supported by NASA and Qualcomm, to develop robots capable of fetching and grasping specific targets under both automatic and manual control.
+                                <br><br>
+                                <strong>Responsibilities:</strong><br>
+                                1. External liaison and engineering documentation.<br>
+                                2. Participation in mechanical construction and SolidWorks simulation design.
+                                <br><br>
+                                <strong>Awards:</strong><br>
+                                Individual Award & Incentive Award, 2018 FIRST Robotics Competition (Suzhou)
+                              </p>
+                              <video class="project-video project-video-small" autoplay loop muted playsinline>
+                                  <source src="videos/pendulum.mp4" type="video/mp4">
+                              </video>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </section>
+        </div>
+    </div>
 
-.profile-image-container {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    border-radius: 50%;
-}
-
-.profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.sidebar-links,
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.sidebar-links a,
-.social-links a {
-    text-decoration: none;
-    color: #0066cc;
-    transition: color 0.3s ease;
-}
-
-.sidebar-links a:hover,
-.social-links a:hover {
-    color: #004080;
-}
-
-/* Main content */
-.main-content {
-    flex: 1;
-    min-width: 300px;
-}
-
-.main-content p {
-    margin-bottom: 1rem;
-    font-size: 0.95em;
-    text-align: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-}
-
-/* 缩略图网格（仅 about.html 用） */
-.thumbnail-instructions {
-    font-size: 0.9em;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-.thumbnail-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.thumbnail-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.thumbnail-grid img:hover {
-  transform: scale(1.05);
-}
-
-/* Lightbox2 关闭按钮 */
-.lb-close,
-.lb-data .lb-close {
-    z-index: 10000 !important;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-/* 项目页面样式 */
-.project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.project-item {
-    background-color: #fafafa;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.project-header {
-    margin-bottom: 10px;
-}
-
-.project-title {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-}
-
-.toggle-icon {
-    margin-left: 5px;
-    font-size: 0.8em;
-    color: #666;
-}
-
-.project-description {
-    display: block;
-}
-
-/* 确保视频、图片不会溢出 */
-.main-content img,
-.project-video,
-.project-video-small {
-    max-width: 100%;
-    height: auto;
-}
-
-/* 新增：媒体容器，用于视频和平台图片并排显示 */
-.media-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.platform-image {
-    max-width: 300px;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-/* 响应式 */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
+    <!-- 折叠/展开脚本 -->
+    <script>
+    function toggleDescription(element) {
+        event.preventDefault();
+        const description = element.closest('.project-item').querySelector('.project-description');
+        const toggleIcon = element.querySelector('.toggle-icon');
+        if (description.style.display === 'none') {
+            description.style.display = 'block';
+            toggleIcon.textContent = '▲';
+        } else {
+            description.style.display = 'none';
+            toggleIcon.textContent = '▼';
+        }
     }
-    .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #e0e0e0;
-    }
-    .main-content {
-        padding: 10px;
-    }
-}
+    document.addEventListener('DOMContentLoaded', function() {
+        const projectDescriptions = document.querySelectorAll('.project-description');
+        const toggleIcons = document.querySelectorAll('.toggle-icon');
+        projectDescriptions.forEach(description => {
+            description.style.display = 'block';
+        });
+        toggleIcons.forEach(icon => {
+            icon.textContent = '▲';
+        });
+    });
+    </script>
+</body>
+</html>
+
