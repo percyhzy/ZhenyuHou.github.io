@@ -53,17 +53,18 @@ hr {
     margin: 2rem 0;
 }
 
-/* 调整整体容器，适当缩小尺寸 */
+/* 容器布局：sidebar + main-content */
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    /* 不使用 flex-wrap，避免主内容换行导致排版乱 */
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 /* 侧边栏 */
@@ -127,7 +128,13 @@ hr {
     -moz-hyphens: auto;
 }
 
-/* 缩略图网格 */
+/* 缩略图网格（仅 about.html 用） */
+.thumbnail-instructions {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
 .thumbnail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -148,7 +155,61 @@ hr {
   transform: scale(1.05);
 }
 
-/* 响应式 */
+/* Lightbox2 关闭按钮覆盖：提高 z-index 确保可点击 */
+.lb-close,
+.lb-data .lb-close {
+    z-index: 10000 !important;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* 项目页面的样式 */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.project-header {
+    margin-bottom: 10px;
+}
+
+.project-title {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-icon {
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.project-description {
+    display: block; /* 默认展开，可根据需要改为 none */
+}
+
+/* 让视频、图片在主内容中不会溢出 */
+.main-content img,
+.project-video,
+.project-video-small {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 较小屏幕下的自适应 */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
