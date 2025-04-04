@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- 侧边栏 -->
+        <!-- Sidebar -->
         <div class="sidebar">
             <div class="profile-image-container">
                 <img src="images/me.jpg" alt="Yunlong Song" class="profile-image">
@@ -34,7 +34,7 @@
             <a href="about.html" title="about">About Me</a>
         </div>
 
-        <!-- 主内容区 -->
+        <!-- Main content -->
         <div class="main-content">
             <section class="project">
               <h2>Research Projects</h2>
@@ -44,6 +44,7 @@
               </p>
 
               <div class="project-list">
+                  <!-- 项目 1 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -65,6 +66,7 @@
                       </div>
                   </div>
 
+                  <!-- 项目 2 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -82,6 +84,7 @@
                       </div>
                   </div>
 
+                  <!-- 项目 3 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -97,12 +100,13 @@
                               implementing VIO-based localization using <a href="https://docs.openvins.com/">OpenVINS</a>.
                             </p>
                             <video class="project-video project-video-small" autoplay loop muted playsinline>
-                                <source src="videos/AutonomousFlight.mp4" type="video/mp4">
+                                <source src="videos/Rofly.mp4" type="video/mp4">
                             </video>
                           </div>
                       </div>
                   </div>
 
+                  <!-- 项目 4：Autonomous Flight and Swarm -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -117,12 +121,17 @@
                             Constructed an autonomous drone swarm employing a lidar-based <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">ego-swarm algorithm</a>, 
                             enabling independent flight in both outdoor sparse-feature environments and indoor structured settings.
                           </p>
-                          <video class="project-video" autoplay loop muted playsinline>
-                              <source src="videos/AutonomousFlight.mp4" type="video/mp4">
-                          </video>
+                          <!-- 新增媒体容器，实现视频与图片并排显示 -->
+                          <div class="media-container">
+                              <video class="project-video" autoplay loop muted playsinline>
+                                  <source src="videos/AutonomousFlight.mp4" type="video/mp4">
+                              </video>
+                              <img class="platform-image" src="images/fisheye.jpg" alt="Fisheye Drone">
+                          </div>
                       </div>
                   </div>
 
+                  <!-- 项目 5 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -133,10 +142,9 @@
                       <div class="project-description">
                           <div class="video-text-container">
                               <p>
-                                Developed a WiFi signal detection software for aerial-ground robots using PyQt and Linux networ interfaces. Air-Ground Robot Communication Planning Mesh Networking Problem
+                                Developed a WiFi signal detection software for aerial-ground robots using PyQt and Linux network interfaces. Air-Ground Robot Communication Planning Mesh Networking Problem
                                 (Transmission of odometer information as well as map packets) with bandwidth, communication conditions and UAV energy as constraints for FUEL and ego-planner based UAV cluster
-                                exploration problem.(It's a subject I'm planning to do in the future,I referenced the subT Challenge paper and methods,I considered trajectory optimisation and drop points for mobile relay nodes)
-                                (This idea is inspired by MRS Group of CTU,from Professor Saska's paper)
+                                exploration problem. (This idea is inspired by MRS Group of CTU, from Professor Saska's paper)
                               </p>
                               <video class="project-video project-video-small" autoplay loop muted playsinline>
                                   <source src="videos/gt.mp4" type="video/mp4">
@@ -145,6 +153,7 @@
                       </div>
                   </div>
 
+                  <!-- 项目 6 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -155,22 +164,10 @@
                       <div class="project-description">
                           <div class="video-text-container">
                               <p>
-                                The future of unmanned transport technology is rapidly developing, and the
-                                scale of unmanned devices is expanding, while at the same time, labour costs are rising and the
-                                demand for logistics is gradually increasing. Against this background, a project is proposed that
-                                aims to achieve efficient logistics and distribution by integrating multiple unmanned devices so
-                                that they can operate in concert and relay distribution under different demands. The project is
-                                built on the carrier of the company, designed the company's organisational and system structure,
-                                job division of labour, profit model. Technically, it solves the intelligent site selection problem of
-                                the station of unmanned equipment, the path planning problem of unmanned equipment
-                                receiving and distribution, as well as the intelligent communication and environment perception
-                                problem between the equipment and the system security and interaction problem, and finally
-                                carries out the pre-study of technical feasibility. 
+                                The future of unmanned transport technology is rapidly developing, and the scale of unmanned devices is expanding, while labour costs are rising and demand for logistics is increasing. Against this background, a project was proposed to achieve efficient logistics and distribution by integrating multiple unmanned devices so that they can operate in concert and relay distribution under different demands.
                                 <br><br>
-                                <strong>Responsible for :</strong><br>
-                                Implemented RRT and RRT* path planning and navigation for a quadruped robot in Gazebo; performed rendering simulations for both drones and quadruped robots using Blender.
-                                Conducted GPS spoofing experiments using HackRF, validated spoofing on simulated target robots, and performed market research on potential solutions.
-                                Market research, technical feasibility research, and technical organisation design of the company.
+                                <strong>Responsible for:</strong><br>
+                                Implemented RRT and RRT* path planning and navigation for a quadruped robot in Gazebo; performed rendering simulations for both drones and quadruped robots using Blender. Conducted GPS spoofing experiments using HackRF, validated spoofing on simulated target robots, and performed market research on potential solutions. Also responsible for technical feasibility research and organisational design.
                                 <br><br>
                                 <strong>Awards:</strong><br>
                                 2023 Outstanding Camper, Redbird Challenge Camp, HKUST
@@ -182,6 +179,7 @@
                       </div>
                   </div>
 
+                  <!-- 项目 7 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -192,37 +190,20 @@
                       <div class="project-description">
                           <div class="video-text-container">
                               <p>
-                                Project Introduction: National University Robotics Competition RoboMaster is a robotics event
-                                jointly sponsored by the Central Committee of the Communist Youth League, the All-China
-                                Federation of Schools and Colleges, the Chinese Academy of Engineering and the Shenzhen
-                                Municipal People's Government, and initiated and hosted by DJI, as a global shooting
-                                confrontation robotics competition.
+                                Project Introduction: National University Robotics Competition RoboMaster is a robotics event jointly sponsored by several prestigious organizations and hosted by DJI.
                                 <br><br>
                                 <strong>Responsible for:</strong><br>
-                                1. Laboratory creation: multiple negotiations with college and school
-                                leaders, applying for funding, building the robotics lab from zero to one. 2023 seasons of collaboration with multiple schools (CAUC, SCU, SWU, DGUT, THU, etc.), about 40 people in the team.
-                                <br>
-                                2. Team Management: used Coding and Feishu to manage the project
-                                and acceptance of results; established lab safety acceptance system.
-                                <br>
-                                3. Financial management: established a triple financial purchase reimbursement process
-                                (team leader-captain-teacher), successfully obtained motor sponsorship from <a href="https://en.directdrive.com/">DirectDrive</a>.
-                                <br>
-                                4. Robot electronic control debugging: PID parameter tuning under
-                                freeRTOS, applying cascaded PID control for a dual-degree-of-freedom gimbal, using inverse kinematics
-                                for mecanum/omni wheels, verifying robustness, etc.
-                                <br>
-                                5. Wiring design: completed the topology design and actual wiring (signals and power supply) for
-                                the Infantry, Hero, and Sentry robots.
-                                <br>
-                                6. Algorithm debugging: assisted the vision team in camera selection, calibration (Matlab, kalibar),
-                                Docker-based environment, LIDAR + multi-camera fusion, radar calibration, YOLO detection on ROS,
-                                3D printing, Gazebo simulation, etc.
+                                1. Laboratory creation: Negotiated with leaders and secured funding to build the robotics lab from scratch (collaboration with multiple schools, ~40 people).<br>
+                                2. Team Management: Managed the project using Coding and Feishu; established lab safety systems.<br>
+                                3. Financial management: Established a triple approval process, obtaining motor sponsorship from <a href="https://en.directdrive.com/">DirectDrive</a>.<br>
+                                4. Robot control debugging: Tuned PID parameters under freeRTOS, applied cascaded PID control and inverse kinematics for mecanum/omni wheels.<br>
+                                5. Wiring design: Completed design and actual wiring for Infantry, Hero, and Sentry robots.<br>
+                                6. Algorithm debugging: Assisted in camera selection, calibration, LIDAR and multi-camera fusion, radar calibration, YOLO detection on ROS, 3D printing, and Gazebo simulation.
                                 <br><br>
                                 <strong>Awards:</strong><br>
                                 3rd place in the National <a href="https://www.robomaster.com/en-US">RoboMaster</a> Championship, 2023 (supported by DJI)<br>
-                                2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (DJI)<br>
-                                3rd place in the National RoboMaster 3v3 League, 2022 (DJI)
+                                2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (supported by DJI)<br>
+                                3rd place in the National RoboMaster 3v3 League, 2022 (supported by DJI)
                               </p>
                               <video class="project-video project-video-small" autoplay loop muted playsinline>
                                   <source src="videos/gt.mp4" type="video/mp4">
@@ -231,6 +212,7 @@
                       </div>
                   </div>
 
+                  <!-- 项目 8 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -241,13 +223,11 @@
                       <div class="project-description">
                           <div class="video-text-container">
                               <p>
-                                <strong>Project Description:</strong> A youth robotics event under FIRST, supported by NASA and Qualcomm, to
-                                develop robots that can perform fetching (sucking up specific targets as well as grasping specific
-                                targets) and support both automatic and manual control.
+                                <strong>Project Description:</strong> A youth robotics event under FIRST, supported by NASA and Qualcomm, to develop robots capable of fetching and grasping specific targets under both automatic and manual control.
                                 <br><br>
                                 <strong>Responsibilities:</strong><br>
-                                1. External liaison, completing overall engineering notes, communication with the committee.<br>
-                                2. Participated in mechanical construction and SolidWorks simulation design.
+                                1. External liaison and engineering documentation.<br>
+                                2. Participation in mechanical construction and SolidWorks simulation design.
                                 <br><br>
                                 <strong>Awards:</strong><br>
                                 Individual Award & Incentive Award, 2018 FIRST Robotics Competition (Suzhou)
@@ -267,12 +247,8 @@
     <script>
     function toggleDescription(element) {
         event.preventDefault();
-
-        // Find the description div
         const description = element.closest('.project-item').querySelector('.project-description');
         const toggleIcon = element.querySelector('.toggle-icon');
-
-        // Toggle visibility
         if (description.style.display === 'none') {
             description.style.display = 'block';
             toggleIcon.textContent = '▲';
@@ -281,16 +257,12 @@
             toggleIcon.textContent = '▼';
         }
     }
-
-    // On page load, set all project descriptions to be visible by default
     document.addEventListener('DOMContentLoaded', function() {
         const projectDescriptions = document.querySelectorAll('.project-description');
         const toggleIcons = document.querySelectorAll('.toggle-icon');
-
         projectDescriptions.forEach(description => {
             description.style.display = 'block';
         });
-
         toggleIcons.forEach(icon => {
             icon.textContent = '▲';
         });
