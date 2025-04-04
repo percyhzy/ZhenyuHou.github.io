@@ -44,7 +44,7 @@
               </p>
 
               <div class="project-list">
-                  <!-- Project 1 -->
+                  <!-- 项目 1 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -66,7 +66,7 @@
                       </div>
                   </div>
 
-                  <!-- Project 2 -->
+                  <!-- 项目 2 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -84,7 +84,7 @@
                       </div>
                   </div>
 
-                  <!-- Project 3 -->
+                  <!-- 项目 3 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -106,7 +106,7 @@
                       </div>
                   </div>
 
-                  <!-- Project 4: Autonomous Flight and Swarm -->
+                  <!-- 项目 4：Autonomous Flight and Swarm -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -121,13 +121,17 @@
                             Constructed an autonomous drone swarm employing a lidar-based <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">ego-swarm algorithm</a>, 
                             enabling independent flight in both outdoor sparse-feature environments and indoor structured settings.
                           </p>
-                          <video class="project-video" autoplay loop muted playsinline>
-                              <source src="videos/AutonomousFlight.mp4" type="video/mp4">
-                          </video>
+                          <!-- 新增媒体容器，实现视频与图片并排显示 -->
+                          <div class="media-container">
+                              <video class="project-video" autoplay loop muted playsinline>
+                                  <source src="videos/AutonomousFlight.mp4" type="video/mp4">
+                              </video>
+                              <img class="platform-image" src="images/fisheye.jpg" alt="Fisheye Drone">
+                          </div>
                       </div>
                   </div>
 
-                  <!-- Project 5 -->
+                  <!-- 项目 5 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -149,7 +153,7 @@
                       </div>
                   </div>
 
-                  <!-- Project 6 -->
+                  <!-- 项目 6 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -175,7 +179,7 @@
                       </div>
                   </div>
 
-                  <!-- Project 7 -->
+                  <!-- 项目 7 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -208,7 +212,7 @@
                       </div>
                   </div>
 
-                  <!-- Project 8 -->
+                  <!-- 项目 8 -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -239,6 +243,7 @@
         </div>
     </div>
 
+    <!-- 折叠/展开脚本 -->
     <script>
     function toggleDescription(element) {
         event.preventDefault();
