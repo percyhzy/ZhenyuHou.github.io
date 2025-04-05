@@ -66,7 +66,7 @@
                       </div>
                   </div>
 
-                  <!-- Project 2：Autonomous Exploration in Simulator -->
+                  <!-- Project 2: Autonomous Exploration in Simulator -->
                   <div class="project-item">
                       <div class="project-header">
                           <a href="#" class="project-title" onclick="toggleDescription(this)">
@@ -78,7 +78,7 @@
                         <p>
                           Tested the <a href="https://github.com/ZJU-FAST-Lab/FastSim?tab=readme-ov-file">FastSim simulator</a>, integrating it with drone localization (using <a href="https://github.com/hku-mars/FAST_LIO">Fast-LIO</a>) and autonomous exploration (using <a href="https://github.com/HKUST-Aerial-Robotics/FUEL">FUEL</a>) algorithms for both structured and unstructured dark environments.
                         </p>
-                        <!-- 新增视频容器，两个视频并排显示 -->
+                        <!-- 使用视频行容器并排显示两个视频 -->
                         <div class="video-row">
                             <video class="project-video" autoplay loop muted playsinline>
                                 <source src="videos/FASTSIM.mp4" type="video/mp4">
@@ -127,9 +127,15 @@
                             Constructed an autonomous drone swarm employing a lidar-based <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">ego-swarm algorithm</a>, 
                             enabling independent flight in both outdoor sparse-feature environments and indoor structured settings.
                           </p>
-                          <video class="project-video" autoplay loop muted playsinline>
-                              <source src="videos/AutonomousFlight.mp4" type="video/mp4">
-                          </video>
+                          <!-- 使用视频行容器并排显示两个视频 -->
+                          <div class="video-row">
+                              <video class="project-video" autoplay loop muted playsinline>
+                                  <source src="videos/AutonomousFlight.mp4" type="video/mp4">
+                              </video>
+                              <video class="project-video" autoplay loop muted playsinline>
+                                  <source src="videos/Swarm.mp4" type="video/mp4">
+                              </video>
+                          </div>
                       </div>
                   </div>
 
@@ -235,7 +241,7 @@
                                 Individual Award & Incentive Award, 2018 FIRST Robotics Competition (Suzhou)
                               </p>
                               <video class="project-video project-video-small" autoplay loop muted playsinline>
-                                  <source src="videos/FTC.mp4" type="video/mp4">
+                                  <source src="videos/pendulum.mp4" type="video/mp4">
                               </video>
                           </div>
                       </div>
@@ -245,7 +251,7 @@
         </div>
     </div>
 
-    <!-- 折叠/展开脚本 -->
+    <!-- Toggle script -->
     <script>
     function toggleDescription(element) {
         event.preventDefault();
@@ -272,4 +278,3 @@
     </script>
 </body>
 </html>
-
