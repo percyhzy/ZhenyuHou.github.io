@@ -207,12 +207,16 @@ hr {
     height: auto;
 }
 
-/* 新增：媒体容器，用于 Project 4 内视频与图片并排显示 */
-.media-container {
+/* 新增：媒体容器，用于 Project 4 内视频与图片并排显示（此处 Project 4 已调整为视频行） */
+/* 新增：视频行，用于将多个视频并排显示 */
+.video-row {
     display: flex;
-    align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
     margin-top: 10px;
+}
+.video-row video {
+    flex: 1 1 48%;
 }
 
 /* 响应式 */
@@ -229,15 +233,4 @@ hr {
     .main-content {
         padding: 10px;
     }
-}
-
-/* 新增：视频行，用于 Project 2 两个视频并排显示 */
-.video-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-.video-row video {
-    flex: 1 1 48%;
 }
