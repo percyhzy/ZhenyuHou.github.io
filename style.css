@@ -218,14 +218,14 @@ hr {
     flex: 1 1 48%;
 }
 
-/* 新增：视频网格，用于 Project 7 六个视频 */
+/* 新增：视频网格，用于将 6 个视频排列成 3 列 2 行 */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     margin-top: 10px;
-    height: 250px; /* 可根据需要调整，总体与其他视频块保持一致 */
+    height: 250px; /* 整体网格高度，保证与其他视频块占用空间一致 */
 }
 .video-grid video {
     width: 100%;
