@@ -207,8 +207,7 @@ hr {
     height: auto;
 }
 
-/* 新增：媒体容器，用于 Project 4 内视频与图片并排显示（此处 Project 4 已调整为视频行） */
-/* 新增：视频行，用于将多个视频并排显示 */
+/* 新增：视频行，用于将两个视频并排显示 */
 .video-row {
     display: flex;
     gap: 10px;
@@ -217,6 +216,21 @@ hr {
 }
 .video-row video {
     flex: 1 1 48%;
+}
+
+/* 新增：视频网格，用于 Project 7 六个视频 */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    height: 250px; /* 可根据需要调整，总体与其他视频块保持一致 */
+}
+.video-grid video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* 响应式 */
