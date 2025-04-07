@@ -207,7 +207,7 @@ hr {
     height: auto;
 }
 
-/* 新增：视频行，用于将两个视频并排显示 */
+/* 两个视频并排显示 */
 .video-row {
     display: flex;
     gap: 10px;
@@ -218,15 +218,16 @@ hr {
     flex: 1 1 48%;
 }
 
-/* 新增：视频网格，用于将 6 个视频排列成 3 列 2 行 */
+/* 3x2 视频网格 (Project 7) */
 .video-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     margin-top: 10px;
-    height: 250px; /* 整体网格高度，保证与其他视频块占用空间一致 */
+    height: 180px; /* 调整此值可控制视频整体大小，原先 250px 改为 180px */
 }
+
 .video-grid video {
     width: 100%;
     height: 100%;
