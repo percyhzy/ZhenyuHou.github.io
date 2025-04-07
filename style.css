@@ -225,7 +225,7 @@ hr {
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
   margin-top: 10px;
-  height: 240px; /* 可根据需要调整，原先 180px 改为 240px 以确保视频完整显示 */
+  height: 500px; /* 可根据需要调整，原先 180px 改为 240px 以确保视频完整显示 */
 }
 .video-grid video {
   width: 100%;
