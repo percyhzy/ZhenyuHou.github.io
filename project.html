@@ -69,6 +69,27 @@
             </div>
           </div>
 
+<div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(this)">
+                Tracailer: An Efficient Trajectory Planner for  Tractor-Trailer Vehicles in Unstructured Environments
+                <span class="toggle-icon">▼</span>
+              </a>
+            </div>
+            <div class="project-description">
+              <p>
+This paper presents a lightweight, high-order–smooth trajectory representation and a coupled space–time optimization framework for articulated tractor-trailer planning. By deforming trajectories directly in continuous free space, the method eliminates repeated safe-corridor construction, greatly accelerates computation, and reduces both curvature and travel time.
+
+Building on this framework, I conducted full-scale trials with a 7 m tractor-trailer (1 : 1 real vehicle). Apollo’s native lateral LQR and longitudinal PID controllers, together with the PIX-series CAN-bus protocol, were re-engineered as ROS nodes; for comparison, I also implemented an MPC controller. All components were seamlessly integrated with the planner, yielding a complete perception-mapping-planning-control loop. Real-world tests—spanning indoor/outdoor transport, loading/unloading, and narrow-aisle navigation—achieved a mean tracking error of ≈ 0.11 m, satisfying industrial-grade precision requirements.</a>.
+              </p>
+              <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                <source data-src="videos/IROS2025Percy.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+
+          
           <!-- Project 2: Autonomous Exploration in Simulator -->
           <div class="project-item">
             <div class="project-header">
