@@ -88,6 +88,30 @@ Building on this framework, I conducted full-scale trials with a 7 m tractor-tra
             </div>
           </div>
 
+<div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(this)">
+                Ground Point Cloud Perception,Obstacle Separation Algorithm and Social navigation
+                <span class="toggle-icon">▼</span>
+              </a>
+            </div>
+            <div class="project-description">
+              <p>
+This project involved the development of a ground point cloud perception and ground-obstacle separation algorithm, suitable for various environments. The algorithm significantly improved point cloud processing efficiency and reduced interference from virtual ground points caused by LiDAR reflection noise, using <a href="https://github.com/url-kaist/patchwork-plusplus">Voxel Downsampling (Fast Voxel Hashing)</a> and <a href="https://github.com/url-kaist/patchwork-plusplus">Reflection Noise Removal</a> techniques. It utilized <a href="https://github.com/url-kaist/patchwork-plusplus">Region-wise Vertical Plane Fitting</a> to remove low vertical structure points, such as guardrails and wall corners, improving the accuracy of subsequent ground fitting. The algorithm, combined with <a href="https://github.com/NKU-MobFly-Robotics/LRAE">Local Roughness and Elevation Estimation (LRAE)</a>, enabled the perception of uneven terrain and used an incremental map update method from <a href="https://github.com/hku-mars/ROG-Map">ROG-MAP</a> to reduce computational overhead. It performed well on the KITTI dataset and operated above 100Hz on a Jetson Orin NX, meeting real-time demands for quadruped robots or UGVs in complex environments, with real-world testing on Boston Dynamics' Spot robot.
+              </p>
+                <p>
+            Additionally, the project utilized a ZED camera and the YOLO algorithm for object detection and tracking.
+        </p>
+        <p>
+            This project was supervised by <a href="https://profiles.imperial.ac.uk/y.demiris">Prof. Yiannis Demiris</a> and <a href="https://www.imperial.ac.uk/personal-robotics/people/post-doctoral-researchers-and-research-assistants/dr-fernando-e-casado/">Dr. Fernando E. Casado</a> at the Imperial College Robotics Summer School.
+        </p>
+              <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                <source data-src="videos/FinalCarry2_wx264_720p.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          
 
           
           <!-- Project 2: Autonomous Exploration in Simulator -->
