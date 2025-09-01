@@ -37,13 +37,14 @@ a {
   color: #0366d6;
   transition: color 0.3s ease;
 }
+
 a:hover {
   color: #024b8d;
 }
 
-img { max-width: 100%; display: block; }
-
-section { margin-bottom: 2rem; }
+section {
+  margin-bottom: 2rem;
+}
 
 hr {
   border: none;
@@ -52,14 +53,16 @@ hr {
   margin: 2rem 0;
 }
 
-/* 容器布局（原：左右两列，侧栏 + 主内容） */
+/* 容器布局 */
 .container {
   max-width: 1200px;
   margin: 20px auto;
-  padding: 0 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   display: flex;
   gap: 20px;
-  align-items: flex-start;
 }
 
 /* Sidebar */
@@ -71,10 +74,6 @@ hr {
   align-items: flex-start;
   padding: 1rem;
   box-sizing: border-box;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: left;
 }
 
 .profile-image-container {
@@ -82,18 +81,19 @@ hr {
   height: 120px;
   margin-bottom: 1rem;
   overflow: hidden;
+  border-radius: 50%;
 }
+
 .profile-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
 }
 
 .sidebar-links,
 .social-links {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   margin-top: 10px;
@@ -101,31 +101,20 @@ hr {
 
 .sidebar-links a,
 .social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
-  border-radius: 8px;
-  border: 1px solid #e1e4e8;
-  background: #fff;
+  text-decoration: none;
   color: #0066cc;
-  transition: color 0.3s ease, box-shadow 0.2s ease;
+  transition: color 0.3s ease;
 }
+
 .sidebar-links a:hover,
 .social-links a:hover {
   color: #004080;
-  box-shadow: 0 0 0 3px rgba(3,102,214,0.15);
 }
 
 /* Main content */
 .main-content {
   flex: 1;
   min-width: 300px;
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  padding: 20px;
 }
 
 .main-content p {
@@ -137,20 +126,20 @@ hr {
   -moz-hyphens: auto;
 }
 
-/* About 页面：缩略图说明 */
+/* About 页面用的缩略图 */
 .thumbnail-instructions {
   font-size: 0.9em;
   color: #555;
   margin-bottom: 5px;
 }
 
-/* About 页面：缩略图网格（原本的简洁版本） */
 .thumbnail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
   margin-bottom: 20px;
 }
+
 .thumbnail-grid img {
   width: 100%;
   height: auto;
@@ -159,9 +148,12 @@ hr {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
-.thumbnail-grid img:hover { transform: scale(1.05); }
 
-/* Lightbox2 关闭按钮微调（原有） */
+.thumbnail-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox2 关闭按钮 */
 .lb-close,
 .lb-data .lb-close {
   z-index: 10000 !important;
@@ -170,42 +162,49 @@ hr {
   right: 10px;
 }
 
-/* 你原先自定义的 Modal（如果还需要保留） */
+/* Modal弹出框样式 */
 .modal {
-  display: none;
+  display: none; /* 默认隐藏 */
   position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  overflow: auto;
+  z-index: 9999; /* 确保弹出框位于其他内容之上 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+  overflow: auto; /* 如果图片比屏幕大，可以滚动 */
 }
+
 .modal-content {
   margin: auto;
   display: block;
-  max-width: 80%;
+  max-width: 80%; /* 限制图片最大尺寸 */
   max-height: 80%;
 }
+
 .close-modal {
   position: absolute;
-  top: 10px; right: 25px;
+  top: 10px;
+  right: 25px;
   color: #fff;
   font-size: 35px;
   font-weight: bold;
   cursor: pointer;
 }
+
 #modalCaption {
   text-align: center;
   color: #fff;
   padding: 10px;
 }
 
-/* 项目列表（原样式） */
+/* 项目页面样式 */
 .project-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .project-item {
   background-color: #fafafa;
   padding: 15px;
@@ -213,7 +212,11 @@ hr {
   border: 1px solid #eee;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
-.project-header { margin-bottom: 10px; }
+
+.project-header {
+  margin-bottom: 10px;
+}
+
 .project-title {
   text-decoration: none;
   color: #333;
@@ -221,14 +224,18 @@ hr {
   cursor: pointer;
   user-select: none;
 }
+
 .toggle-icon {
   margin-left: 5px;
   font-size: 0.8em;
   color: #666;
 }
-.project-description { display: block; }
 
-/* 媒体内容宽度限制 */
+.project-description {
+  display: block;
+}
+
+/* 确保视频和图片不超出容器 */
 .main-content img,
 .project-video,
 .project-video-small {
@@ -236,23 +243,25 @@ hr {
   height: auto;
 }
 
-/* 两个视频并排 */
+/* 两个视频并排显示 */
 .video-row {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 10px;
 }
-.video-row video { flex: 1 1 48%; }
+.video-row video {
+  flex: 1 1 48%;
+}
 
-/* 3×2 视频网格 */
+/* 3×2 视频网格 (Project 7) */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
   margin-top: 10px;
-  height: 500px;
+  height: 500px; /* 可根据需要调整，原先 180px 改为 240px 以确保视频完整显示 */
 }
 .video-grid video {
   width: 100%;
@@ -264,12 +273,14 @@ hr {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
   .sidebar {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #e0e0e0;
   }
-  .main-content { padding: 10px; }
+  .main-content {
+    padding: 10px;
+  }
 }
