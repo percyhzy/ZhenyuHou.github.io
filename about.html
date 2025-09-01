@@ -187,78 +187,80 @@ Later, in December 2024, I participated in the Autonomous Robot Technology Sympo
       </section>
     </div>
   </div>
-<h3>Journey to the England: Imperial College Robotics Summer School</h3>
-<div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
-  <a href="images/about/andrew.png" data-lightbox="journey" data-title="IC1"
-     style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-    <img src="images/about/andrew.png" alt="IC1" loading="lazy"
-         style="width:100%; height:100%; object-fit:cover;">
-  </a>
+<div class="container">
+  <div class="main-content">
+    <h3>Journey to the England: Imperial College Robotics Summer School</h3>
 
-  <a href="images/about/group.png" data-lightbox="journey" data-title="IC2"
-     style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-    <img src="images/about/group.png" alt="IC2" loading="lazy"
-         style="width:100%; height:100%; object-fit:cover;">
-  </a>
+    <!-- 单独一组，限定为 3 列（= 两行）+ 统一 4:3 比例，不改全局 CSS -->
+    <div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
+      <a href="images/about/andrew.png" data-lightbox="ic" data-title="IC1"
+         style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+        <img src="images/about/andrew.png" alt="IC1" loading="lazy"
+             style="width:100%; height:100%; object-fit:cover;">
+      </a>
 
-  <a href="images/about/pre.png" data-lightbox="journey" data-title="IC3"
-     style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-    <img src="images/about/pre.png" alt="IC3" loading="lazy"
-         style="width:100%; height:100%; object-fit:cover;">
-  </a>
+      <a href="images/about/group.png" data-lightbox="ic" data-title="IC2"
+         style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+        <img src="images/about/group.png" alt="IC2" loading="lazy"
+             style="width:100%; height:100%; object-fit:cover;">
+      </a>
 
-  <a href="images/about/yiannis.png" data-lightbox="journey" data-title="IC4"
-     style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-    <img src="images/about/yiannis.png" alt="IC4" loading="lazy"
-         style="width:100%; height:100%; object-fit:cover;">
-  </a>
+      <a href="images/about/pre.png" data-lightbox="ic" data-title="IC3"
+         style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+        <img src="images/about/pre.png" alt="IC3" loading="lazy"
+             style="width:100%; height:100%; object-fit:cover;">
+      </a>
 
-  <a href="images/about/final.png" data-lightbox="journey" data-title="IC5"
-     style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-    <img src="images/about/final.png" alt="IC5" loading="lazy"
-         style="width:100%; height:100%; object-fit:cover;">
-  </a>
+      <a href="images/about/yiannis.png" data-lightbox="ic" data-title="IC4"
+         style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+        <img src="images/about/yiannis.png" alt="IC4" loading="lazy"
+             style="width:100%; height:100%; object-fit:cover;">
+      </a>
 
-  <a href="images/about/IC.png" data-lightbox="journey" data-title="IC6"
-     style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-    <img src="images/about/IC.png" alt="IC6" loading="lazy"
-         style="width:100%; height:100%; object-fit:cover;">
-  </a>
+      <a href="images/about/final.png" data-lightbox="ic" data-title="IC5"
+         style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+        <img src="images/about/final.png" alt="IC5" loading="lazy"
+             style="width:100%; height:100%; object-fit:cover;">
+      </a>
+
+      <a href="images/about/IC.png" data-lightbox="ic" data-title="IC6"
+         style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+        <img src="images/about/IC.png" alt="IC6" loading="lazy"
+             style="width:100%; height:100%; object-fit:cover;">
+      </a>
+    </div>
+
+    <p>
+      I had the amazing opportunity to attend the first Robotics Summer School at Imperial College London, supervised by 
+      <b>Prof. Yiannis Demiris</b> and <b>Dr. Fernando Estévez Casado</b>.
+    </p>
+
+    <p>
+      Together with Andrea D’Antona, Safa Tok, Elisha Okara, and Rob Woolley, I worked on Robot Social Navigation with Boston Dynamics’ Spot. 
+      I proposed and led the development of a ground point cloud perception and ground-obstacle separation algorithm suitable for complex environments. 
+      The algorithm improved point cloud processing efficiency and reduced LiDAR reflection noise by integrating Voxel Downsampling (Fast Voxel Hashing) 
+      with advanced Reflection Noise Removal and Region-wise Vertical Plane Fitting for low structure filtering.
+    </p>
+
+    <p>
+      Combined with Local Roughness and Elevation Estimation (LRAE) and an incremental mapping approach from ROG-MAP, our system enabled robust uneven 
+      terrain perception while reducing computational overhead. We validated performance on both datasets (KITTI) and real hardware, achieving stable 
+      real-time operation above 100Hz on Jetson Orin NX, and successfully deploying on Boston Dynamics’ Spot robot.
+    </p>
+
+    <p>
+      In addition, we integrated a ZED stereo camera and YOLO-based detection and tracking to support human-guided navigation, building upon principles 
+      from the Augmented Social Force Model for Legged Robot Navigation.
+    </p>
+
+    <p>
+      It was truly exciting to see the pipeline running on Spot and to extend elements of Prof. Demiris’ work in socially aware navigation. 
+      Big thanks to the Imperial Robotics Forum team for organizing this, and to Yiannis and Fernando for their support throughout.
+    </p>
+
+    <p>Journey still continues...</p>
+  </div>
 </div>
-
-
-
-<p>
-  I had the amazing opportunity to attend the first Robotics Summer School at Imperial College London, supervised by 
-  <b>Prof. Yiannis Demiris</b> and <b>Dr. Fernando Estévez Casado</b>.
-</p>
-
-<p>
-  Together with Andrea D’Antona, Safa Tok, Elisha Okara, and Rob Woolley, I worked on Robot Social Navigation with Boston Dynamics’ Spot. 
-  I proposed and led the development of a ground point cloud perception and ground-obstacle separation algorithm suitable for complex environments. 
-  The algorithm improved point cloud processing efficiency and reduced LiDAR reflection noise by integrating Voxel Downsampling (Fast Voxel Hashing) 
-  with advanced Reflection Noise Removal and Region-wise Vertical Plane Fitting for low structure filtering.
-</p>
-
-<p>
-  Combined with Local Roughness and Elevation Estimation (LRAE) and an incremental mapping approach from ROG-MAP, our system enabled robust uneven 
-  terrain perception while reducing computational overhead. We validated performance on both datasets (KITTI) and real hardware, achieving stable 
-  real-time operation above 100Hz on Jetson Orin NX, and successfully deploying on Boston Dynamics’ Spot robot.
-</p>
-
-<p>
-  In addition, we integrated a ZED stereo camera and YOLO-based detection and tracking to support human-guided navigation, building upon principles 
-  from the Augmented Social Force Model for Legged Robot Navigation.
-</p>
-
-<p>
-  It was truly exciting to see the pipeline running on Spot and to extend elements of Prof. Demiris’ work in socially aware navigation. 
-  Big thanks to the Imperial Robotics Forum team for organizing this, and to Yiannis and Fernando for their support throughout.
-</p>
-
-<p>
-  Journey still continues...
-</p>
 
 
 
