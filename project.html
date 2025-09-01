@@ -114,7 +114,30 @@ This project involved the development of a ground point cloud perception and gro
             </div>
           </div>
 
-          
+<div class="project-item">
+  <div class="project-header">
+    <a href="#" class="project-title" onclick="toggleDescription(this)">
+      Quadruped robot safety navigation
+      <span class="toggle-icon">▼</span>
+    </a>
+  </div>
+  <div class="project-description">
+    <ul>
+      <li>
+        Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, combining Gaussian Process–based terrain traversability assessment with Control Barrier Functions, and applied it on a quadruped robot platform.
+      </li>
+      <li>
+        Developed an engineering-grade planning framework for quadruped robots: the global planner adopted hybrid A* with a state machine structure inspired by 
+        <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>, while the local planner integrated 
+        <a href="https://github.com/hanruihua/RDA-planner" target="_blank">RDA Planner</a>. The system was deployed on real hardware and successfully navigated dense indoor environments with obstacle avoidance.
+      </li>
+    </ul>
+    <video class="project-video" autoplay loop muted playsinline preload="metadata">
+      <source data-src="videos/FinalCarry2_wx264_720p.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
 
           
           <!-- Project 2: Autonomous Exploration in Simulator -->
