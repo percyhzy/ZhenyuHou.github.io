@@ -269,7 +269,7 @@ Later, in December 2024, I participated in the Autonomous Robot Technology Sympo
 <!-- Lightbox2 JS (CDN) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-wfdfVwiuM3pCVHnH3gPwjpYfRUPN1g0Y9D6cZNYA9SZypK80CeqtWcdxNf8BK96+jDpxaSz3c8Xg0RtoB0ZfUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<!-- 轻量初始化（可选） -->
+<!-- Lightbox2 初始化 + 关闭兼容 -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (window.lightbox && lightbox.option) {
@@ -277,11 +277,39 @@ Later, in December 2024, I participated in the Autonomous Robot Technology Sympo
         resizeDuration: 200,
         fadeDuration: 200,
         imageFadeDuration: 200,
-        wrapAround: true
+        wrapAround: true,
+        showImageNumberLabel: false,
+        disableScrolling: true,
+        positionFromTop: 60
       });
     }
+
+    // 点击黑色遮罩关闭
+    document.addEventListener('click', function (e) {
+      if (e.target && e.target.classList && e.target.classList.contains('lb-overlay')) {
+        if (window.lightbox && typeof lightbox.end === 'function') lightbox.end();
+      }
+    });
+
+    // 按 ESC 关闭
+    document.addEventListener('keydown', function (e) {
+      if ((e.key && e.key.toLowerCase() === 'escape') || e.keyCode === 27) {
+        if (window.lightbox && typeof lightbox.end === 'function') lightbox.end();
+      }
+    });
   });
 </script>
+
+<!-- 只作用于 Lightbox 的样式，确保关闭按钮可点 -->
+<style>
+  .lb-overlay{ z-index: 10000 !important; }
+  .lb-outerContainer, .lightbox{ z-index: 10001 !important; }
+  .lb-close{
+    z-index: 10002 !important;
+    opacity: 1 !important;
+    cursor: pointer;
+  }
+</style>
 
 
 </body>
