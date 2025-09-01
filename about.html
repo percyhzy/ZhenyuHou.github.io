@@ -241,23 +241,58 @@ Later, in December 2024, I participated in the Autonomous Robot Technology Sympo
   Journey still continues...
 </p>
 
-<!-- Lightbox2 JS (CDN) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-wfdfVwiuM3pCVHnH3gPwjpYfRUPN1g0Y9D6cZNYA9SZypK80CeqtWcdxNf8BK96+jDpxaSz3c8Xg0RtoB0ZfUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3张图一行 */
+  gap: 10px; /* 图片间距 */
+}
+.thumbnail-grid img {
+  width: 100%;
+  border-radius: 6px;
+}
+</style>
 
-<!-- 初始化 Lightbox2（替换你原来的整段自定义脚本） -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.lightbox && lightbox.option) {
-      lightbox.option({
-        resizeDuration: 200,
-        fadeDuration: 200,
-        imageFadeDuration: 200,
-        wrapAround: true,
-        alwaysShowNavOnTouchDevices: true
+  
+  <!-- Lightbox2 JS (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-wfdfVwiuM3pCVHnH3gPwjpYfRUPN1g0Y9D6cZNYA9SZypK80CeqtWcdxNf8BK96+jDpxaSz3c8Xg0RtoB0ZfUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    // 获取所有图片的链接
+    const images = document.querySelectorAll('.thumbnail-grid a');
+    
+    images.forEach(image => {
+      image.addEventListener('click', function(event) {
+        event.preventDefault(); // 防止跳转到链接
+        const modalImage = document.createElement('img');
+        modalImage.src = this.href;
+        modalImage.classList.add('modal-content');
+        
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        
+        const closeModal = document.createElement('span');
+        closeModal.classList.add('close-modal');
+        closeModal.textContent = '×';
+        
+        modal.appendChild(closeModal);
+        modal.appendChild(modalImage);
+        document.body.appendChild(modal);
+        
+        // 关闭按钮事件
+        closeModal.addEventListener('click', function() {
+          modal.remove();
+        });
+        
+        // 点击图片外部关闭
+        window.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.remove();
+          }
+        });
       });
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
