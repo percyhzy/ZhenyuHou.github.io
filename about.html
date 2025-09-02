@@ -266,9 +266,6 @@ Later, in December 2024, I participated in the Autonomous Robot Technology Sympo
 
   
 
-<!-- Lightbox2 JS (CDN) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-wfdfVwiuM3pCVHnH3gPwjpYfRUPN1g0Y9D6cZNYA9SZypK80CeqtWcdxNf8BK96+jDpxaSz3c8Xg0RtoB0ZfUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <!-- Lightbox2 初始化 + 关闭兼容 -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -284,9 +281,9 @@ Later, in December 2024, I participated in the Autonomous Robot Technology Sympo
       });
     }
 
-    // 点击黑色遮罩关闭
+    // 点击黑色遮罩关闭（Lightbox2 的遮罩是 #lightboxOverlay）
     document.addEventListener('click', function (e) {
-      if (e.target && e.target.classList && e.target.classList.contains('lb-overlay')) {
+      if (e.target && (e.target.id === 'lightboxOverlay')) {
         if (window.lightbox && typeof lightbox.end === 'function') lightbox.end();
       }
     });
@@ -300,16 +297,17 @@ Later, in December 2024, I participated in the Autonomous Robot Technology Sympo
   });
 </script>
 
-<!-- 只作用于 Lightbox 的样式，确保关闭按钮可点 -->
+<!-- 只作用于 Lightbox 的样式，确保关闭按钮可点且在最上层 -->
 <style>
-  .lb-overlay{ z-index: 10000 !important; }
-  .lb-outerContainer, .lightbox{ z-index: 10001 !important; }
+  #lightboxOverlay{ z-index: 10000 !important; }
+  #lightbox, .lightbox, .lb-outerContainer{ z-index: 10001 !important; }
   .lb-close{
     z-index: 10002 !important;
     opacity: 1 !important;
     cursor: pointer;
   }
 </style>
+
 
 
 </body>
