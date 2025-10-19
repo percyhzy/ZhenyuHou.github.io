@@ -5,7 +5,7 @@
   <title>Zhenyu Hou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 描述 / 社交卡片（可按需改图） -->
+  <!-- 描述 / 社交卡片 -->
   <meta name="description" content="Zhenyu Hou — Robotics research on off-road navigation, trajectory optimization, and SLAM.">
   <link rel="icon" href="images/favicon.png">
   <meta property="og:title" content="Zhenyu Hou">
@@ -13,20 +13,43 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/og-cover.jpg">
 
-  <!-- 字体（与你的 CSS 匹配：Merriweather & Lora） -->
+  <!-- 字体 -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 图标 -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- 站点样式 -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- 最小内联样式（仅用于站点统计卡片） -->
+  <style>
+    .site-stats { margin-top: 2rem; }
+    .stats-card{
+      background:#f8f9fa;
+      border:1px solid #eaecef;
+      border-radius:8px;
+      padding:12px;
+      display:grid;
+      grid-template-columns: 260px 1fr; /* 左计数，右地图 */
+      gap:16px;
+      align-items:center;
+    }
+    .stats-counter-label{ color:#2c3e50; margin-right:.5rem; }
+    #visitCount{ font-size:1.25rem; color:#2c3e50; }
+    .stats-map{ min-height:260px; }
+    .stats-map img, .stats-map iframe{ max-width:100%; height:auto; }
+    @media (max-width: 900px){
+      .stats-card{ grid-template-columns: 1fr; }
+      .stats-map{ min-height:220px; }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Skip link：键盘用户可直接跳到正文 -->
+  <!-- Skip link -->
   <a class="skip-link sr-only" href="#main">Skip to main content</a>
 
   <div class="container">
@@ -37,7 +60,7 @@
              width="240" height="240" loading="eager" fetchpriority="high">
       </div>
 
-      <!-- 社交图标链接（加入 aria-label + 隐藏文本） -->
+      <!-- 社交 -->
       <nav aria-label="Profile links" class="sidebar-links">
         <a href="https://scholar.google.com/citations?user=AQu2ugsAAAAJ&hl=en" aria-label="Google Scholar">
           <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="sr-only">Google Scholar</span>
@@ -58,29 +81,6 @@
           <li><a href="about.html">About Me</a></li>
         </ul>
       </nav>
-      <!-- Visitor Map & Counter（放在 Site 导航后、</aside> 前） -->
-<section class="visitor-card" aria-labelledby="visitorTitle">
-  <h2 id="visitorTitle" class="visitor-map-title">Visitors</h2>
-
-  <!-- 访问次数计数徽章（你的主页 URL 已编码） -->
-  <div class="visitor-counter">
-    <img
-      src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpercyhzy.github.io%2FZhenyuHou.github.io%2F&count_bg=%233498db&title_bg=%23555555&title=Visits&edge_flat=false"
-      alt="Total visits" loading="lazy" referrerpolicy="no-referrer">
-  </div>
-
-  <!-- 访客地图：去 ClustrMaps 生成 script，把下面这一行 src 换成他们给你的那一行 -->
-  <div class="visitor-map" aria-label="Visitor Map">
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YRFduDmfKjrjCy3dbGXXkQ4LXpGmcrPwTSDuNLVwkZ0&cl=ffffff&w=a"></script>
-    <noscript>
-      <a href="https://clustrmaps.com/site/your-site-id">
-        <img src="//clustrmaps.com/map_v2.png?cl=ffffff&w=a&t=n&d=placeholder"
-             alt="Visitor map snapshot" width="220" loading="lazy">
-      </a>
-    </noscript>
-  </div>
-</section>
-
     </aside>
 
     <!-- 主体 -->
@@ -105,7 +105,7 @@
       <section class="research-interests">
         <h2>Research Interests</h2>
         <p>
-          My research interests focus on motion planning and SLAM for field ground robots.I am also very interested in aerial robots, humanoid robots, and quadruped robots,
+          My research interests focus on motion planning and SLAM for field ground robots. I am also very interested in aerial robots, humanoid robots, and quadruped robots,
           and I am also integrating traditional robotic perception and planning with learning based methods recently.
         </p>
         <p>
@@ -230,17 +230,56 @@
           </li>
         </ul>
       </section>
+
+      <!-- ⬇⬇⬇ 把访客统计放到正文底部（更美观） -->
+      <section class="site-stats" aria-labelledby="statsTitle">
+        <h2 id="statsTitle">Site Analytics</h2>
+        <div class="stats-card">
+          <!-- 纯文本总访问数（不丑、也不易被拦截） -->
+          <div class="stats-counter" aria-live="polite">
+            <span class="stats-counter-label">Total visits</span>
+            <strong id="visitCount">—</strong>
+          </div>
+          <!-- 地图：使用你的 ClustrMaps 脚本 -->
+          <div class="stats-map" aria-label="Visitor Map">
+            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YRFduDmfKjrjCy3dbGXXkQ4LXpGmcrPwTSDuNLVwkZ0&cl=ffffff&w=a"></script>
+            <noscript>
+              <a href="https://clustrmaps.com/">
+                <img src="//www.clustrmaps.com/map_v2.png" alt="Visitor map snapshot" loading="lazy">
+              </a>
+            </noscript>
+          </div>
+        </div>
+      </section>
+      <!-- ⬆⬆⬆ 访客统计结束 -->
+
     </main>
   </div>
 
-  <!-- 图片弹出框（可访问对话框） -->
+  <!-- 图片弹出框 -->
   <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalCaption" hidden>
     <img class="modal-content" id="modalImage" alt="">
     <p id="modalCaption"></p>
     <button class="close-modal" aria-label="Close image preview">&times;</button>
   </div>
 
-  <!-- 无障碍增强的弹窗脚本 -->
+  <!-- 访问计数（countapi：简单稳） -->
+  <script>
+    (function(){
+      const key = 'percyhzy.github.io/ZhenyuHou.github.io'; // 你的站点键
+      const el = document.getElementById('visitCount');
+      fetch('https://api.countapi.xyz/update/' + encodeURIComponent(key) + '/visits?amount=1')
+        .then(r => r.json())
+        .then(d => { el.textContent = (d && d.value ? d.value : 1).toLocaleString(); })
+        .catch(() => {
+          const k='localVisitCount', v=(parseInt(localStorage.getItem(k)||'0',10)+1);
+          localStorage.setItem(k,v);
+          el.textContent = v.toLocaleString();
+        });
+    })();
+  </script>
+
+  <!-- 弹窗脚本 -->
   <script>
     const modal = document.getElementById("imageModal");
     const modalImage = document.getElementById("modalImage");
