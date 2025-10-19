@@ -358,3 +358,28 @@ a:focus, button:focus {
     padding: 10px;
   }
 }
+/* Visitor Map Card */
+.visitor-card { 
+  margin-top: 1rem; 
+  background:#f8f9fa; 
+  padding:.75rem; 
+  border:1px solid #eaecef; 
+  border-radius:6px; 
+}
+.visitor-card .visitor-map-title { 
+  margin:.25rem 0 .5rem; 
+  font-size:1rem; 
+  color:#2c3e50; 
+}
+.visitor-counter { 
+  margin-bottom:.5rem; 
+  display:flex; 
+  align-items:center; 
+  gap:.5rem; 
+}
+.visitor-map iframe, 
+.visitor-map img { 
+  max-width:100%; 
+  height:auto; 
+}
+
