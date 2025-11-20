@@ -24,7 +24,7 @@
   <!-- 站点样式 -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- 最小内联样式（仅用于站点统计卡片） -->
+  <!-- 最小内联样式（仅用于站点统计卡片和 Talks） -->
   <style>
     .site-stats { margin-top: 2rem; }
     .stats-card{
@@ -44,6 +44,26 @@
     @media (max-width: 900px){
       .stats-card{ grid-template-columns: 1fr; }
       .stats-map{ min-height:220px; }
+    }
+
+    /* Talks & Presentations */
+    .talks-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .talks-list li + li {
+      margin-top: 1rem;
+    }
+    .talks-list h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .talks-list p {
+      margin: 0;
+      line-height: 1.5;
+      color: #444;
     }
   </style>
 </head>
@@ -78,6 +98,7 @@
         <ul class="site-nav">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="project.html">Research Projects</a></li>
+          <li><a href="#talks">Talks &amp; Presentations</a></li>
           <li><a href="about.html">About Me</a></li>
         </ul>
       </nav>
@@ -132,6 +153,36 @@
 
       <hr>
 
+      <!-- Talks & Presentations -->
+      <section id="talks" class="talks">
+        <h2>Talks &amp; Presentations</h2>
+        <ul class="talks-list">
+          <li>
+            <h3>Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process</h3>
+            <p>IROS 2025, Oral presentation.</p>
+            <p>
+              <a href="https://youtu.be/Stee8LSlMak?si=KRX46HDIKcU-mKvf" target="_blank" rel="noopener">Talk video (YouTube)</a> ·
+              <a href="https://doi.org/10.48550/arXiv.2503.04134" target="_blank" rel="noopener">Paper (arXiv)</a> ·
+              <a href="https://www.bilibili.com/video/BV13msgztEMX/?share_source=copy_web&vd_source=c281e29c6456ee7bc965eaf485fcb88c" target="_blank" rel="noopener">Project video (Bilibili)</a>
+            </p>
+          </li>
+
+          <!-- 以后有新的 talk，复制下面这个模板改内容即可 -->
+          <!--
+          <li>
+            <h3>Talk Title</h3>
+            <p>Conference / Seminar, City, Country, Month Year.</p>
+            <p>
+              <a href="VIDEO_LINK" target="_blank" rel="noopener">Talk video</a> ·
+              <a href="SLIDES_OR_PAPER_LINK" target="_blank" rel="noopener">Slides / Paper</a>
+            </p>
+          </li>
+          -->
+        </ul>
+      </section>
+
+      <hr>
+
       <section class="publications">
         <h2>Publications and Patents</h2>
         <ul>
@@ -152,8 +203,8 @@
               </div>
             </div>
           </li>
-           <li>
-           <div class="publication-details">
+          <li>
+            <div class="publication-details">
               <strong>Learning Trajectory Generation on Uneven Terrain with Differentiable Trajectory Optimization and Manifold</strong>
               <div class="publication-authors">
                 Long Xu†, <strong>Zhenyu Hou</strong>†, Fei Gao<br>
@@ -165,7 +216,7 @@
                 </span>
               </div>
             </div>
-              </li>
+          </li>
           <li>
             <div class="publication-details">
               <strong>From Gaussian Processes to Ellipsoidal Obstacles: Safety Control Barrier Functions and Model Predictive Control</strong>
