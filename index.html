@@ -24,7 +24,7 @@
   <!-- 站点样式 -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- 最小内联样式（仅用于站点统计卡片和 Talks） -->
+  <!-- 内联样式：访客统计 + Talks 区块 -->
   <style>
     .site-stats { margin-top: 2rem; }
     .stats-card{
@@ -46,24 +46,48 @@
       .stats-map{ min-height:220px; }
     }
 
-    /* Talks & Presentations */
-    .talks-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
+    /* Talks & Presentations 样式（仿 xulong） */
+    .talks {
+      margin-top: 2rem;
     }
-    .talks-list li + li {
-      margin-top: 1rem;
+    .talks h2 {
+      margin-bottom: 0.3rem;
     }
-    .talks-list h3 {
-      margin: 0 0 0.25rem;
-      font-size: 1rem;
+    .talks-underline {
+      width: 60px;
+      height: 3px;
+      background: #007bff;
+      margin-bottom: 1.8rem;
+    }
+    .talk-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .talk-item {
+      display: grid;
+      grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .talk-video iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+    .talk-info h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
       font-weight: 600;
     }
-    .talks-list p {
+    .talk-meta {
       margin: 0;
-      line-height: 1.5;
       color: #444;
+    }
+    @media (max-width: 800px){
+      .talk-item {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -153,32 +177,56 @@
 
       <hr>
 
-      <!-- Talks & Presentations -->
+      <!-- Talks & Presentations（带 YouTube 视频嵌入） -->
       <section id="talks" class="talks">
         <h2>Talks &amp; Presentations</h2>
-        <ul class="talks-list">
-          <li>
-            <h3>Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process</h3>
-            <p>IROS 2025, Oral presentation.</p>
-            <p>
-              <a href="https://youtu.be/Stee8LSlMak?si=KRX46HDIKcU-mKvf" target="_blank" rel="noopener">Talk video (YouTube)</a> ·
-              <a href="https://doi.org/10.48550/arXiv.2503.04134" target="_blank" rel="noopener">Paper (arXiv)</a> ·
-              <a href="https://www.bilibili.com/video/BV13msgztEMX/?share_source=copy_web&vd_source=c281e29c6456ee7bc965eaf485fcb88c" target="_blank" rel="noopener">Project video (Bilibili)</a>
-            </p>
-          </li>
+        <div class="talks-underline"></div>
+
+        <div class="talk-list">
+          <!-- IROS 2025 Oral -->
+          <article class="talk-item">
+            <div class="talk-video">
+              <iframe
+                src="https://www.youtube.com/embed/Stee8LSlMak"
+                title="IROS 2025 Oral Talk — Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process"
+                loading="lazy"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="talk-info">
+              <h3>Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process</h3>
+              <p class="talk-meta">
+                International Conference on Intelligent Robots and Systems (IROS), Hangzhou, China, Oct. 2025, Oral.
+              </p>
+            </div>
+          </article>
 
           <!-- 以后有新的 talk，复制下面这个模板改内容即可 -->
           <!--
-          <li>
-            <h3>Talk Title</h3>
-            <p>Conference / Seminar, City, Country, Month Year.</p>
-            <p>
-              <a href="VIDEO_LINK" target="_blank" rel="noopener">Talk video</a> ·
-              <a href="SLIDES_OR_PAPER_LINK" target="_blank" rel="noopener">Slides / Paper</a>
-            </p>
-          </li>
+          <article class="talk-item">
+            <div class="talk-video">
+              <iframe
+                src="YOUTUBE_EMBED_LINK"
+                title="Talk title"
+                loading="lazy"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="talk-info">
+              <h3>Talk Title</h3>
+              <p class="talk-meta">
+                Conference / Workshop, City, Country, Month Year.
+              </p>
+            </div>
+          </article>
           -->
-        </ul>
+        </div>
       </section>
 
       <hr>
@@ -194,7 +242,9 @@
                 † indicates equal contribution (co-first authors)
               </div>
               <div class="publication-venue-links">
-                <span class="publication-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (<strong>IROS 2025</strong>, <strong>Oral</strong>)</span>
+                <span class="publication-venue">
+                  International Conference on Intelligent Robots and Systems (IROS), Hangzhou, China, Oct. 2025, Oral.
+                </span>
                 <span class="paper-links">
                   <a href="https://doi.org/10.48550/arXiv.2503.04134">PDF</a>
                   <a href="https://www.bilibili.com/video/BV13msgztEMX/?share_source=copy_web&vd_source=c281e29c6456ee7bc965eaf485fcb88c">Video</a>
@@ -203,6 +253,7 @@
               </div>
             </div>
           </li>
+
           <li>
             <div class="publication-details">
               <strong>Learning Trajectory Generation on Uneven Terrain with Differentiable Trajectory Optimization and Manifold</strong>
@@ -217,6 +268,7 @@
               </div>
             </div>
           </li>
+
           <li>
             <div class="publication-details">
               <strong>From Gaussian Processes to Ellipsoidal Obstacles: Safety Control Barrier Functions and Model Predictive Control</strong>
@@ -295,16 +347,14 @@
         </ul>
       </section>
 
-      <!-- ⬇⬇⬇ 把访客统计放到正文底部（更美观） -->
+      <!-- 访客统计 -->
       <section class="site-stats" aria-labelledby="statsTitle">
         <h2 id="statsTitle">Site Analytics</h2>
         <div class="stats-card">
-          <!-- 纯文本总访问数（不丑、也不易被拦截） -->
           <div class="stats-counter" aria-live="polite">
             <span class="stats-counter-label">Total visits</span>
             <strong id="visitCount">—</strong>
           </div>
-          <!-- 地图：使用你的 ClustrMaps 脚本 -->
           <div class="stats-map" aria-label="Visitor Map">
             <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YRFduDmfKjrjCy3dbGXXkQ4LXpGmcrPwTSDuNLVwkZ0&cl=ffffff&w=a"></script>
             <noscript>
@@ -315,8 +365,6 @@
           </div>
         </div>
       </section>
-      <!-- ⬆⬆⬆ 访客统计结束 -->
-
     </main>
   </div>
 
@@ -327,10 +375,10 @@
     <button class="close-modal" aria-label="Close image preview">&times;</button>
   </div>
 
-  <!-- 访问计数（countapi：简单稳） -->
+  <!-- 访问计数 -->
   <script>
     (function(){
-      const key = 'percyhzy.github.io/ZhenyuHou.github.io'; // 你的站点键
+      const key = 'percyhzy.github.io/ZhenyuHou.github.io';
       const el = document.getElementById('visitCount');
       fetch('https://api.countapi.xyz/update/' + encodeURIComponent(key) + '/visits?amount=1')
         .then(r => r.json())
