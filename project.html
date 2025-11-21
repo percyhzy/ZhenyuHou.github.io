@@ -5,7 +5,7 @@
   <title>Research Projects — Zhenyu Hou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 描述 / 社交卡片 -->
+  <!-- Meta -->
   <meta name="description" content="Research projects of Zhenyu Hou — motion planning, SLAM, legged and humanoid robots, UAVs, and autonomous systems.">
   <link rel="icon" href="images/favicon.png">
   <meta property="og:title" content="Research Projects — Zhenyu Hou">
@@ -13,80 +13,103 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/og-cover.jpg">
 
-  <!-- 字体（与 index / about 保持一致） -->
+  <!-- Fonts (same family as index) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for modern icons -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- 主样式 -->
+  <!-- Main site style -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- 项目页视频布局小样式：统一所有视频排版 -->
+  <!-- Page-specific video layout tweaks -->
   <style>
-    .project-video {
+    /* 统一所有项目视频的基础样式 */
+    .project .project-video {
       width: 100%;
-      max-width: 760px;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;     /* 统一比例，解决高度不一的问题 */
+      object-fit: cover;        /* 铺满容器 */
       display: block;
-      margin: 0.5rem auto 0;
       border-radius: 8px;
-      outline: none;
+      background: #000;
+      border: none;
     }
 
-    .video-row {
+    .project .single-video {
+      max-width: 760px;
+      margin: 0.75rem auto 0;
+    }
+
+    /* 多视频并排的通用容器（2～3 个） */
+    .project .video-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 12px;
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .project .video-row .project-video {
+      margin: 0;
     }
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
-      margin-top: 0.5rem;
-    }
-
-    .video-text-container {
+    /* 文本 + 单视频左右布局的容器 */
+    .project .video-text-container {
       display: flex;
       flex-wrap: wrap;
       gap: 1.2rem;
       align-items: flex-start;
     }
-
-    .video-text-container p {
+    .project .video-text-container p {
       flex: 1 1 260px;
       margin-top: 0;
     }
-
-    .video-text-container .project-video {
+    .project .video-text-container .project-video {
       flex: 0 0 320px;
       max-width: 420px;
       margin: 0;
     }
-
-    .project-video-small {
+    .project .project-video-small {
       max-width: 420px;
     }
 
+    /* RoboMaster 六小块视频专用网格 */
+    .project .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 0.75rem;
+      max-width: 960px;
+    }
+    .project .video-grid .project-video {
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .project .video-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 768px) {
-      .video-text-container {
+      .project .video-text-container {
         flex-direction: column;
       }
-      .video-text-container .project-video {
+      .project .video-text-container .project-video {
+        max-width: 100%;
+      }
+      .project .single-video {
         max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <!-- 跳转主内容，和 index / about 一致 -->
   <a class="skip-link sr-only" href="#main">Skip to main content</a>
 
   <div class="container">
-    <!-- Sidebar：结构统一 -->
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="profile-image-container">
         <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image" loading="lazy">
@@ -123,7 +146,7 @@
         </p>
 
         <div class="project-list">
-          <!-- Project 1 -->
+          <!-- Project 1: FSGP-BGK -->
           <div class="project-item">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
@@ -139,11 +162,12 @@
                 These features are integrated into a high-resolution local traversability map using a spatial-temporal Bayesian Gaussian
                 Kernel inference method that fuses historical and real-time information with slope, flatness, gradient, and uncertainty metrics.
                 Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared with traditional methods.
-                The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot.<br><br>
+                The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot.
+                <br><br>
                 Source code: <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK" target="_blank">github.com/ZJU-FAST-Lab/FSGP_BGK</a><br>
                 Project website: <a href="https://percyhzy.github.io/IROS2025-website/" target="_blank">IROS 2025 project page</a>
               </p>
-              <video class="project-video" autoplay loop muted playsinline preload="metadata">
+              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
                 <source data-src="videos/IROS2025-FASTFIRE_web.mp4" type="video/mp4">
               </video>
             </div>
@@ -164,13 +188,13 @@
                 repeated safe-corridor construction, greatly accelerates computation, and reduces both curvature and travel time.
               </p>
               <p>
-                Building on this framework, I conducted full-scale trials with a 7 m tractor–trailer (1:1 real vehicle).
-                Apollo’s native lateral LQR and longitudinal PID controllers, together with the PIX-series CAN-bus protocol, were re-engineered
-                as ROS nodes; for comparison, I also implemented an MPC controller. All components were seamlessly integrated with the planner,
-                yielding a complete perception–mapping–planning–control loop. Real-world tests—spanning indoor/outdoor transport, loading/unloading,
-                and narrow-aisle navigation—achieved a mean tracking error of ≈ 0.11 m, satisfying industrial-grade precision requirements.
+                Building on this framework, I conducted full-scale trials with a 7 m tractor–trailer (1:1 real vehicle). Apollo’s native lateral LQR
+                and longitudinal PID controllers, together with the PIX-series CAN-bus protocol, were re-engineered as ROS nodes; for comparison,
+                I also implemented an MPC controller. All components were seamlessly integrated with the planner, yielding a complete perception–
+                mapping–planning–control loop. Real-world tests—spanning indoor/outdoor transport, loading/unloading, and narrow-aisle navigation—
+                achieved a mean tracking error of ≈ 0.11 m, satisfying industrial-grade precision requirements.
               </p>
-              <video class="project-video" autoplay loop muted playsinline preload="metadata">
+              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
                 <source data-src="videos/trailer.mp4" type="video/mp4">
               </video>
             </div>
@@ -205,7 +229,8 @@
                 which generates safe, dynamically feasible trajectories in real time.
               </p>
               <p>
-                At the control level, we employ an <a href="https://github.com/leggedrobotics/rsl_rl" target="_blank">rsl_rl</a>-based locomotion policy
+                At the control level, we employ an
+                <a href="https://github.com/leggedrobotics/rsl_rl" target="_blank">rsl_rl</a>-based locomotion policy
                 to track the optimized trajectories and handle contact-rich legged locomotion on uneven indoor terrain.
                 The three clips below illustrate the progression from early sim-to-real trials with unstable RL behavior,
                 to intermediate locomotion tuning, and finally the fully integrated navigation demo in indoor environments.
@@ -279,17 +304,18 @@
             <div class="project-description">
               <ul>
                 <li>
-                  Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, combining Gaussian Process–based terrain traversability
-                  assessment with Control Barrier Functions, and applied it on a quadruped robot platform.
+                  Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, combining Gaussian Process–based terrain
+                  traversability assessment with Control Barrier Functions, and applied it on a quadruped robot platform.
                 </li>
                 <li>
-                  Developed an engineering-grade planning framework for quadrupeds: the global planner adopted hybrid A* with a state-machine
-                  structure inspired by <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>, while the local planner
-                  integrated the <a href="https://github.com/hanruihua/RDA-planner" target="_blank">RDA Planner</a>. The system was deployed on real hardware
+                  Developed an engineering-grade planning framework for quadrupeds: the global planner adopted hybrid A* with a
+                  state-machine structure inspired by
+                  <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>, while the local planner integrated the
+                  <a href="https://github.com/hanruihua/RDA-planner" target="_blank">RDA Planner</a>. The system was deployed on real hardware
                   and successfully navigated dense indoor environments with obstacle avoidance.
                 </li>
               </ul>
-              <video class="project-video" autoplay loop muted playsinline preload="metadata">
+              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
                 <source data-src="videos/westlake.mp4" type="video/mp4">
               </video>
             </div>
@@ -334,9 +360,9 @@
                 <p>
                   Developed an aerial–ground autonomous navigation system for drones using FAST-LIO and
                   <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>.
-                  Achieved point-cloud map relay sharing during exploration. Designed and built a quad-fisheye-based localization drone inspired by
-                  <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt" target="_blank">OmniNxt</a>, implementing VIO-based localization using
-                  <a href="https://docs.openvins.com/" target="_blank">OpenVINS</a>.
+                  Achieved point-cloud map relay sharing during exploration. Designed and built a quad-fisheye-based localization drone
+                  inspired by <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt" target="_blank">OmniNxt</a>, implementing
+                  VIO-based localization using <a href="https://docs.openvins.com/" target="_blank">OpenVINS</a>.
                 </p>
                 <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/Rofly.mp4" type="video/mp4">
@@ -356,11 +382,12 @@
             <div class="project-description">
               <p>
                 Deployed lightweight drones equipped with VIO
-                (<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion" target="_blank">VINS-Fusion</a>) and autonomous flight using EGO-Planner.
-                Conducted multi-drone VIO experiments using <a href="https://github.com/VIS4ROB-lab/covins" target="_blank">COVINS-G</a> and tested DM-VIO,
-                ORB-SLAM, and A-LOAM. Constructed an autonomous drone swarm employing the vision-based
-                <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm" target="_blank">EGO-Swarm</a> algorithm, enabling independent flight in both
-                outdoor sparse-feature environments and indoor structured settings.
+                (<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion" target="_blank">VINS-Fusion</a>)
+                and autonomous flight using EGO-Planner. Conducted multi-drone VIO experiments using
+                <a href="https://github.com/VIS4ROB-lab/covins" target="_blank">COVINS-G</a> and tested DM-VIO, ORB-SLAM, and A-LOAM.
+                Constructed an autonomous drone swarm employing the vision-based
+                <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm" target="_blank">EGO-Swarm</a> algorithm, enabling independent
+                flight in both outdoor sparse-feature environments and indoor structured settings.
               </p>
               <div class="video-row">
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
@@ -428,7 +455,7 @@
             </div>
           </div>
 
-          <!-- Project 11: RoboMaster Championship -->
+          <!-- Project 11: RoboMaster (六小块) -->
           <div class="project-item">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
@@ -437,48 +464,49 @@
               </a>
             </div>
             <div class="project-description">
-              <div class="video-text-container">
-                <p>
-                  <strong>Project Introduction:</strong> The National University Robotics Competition RoboMaster is a robotics event
-                  jointly sponsored by several prestigious organizations and hosted by DJI.
-                  <br><br>
-                  <strong>Responsibilities:</strong><br>
-                  1. <b>Laboratory creation:</b> Negotiated with university leaders and secured funding to build the robotics lab from scratch
-                  (multi-school collaboration, ~40 members).<br>
-                  2. <b>Team management:</b> Managed the project using Coding and Feishu; established lab safety and management systems.<br>
-                  3. <b>Financial management:</b> Established a triple-approval process and obtained motor sponsorship from
-                  <a href="https://en.directdrive.com/" target="_blank">DirectDrive</a>.<br>
-                  4. <b>Robot control debugging:</b> Tuned PID parameters under FreeRTOS, applied cascaded PID control and inverse kinematics
-                  for mecanum/omni wheels.<br>
-                  5. <b>Wiring design:</b> Completed design and physical wiring for Infantry, Hero, and Sentry robots.<br>
-                  6. <b>Algorithm debugging:</b> Assisted in camera selection and calibration, LiDAR and multi-camera fusion,
-                  radar calibration, YOLO detection on ROS, 3D printing, and Gazebo simulation.
-                  <br><br>
-                  <strong>Awards:</strong><br>
-                  3rd place in the National <a href="https://www.robomaster.com/en-US" target="_blank">RoboMaster</a> Championship, 2023 (DJI)<br>
-                  2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (DJI)<br>
-                  3rd place in the National RoboMaster 3v3 League, 2022 (DJI)
-                </p>
-                <div class="video-grid">
-                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                    <source data-src="videos/7V7.mp4" type="video/mp4">
-                  </video>
-                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                    <source data-src="videos/3v3.mp4" type="video/mp4">
-                  </video>
-                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                    <source data-src="videos/infantry.mp4" type="video/mp4">
-                  </video>
-                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                    <source data-src="videos/hero.mp4" type="video/mp4">
-                  </video>
-                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                    <source data-src="videos/control.mp4" type="video/mp4">
-                  </video>
-                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                    <source data-src="videos/RMvision.mp4" type="video/mp4">
-                  </video>
-                </div>
+              <p>
+                <strong>Project Introduction:</strong> The National University Robotics Competition RoboMaster is a robotics event
+                jointly sponsored by several prestigious organizations and hosted by DJI.
+              </p>
+              <p>
+                <strong>Responsibilities:</strong><br>
+                1. Laboratory creation: Negotiated with university leaders and secured funding to build the robotics lab from scratch
+                (multi-school collaboration, ~40 members).<br>
+                2. Team management: Managed the project using Coding and Feishu; established lab safety and management systems.<br>
+                3. Financial management: Established a triple-approval process and obtained motor sponsorship from
+                <a href="https://en.directdrive.com/" target="_blank">DirectDrive</a>.<br>
+                4. Robot control debugging: Tuned PID parameters under FreeRTOS, applied cascaded PID control and inverse kinematics
+                for mecanum/omni wheels.<br>
+                5. Wiring design: Completed design and physical wiring for Infantry, Hero, and Sentry robots.<br>
+                6. Algorithm debugging: Assisted in camera selection and calibration, LiDAR and multi-camera fusion, radar calibration,
+                YOLO detection on ROS, 3D printing, and Gazebo simulation.
+              </p>
+              <p>
+                <strong>Awards:</strong><br>
+                3rd place in the National <a href="https://www.robomaster.com/en-US" target="_blank">RoboMaster</a> Championship, 2023 (DJI)<br>
+                2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (DJI)<br>
+                3rd place in the National RoboMaster 3v3 League, 2022 (DJI)
+              </p>
+              <!-- 六个小视频：3×2 网格 -->
+              <div class="video-grid">
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/7V7.mp4" type="video/mp4">
+                </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/3v3.mp4" type="video/mp4">
+                </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/infantry.mp4" type="video/mp4">
+                </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/hero.mp4" type="video/mp4">
+                </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/control.mp4" type="video/mp4">
+                </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/RMvision.mp4" type="video/mp4">
+                </video>
               </div>
             </div>
           </div>
