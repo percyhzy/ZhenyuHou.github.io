@@ -45,11 +45,6 @@
       .stats-card{ grid-template-columns: 1fr; }
       .stats-map{ min-height:220px; }
     }
-    .stats-counter-subtext{
-      font-size: 0.85rem;
-      color: #6c757d;
-      margin-top: 4px;
-    }
 
     /* Talks & Presentations 样式（仿 xulong） */
     .talks {
@@ -228,29 +223,6 @@
               </p>
             </div>
           </article>
-
-          <!-- 以后有新的 talk，复制下面这个模板改内容即可 -->
-          <!--
-          <article class="talk-item">
-            <div class="talk-video">
-              <iframe
-                src="YOUTUBE_EMBED_LINK"
-                title="Talk title"
-                loading="lazy"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-              </iframe>
-            </div>
-            <div class="talk-info">
-              <h3>Talk Title</h3>
-              <p class="talk-meta">
-                Conference / Workshop, City, Country, Month Year.
-              </p>
-            </div>
-          </article>
-          -->
         </div>
       </section>
 
@@ -379,9 +351,6 @@
           <div class="stats-counter" aria-live="polite">
             <span class="stats-counter-label">All-time visits</span>
             <strong id="visitCount">—</strong>
-            <div class="stats-counter-subtext">
-              Includes a little +5 daily boost ✨
-            </div>
           </div>
           <div class="stats-map" aria-label="Visitor Map">
             <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YRFduDmfKjrjCy3dbGXXkQ4LXpGmcrPwTSDuNLVwkZ0&cl=ffffff&w=a"></script>
@@ -403,7 +372,7 @@
     <button class="close-modal" aria-label="Close image preview">&times;</button>
   </div>
 
-  <!-- 访问计数（全站累积 + 每天小加成） -->
+  <!-- 访问计数（全站累积 + 每天额外 +5） -->
   <script>
     (function(){
       const namespace = 'percyhzy.github.io/ZhenyuHou.github.io';
@@ -413,14 +382,14 @@
       // 基础：每次访问至少 +1
       let amount = 1;
 
-      // 每个浏览器每天第一次打开时，再额外 +5
+      // 每个浏览器每天第一次打开时，再额外 +5（页面上不写出来）
       try {
         const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
         const bonusFlagKey = 'visitDailyBonusDate';
         const lastBonusDate = localStorage.getItem(bonusFlagKey);
 
         if (lastBonusDate !== today) {
-          amount += 5; // 今日第一次打开，多给五次
+          amount += 5;
           localStorage.setItem(bonusFlagKey, today);
         }
       } catch (e) {
