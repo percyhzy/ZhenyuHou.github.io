@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/og-cover.jpg">
 
-  <!-- Fonts (same family as index) -->
+  <!-- Fonts (same as index) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,12 +26,11 @@
 
   <!-- Page-specific video layout tweaks -->
   <style>
-    /* 统一所有项目视频的基础样式 */
+    /* 基础：默认按视频原始比例显示，不强制 16:9 */
     .project .project-video {
       width: 100%;
+      height: auto;         /* 跟随原视频自身比例 */
       max-width: 100%;
-      aspect-ratio: 16 / 9;     /* 统一比例，解决高度不一的问题 */
-      object-fit: cover;        /* 铺满容器 */
       display: block;
       border-radius: 8px;
       background: #000;
@@ -43,18 +42,7 @@
       margin: 0.75rem auto 0;
     }
 
-    /* 多视频并排的通用容器（2～3 个） */
-    .project .video-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-      margin-top: 0.75rem;
-    }
-    .project .video-row .project-video {
-      margin: 0;
-    }
-
-    /* 文本 + 单视频左右布局的容器 */
+    /* 文本 + 视频左右排的容器 */
     .project .video-text-container {
       display: flex;
       flex-wrap: wrap;
@@ -74,16 +62,28 @@
       max-width: 420px;
     }
 
-    /* RoboMaster 六小块视频专用网格 */
+    /* 多视频并排（一排 2～3 个） */
+    .project .video-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 0.75rem;
+    }
+
+    /* 只有在 row / grid 里面的视频，才强制 16:9 + cover，保证整齐且无黑边 */
+    .project .video-row .project-video,
+    .project .video-grid .project-video {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;   /* 等比放大填满，不会变形，但会裁一点边缘 */
+    }
+
+    /* RoboMaster 六小块网格 */
     .project .video-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
       margin-top: 0.75rem;
       max-width: 960px;
-    }
-    .project .video-grid .project-video {
-      margin: 0;
     }
 
     @media (max-width: 900px) {
@@ -160,7 +160,7 @@
                 The framework employs Sparse Gaussian Processes (SGP) to extract geometric features—such as curvature, gradient, and elevation—
                 from point cloud data. GPU acceleration is used during feature extraction to ensure real-time performance.
                 These features are integrated into a high-resolution local traversability map using a spatial-temporal Bayesian Gaussian
-                Kernel inference method that fuses historical and real-time information with slope, flatness, gradient, and uncertainty metrics.
+                kernel inference method that fuses historical and real-time information with slope, flatness, gradient, and uncertainty metrics.
                 Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared with traditional methods.
                 The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot.
                 <br><br>
@@ -232,9 +232,10 @@
                 At the control level, we employ an
                 <a href="https://github.com/leggedrobotics/rsl_rl" target="_blank">rsl_rl</a>-based locomotion policy
                 to track the optimized trajectories and handle contact-rich legged locomotion on uneven indoor terrain.
-                The three clips below illustrate the progression from early sim-to-real trials with unstable RL behavior,
+                The clips below illustrate the progression from early sim-to-real trials with unstable RL behavior,
                 to intermediate locomotion tuning, and finally the fully integrated navigation demo in indoor environments.
               </p>
+              <!-- 上面两段并排 -->
               <div class="video-row">
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/human1_mute.mp4" type="video/mp4">
@@ -242,10 +243,11 @@
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/humanRL_mute.mp4" type="video/mp4">
                 </video>
-                <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                  <source data-src="videos/humanNav_mute.mp4" type="video/mp4">
-                </video>
               </div>
+              <!-- 最终导航单独一行，按原视频比例 -->
+              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
+                <source data-src="videos/humanNav_mute.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
 
