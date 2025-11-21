@@ -42,26 +42,6 @@
       margin: 0.75rem auto 0;
     }
 
-    /* 文本 + 视频左右排的容器 */
-    .project .video-text-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      align-items: flex-start;
-    }
-    .project .video-text-container p {
-      flex: 1 1 260px;
-      margin-top: 0;
-    }
-    .project .video-text-container .project-video {
-      flex: 0 0 320px;
-      max-width: 420px;
-      margin: 0;
-    }
-    .project .project-video-small {
-      max-width: 420px;
-    }
-
     /* 多视频并排（一排 2～3 个） */
     .project .video-row {
       display: grid;
@@ -92,12 +72,6 @@
     }
 
     @media (max-width: 768px) {
-      .project .video-text-container {
-        flex-direction: column;
-      }
-      .project .video-text-container .project-video {
-        max-width: 100%;
-      }
       .project .single-video {
         max-width: 100%;
       }
