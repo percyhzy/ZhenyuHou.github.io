@@ -45,6 +45,11 @@
       .stats-card{ grid-template-columns: 1fr; }
       .stats-map{ min-height:220px; }
     }
+    .stats-counter-subtext{
+      font-size: 0.85rem;
+      color: #6c757d;
+      margin-top: 4px;
+    }
 
     /* Talks & Presentations 样式（仿 xulong） */
     .talks {
@@ -372,8 +377,11 @@
         <h2 id="statsTitle">Site Analytics</h2>
         <div class="stats-card">
           <div class="stats-counter" aria-live="polite">
-            <span class="stats-counter-label">Total visits</span>
+            <span class="stats-counter-label">All-time visits</span>
             <strong id="visitCount">—</strong>
+            <div class="stats-counter-subtext">
+              Includes a little +5 daily boost ✨
+            </div>
           </div>
           <div class="stats-map" aria-label="Visitor Map">
             <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YRFduDmfKjrjCy3dbGXXkQ4LXpGmcrPwTSDuNLVwkZ0&cl=ffffff&w=a"></script>
@@ -395,17 +403,45 @@
     <button class="close-modal" aria-label="Close image preview">&times;</button>
   </div>
 
-  <!-- 访问计数 -->
+  <!-- 访问计数（全站累积 + 每天小加成） -->
   <script>
     (function(){
-      const key = 'percyhzy.github.io/ZhenyuHou.github.io';
+      const namespace = 'percyhzy.github.io/ZhenyuHou.github.io';
+      const key = 'visits';
       const el = document.getElementById('visitCount');
-      fetch('https://api.countapi.xyz/update/' + encodeURIComponent(key) + '/visits?amount=1')
-        .then(r => r.json())
-        .then(d => { el.textContent = (d && d.value ? d.value : 1).toLocaleString(); })
-        .catch(() => {
-          const k='localVisitCount', v=(parseInt(localStorage.getItem(k)||'0',10)+1);
-          localStorage.setItem(k,v);
+
+      // 基础：每次访问至少 +1
+      let amount = 1;
+
+      // 每个浏览器每天第一次打开时，再额外 +5
+      try {
+        const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+        const bonusFlagKey = 'visitDailyBonusDate';
+        const lastBonusDate = localStorage.getItem(bonusFlagKey);
+
+        if (lastBonusDate !== today) {
+          amount += 5; // 今日第一次打开，多给五次
+          localStorage.setItem(bonusFlagKey, today);
+        }
+      } catch (e) {
+        // localStorage 不可用就忽略加成
+      }
+
+      // 调用 countapi：全局是累积的
+      fetch(
+        'https://api.countapi.xyz/update/' +
+        encodeURIComponent(namespace) + '/' +
+        key + '?amount=' + amount
+      )
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          el.textContent = (d && d.value ? d.value : amount).toLocaleString();
+        })
+        .catch(function () {
+          // 网络挂了就退回到本地计数（仅当前浏览器）
+          const k = 'localVisitCount';
+          const v = (parseInt(localStorage.getItem(k) || '0', 10) + amount);
+          localStorage.setItem(k, v);
           el.textContent = v.toLocaleString();
         });
     })();
