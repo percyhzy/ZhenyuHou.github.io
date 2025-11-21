@@ -70,14 +70,13 @@
       margin-top: 0.75rem;
     }
 
-    /* 只有在 row / grid 里面的视频，才强制 16:9 + cover，保证整齐且无黑边 */
-    .project .video-row .project-video,
-    .project .video-grid .project-video {
+    /* 只有在 video-row 里的视频，才强制 16:9 + cover，保证整齐且无黑边 */
+    .project .video-row .project-video {
       aspect-ratio: 16 / 9;
       object-fit: cover;   /* 等比放大填满，不会变形，但会裁一点边缘 */
     }
 
-    /* RoboMaster 六小块网格 */
+    /* RoboMaster 六小块网格：只控制网格，不动比例 */
     .project .video-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -457,7 +456,7 @@
             </div>
           </div>
 
-          <!-- Project 11: RoboMaster (六小块) -->
+          <!-- Project 11: RoboMaster (六小块，两行) -->
           <div class="project-item">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
@@ -489,7 +488,7 @@
                 2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (DJI)<br>
                 3rd place in the National RoboMaster 3v3 League, 2022 (DJI)
               </p>
-              <!-- 六个小视频：3×2 网格 -->
+              <!-- 六个小视频：3×2 网格，按原视频比例 -->
               <div class="video-grid">
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/7V7.mp4" type="video/mp4">
