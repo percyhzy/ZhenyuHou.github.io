@@ -2,66 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Research Projects - Zhenyu Hou</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Research Projects — Zhenyu Hou</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 描述 / 社交卡片 -->
+  <meta name="description" content="Research projects of Zhenyu Hou — motion planning, SLAM, legged and humanoid robots, UAVs, and autonomous systems.">
+  <link rel="icon" href="images/favicon.png">
+  <meta property="og:title" content="Research Projects — Zhenyu Hou">
+  <meta property="og:description" content="Robotics research on motion planning, off-road navigation, trajectory optimization, and SLAM.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.jpg">
+
+  <!-- 字体（与 index / about 保持一致） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- Font Awesome for modern icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- 主样式 -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 项目页视频布局小样式：统一所有视频排版 -->
+  <style>
+    .project-video {
+      width: 100%;
+      max-width: 760px;
+      display: block;
+      margin: 0.5rem auto 0;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .video-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+      margin-top: 0.5rem;
+    }
+
+    .video-text-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .video-text-container p {
+      flex: 1 1 260px;
+      margin-top: 0;
+    }
+
+    .video-text-container .project-video {
+      flex: 0 0 320px;
+      max-width: 420px;
+      margin: 0;
+    }
+
+    .project-video-small {
+      max-width: 420px;
+    }
+
+    @media (max-width: 768px) {
+      .video-text-container {
+        flex-direction: column;
+      }
+      .video-text-container .project-video {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
-<body> 
+<body>
+  <!-- 跳转主内容，和 index / about 一致 -->
+  <a class="skip-link sr-only" href="#main">Skip to main content</a>
+
   <div class="container">
-    <!-- Sidebar -->
-    <div class="sidebar">
+    <!-- Sidebar：结构统一 -->
+    <aside class="sidebar">
       <div class="profile-image-container">
-        <img src="images/me.png" alt="Yunlong Song" class="profile-image">
+        <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image" loading="lazy">
       </div>
-      <div class="sidebar-links">
-        <a href="https://scholar.google.com/citations?user=AQu2ugsAAAAJ&hl=en" title="Google Scholar">
-          <i class="fas fa-graduation-cap"></i>
+
+      <nav aria-label="Profile links" class="sidebar-links">
+        <a href="https://scholar.google.com/citations?user=AQu2ugsAAAAJ&hl=en" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="sr-only">Google Scholar</span>
         </a>
-        <a href="https://github.com/percyhzy" title="GitHub">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/percyhzy" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" aria-label="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
         </a>
-      </div>
-      <br>
-      <a href="index.html" title="Home">Home</a>
-      <br>
-      <a href="project.html" title="Projects">Research Projects</a>
-      <br>
-      <a href="about.html" title="about">About Me</a>
-    </div>
+      </nav>
+
+      <nav aria-label="Site">
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="project.html" aria-current="page">Research Projects</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+      </nav>
+    </aside>
 
     <!-- Main content -->
-    <div class="main-content">
+    <main id="main" class="main-content">
       <section class="project">
-        <h2>Research Projects</h2>
+        <h1>Research Projects</h1>
         <p>
-          I am passionate about developing algorithms for robots to perform complex tasks in the real world.
-          Here are the projects I have worked on:
+          I am passionate about developing algorithms that enable robots to perform complex tasks in the real world,
+          across aerial, ground, quadruped, and humanoid platforms. Below is a selection of my research and engineering projects.
         </p>
 
         <div class="project-list">
           <!-- Project 1 -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <p>
-                Proposed a global-map-free navigation framework for efficient autonomous robot navigation in complex terrains.
-                The framework employs Sparse Gaussian Processes (SGP) to extract geometric features—such as curvature, gradient,
-                and elevation—from point cloud data. GPU acceleration is used during feature extraction to ensure real-time performance.
+                This project proposes a global-map-free navigation framework for efficient autonomous robot navigation in complex terrains.
+                The framework employs Sparse Gaussian Processes (SGP) to extract geometric features—such as curvature, gradient, and elevation—
+                from point cloud data. GPU acceleration is used during feature extraction to ensure real-time performance.
                 These features are integrated into a high-resolution local traversability map using a spatial-temporal Bayesian Gaussian
-                Kernel Inference method that fuses historical and real-time data with slope, flatness, gradient, and uncertainty metrics.
-                Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared to traditional methods.
-                The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot.
-                Source code available at <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK">github.com/ZJU-FAST-Lab/FSGP_BGK</a>.
+                Kernel inference method that fuses historical and real-time information with slope, flatness, gradient, and uncertainty metrics.
+                Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared with traditional methods.
+                The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot.<br><br>
+                Source code: <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK" target="_blank">github.com/ZJU-FAST-Lab/FSGP_BGK</a><br>
+                Project website: <a href="https://percyhzy.github.io/IROS2025-website/" target="_blank">IROS 2025 project page</a>
               </p>
               <video class="project-video" autoplay loop muted playsinline preload="metadata">
                 <source data-src="videos/IROS2025-FASTFIRE_web.mp4" type="video/mp4">
@@ -69,18 +149,26 @@
             </div>
           </div>
 
-<div class="project-item">
+          <!-- Project 2: Tracailer -->
+          <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
-                Tracailer: An Efficient Trajectory Planner for  Tractor-Trailer Vehicles in Unstructured Environments
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Tracailer: An Efficient Trajectory Planner for Tractor–Trailer Vehicles in Unstructured Environments
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <p>
-This paper presents a lightweight, high-order–smooth trajectory representation and a coupled space–time optimization framework for articulated tractor-trailer planning. By deforming trajectories directly in continuous free space, the method eliminates repeated safe-corridor construction, greatly accelerates computation, and reduces both curvature and travel time.
-
-Building on this framework, I conducted full-scale trials with a 7 m tractor-trailer (1 : 1 real vehicle). Apollo’s native lateral LQR and longitudinal PID controllers, together with the PIX-series CAN-bus protocol, were re-engineered as ROS nodes; for comparison, I also implemented an MPC controller. All components were seamlessly integrated with the planner, yielding a complete perception-mapping-planning-control loop. Real-world tests—spanning indoor/outdoor transport, loading/unloading, and narrow-aisle navigation—achieved a mean tracking error of ≈ 0.11 m, satisfying industrial-grade precision requirements.</a>.
+                This work presents a lightweight, high-order–smooth trajectory representation and a coupled space–time optimization framework
+                for articulated tractor–trailer planning. By deforming trajectories directly in continuous free space, the method eliminates
+                repeated safe-corridor construction, greatly accelerates computation, and reduces both curvature and travel time.
+              </p>
+              <p>
+                Building on this framework, I conducted full-scale trials with a 7 m tractor–trailer (1:1 real vehicle).
+                Apollo’s native lateral LQR and longitudinal PID controllers, together with the PIX-series CAN-bus protocol, were re-engineered
+                as ROS nodes; for comparison, I also implemented an MPC controller. All components were seamlessly integrated with the planner,
+                yielding a complete perception–mapping–planning–control loop. Real-world tests—spanning indoor/outdoor transport, loading/unloading,
+                and narrow-aisle navigation—achieved a mean tracking error of ≈ 0.11 m, satisfying industrial-grade precision requirements.
               </p>
               <video class="project-video" autoplay loop muted playsinline preload="metadata">
                 <source data-src="videos/trailer.mp4" type="video/mp4">
@@ -88,72 +176,140 @@ Building on this framework, I conducted full-scale trials with a 7 m tractor-tra
             </div>
           </div>
 
-<div class="project-item">
+          <!-- Project 3: Humanoid -->
+          <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
-                Ground Point Cloud Perception,Obstacle Separation Algorithm and Social navigation
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Humanoid Robot Navigation and Locomotion on Uneven Indoor Terrain (人形机器人的导航与非平坦地形的 locomotion)
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <p>
-This project involved the development of a ground point cloud perception and ground-obstacle separation algorithm, suitable for various environments. The algorithm significantly improved point cloud processing efficiency and reduced interference from virtual ground points caused by LiDAR reflection noise, using <a href="https://github.com/url-kaist/patchwork-plusplus">Voxel Downsampling (Fast Voxel Hashing)</a> and <a href="https://github.com/url-kaist/patchwork-plusplus">Reflection Noise Removal</a> techniques. It utilized <a href="https://github.com/url-kaist/patchwork-plusplus">Region-wise Vertical Plane Fitting</a> to remove low vertical structure points, such as guardrails and wall corners, improving the accuracy of subsequent ground fitting. The algorithm, combined with <a href="https://github.com/NKU-MobFly-Robotics/LRAE">Local Roughness and Elevation Estimation (LRAE)</a>, enabled the perception of uneven terrain and used an incremental map update method from <a href="https://github.com/hku-mars/ROG-Map">ROG-MAP</a> to reduce computational overhead. It performed well on the KITTI dataset and operated above 100Hz on a Jetson Orin NX, meeting real-time demands for quadruped robots or UGVs in complex environments, with real-world testing on Boston Dynamics' Spot robot.
+                In this project, I extend our spline-based trajectory optimization navigation framework
+                <a href="https://github.com/MarineRock10/ST-opt-tools" target="_blank">ST-opt-tools</a> to humanoid robots operating in cluttered indoor environments.
+                ST-opt-tools is a trajectory-optimization stack built on top of the high-performance
+                <a href="https://github.com/Bziyue/SplineTrajectory" target="_blank">SplineTrajectory</a> library, providing an end-to-end pipeline:
               </p>
-                <p>
-            Additionally, the project utilized a ZED camera and the YOLO algorithm for object detection and tracking.
-        </p>
-        <p>
-            This project was supervised by <a href="https://profiles.imperial.ac.uk/y.demiris">Prof. Yiannis Demiris</a> and <a href="https://www.imperial.ac.uk/personal-robotics/people/post-doctoral-researchers-and-research-assistants/dr-fernando-e-casado/">Dr. Fernando E. Casado</a> at the Imperial College Robotics Summer School.
-        </p>
-              <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                <source data-src="videos/IC1.mp4" type="video/mp4">
-              </video>
-              <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                  <source data-src="videos/IC2.mp4" type="video/mp4">
+              <ul>
+                <li>ESDF environment mapping → A* path planning → L-BFGS trajectory optimization</li>
+                <li>Integrated obstacle-avoidance and dynamics constraints for safe, feasible trajectories</li>
+                <li>High-performance optimization leveraging SplineTrajectory’s fast evaluation</li>
+                <li>Clean, plug-and-play APIs for robots, UAVs, and autonomous driving applications</li>
+              </ul>
+              <p>
+                For perception, the humanoid uses our FSGP-BGK traversability module
+                (see the IROS 2025 work and demo:
+                <a href="https://youtu.be/T8aI8dNnIBk?si=xg7XUXs8BODYZxe9" target="_blank">video</a>)
+                to build a dense local traversability map from point clouds. This map feeds into the ST-opt-tools navigation layer,
+                which generates safe, dynamically feasible trajectories in real time.
+              </p>
+              <p>
+                At the control level, we employ an <a href="https://github.com/leggedrobotics/rsl_rl" target="_blank">rsl_rl</a>-based locomotion policy
+                to track the optimized trajectories and handle contact-rich legged locomotion on uneven indoor terrain.
+                The three clips below illustrate the progression from early sim-to-real trials with unstable RL behavior,
+                to intermediate locomotion tuning, and finally the fully integrated navigation demo in indoor environments.
+              </p>
+              <div class="video-row">
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/human1_mute.mp4" type="video/mp4">
                 </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/humanRL_mute.mp4" type="video/mp4">
+                </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/humanNav_mute.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
           </div>
 
-<div class="project-item">
-  <div class="project-header">
-    <a href="#" class="project-title" onclick="toggleDescription(this)">
-      Quadruped robot safety navigation
-      <span class="toggle-icon">▼</span>
-    </a>
-  </div>
-  <div class="project-description">
-    <ul>
-      <li>
-        Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, combining Gaussian Process–based terrain traversability assessment with Control Barrier Functions, and applied it on a quadruped robot platform.
-      </li>
-      <li>
-        Developed an engineering-grade planning framework for quadruped robots: the global planner adopted hybrid A* with a state machine structure inspired by 
-        <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>, while the local planner integrated 
-        <a href="https://github.com/hanruihua/RDA-planner" target="_blank">RDA Planner</a>. The system was deployed on real hardware and successfully navigated dense indoor environments with obstacle avoidance.
-      </li>
-    </ul>
-    <video class="project-video" autoplay loop muted playsinline preload="metadata">
-      <source data-src="videos/westlake.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-
-
-          
-          <!-- Project 2: Autonomous Exploration in Simulator -->
+          <!-- Project 4: Ground point cloud / social navigation -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Ground Point Cloud Perception, Obstacle Separation, and Social Navigation
+                <span class="toggle-icon">▼</span>
+              </a>
+            </div>
+            <div class="project-description">
+              <p>
+                This project involved the development of a ground point cloud perception and ground–obstacle separation algorithm
+                suitable for various environments. The algorithm significantly improved point cloud processing efficiency and reduced
+                interference from virtual ground points caused by LiDAR reflection noise, using
+                <a href="https://github.com/url-kaist/patchwork-plusplus" target="_blank">voxel downsampling (Fast Voxel Hashing)</a> and
+                <a href="https://github.com/url-kaist/patchwork-plusplus" target="_blank">reflection noise removal</a> techniques.
+                It utilized <a href="https://github.com/url-kaist/patchwork-plusplus" target="_blank">region-wise vertical plane fitting</a>
+                to remove low vertical structures—such as guardrails and wall corners—improving the accuracy of subsequent ground fitting.
+              </p>
+              <p>
+                Combined with <a href="https://github.com/NKU-MobFly-Robotics/LRAE" target="_blank">Local Roughness and Elevation Estimation (LRAE)</a>,
+                the algorithm enabled perception of uneven terrain and used an incremental map update method from
+                <a href="https://github.com/hku-mars/ROG-Map" target="_blank">ROG-MAP</a> to reduce computational overhead.
+                It performed well on the KITTI dataset and operated above 100 Hz on a Jetson Orin NX, meeting real-time demands
+                for quadruped robots or UGVs in complex environments, with real-world testing on Boston Dynamics’ Spot.
+              </p>
+              <p>
+                Additionally, the project utilized a ZED stereo camera and a YOLO-based detection and tracking pipeline for human-aware navigation.
+                This project was supervised by
+                <a href="https://profiles.imperial.ac.uk/y.demiris" target="_blank">Prof. Yiannis Demiris</a> and
+                <a href="https://www.imperial.ac.uk/personal-robotics/people/post-doctoral-researchers-and-research-assistants/dr-fernando-e-casado/" target="_blank">
+                  Dr. Fernando E. Casado
+                </a> at the Imperial College Robotics Summer School.
+              </p>
+              <div class="video-row">
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/IC1.mp4" type="video/mp4">
+                </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/IC2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Quadruped safety navigation -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Quadruped Robot Safety Navigation
+                <span class="toggle-icon">▼</span>
+              </a>
+            </div>
+            <div class="project-description">
+              <ul>
+                <li>
+                  Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, combining Gaussian Process–based terrain traversability
+                  assessment with Control Barrier Functions, and applied it on a quadruped robot platform.
+                </li>
+                <li>
+                  Developed an engineering-grade planning framework for quadrupeds: the global planner adopted hybrid A* with a state-machine
+                  structure inspired by <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>, while the local planner
+                  integrated the <a href="https://github.com/hanruihua/RDA-planner" target="_blank">RDA Planner</a>. The system was deployed on real hardware
+                  and successfully navigated dense indoor environments with obstacle avoidance.
+                </li>
+              </ul>
+              <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                <source data-src="videos/westlake.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- Project 6: Autonomous Exploration in Simulator -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Autonomous Exploration in Simulator
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <p>
-                Tested the <a href="https://github.com/ZJU-FAST-Lab/FastSim?tab=readme-ov-file">FastSim simulator</a>, integrating it with drone localization (using <a href="https://github.com/hku-mars/FAST_LIO">Fast-LIO and LOAM</a>) and autonomous exploration (using <a href="https://github.com/HKUST-Aerial-Robotics/FUEL">FUEL</a>)
+                Tested the <a href="https://github.com/ZJU-FAST-Lab/FastSim?tab=readme-ov-file" target="_blank">FastSim simulator</a>,
+                integrating it with drone localization (using <a href="https://github.com/hku-mars/FAST_LIO" target="_blank">FAST-LIO</a> and LOAM)
+                and autonomous exploration (using <a href="https://github.com/HKUST-Aerial-Robotics/FUEL" target="_blank">FUEL</a>)
                 algorithms for both structured and unstructured dark environments.
               </p>
-              <!-- 两个视频并排显示 -->
               <div class="video-row">
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/FASTSIM.mp4" type="video/mp4">
@@ -165,20 +321,22 @@ This project involved the development of a ground point cloud perception and gro
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project 7: Aerial-Ground & quad-fisheye -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
-                Aerial-Ground drone and quad-fisheye drone
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Aerial-Ground Drone and Quad-Fisheye Drone
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <div class="video-text-container">
                 <p>
-                  Developed an aerial-ground autonomous navigation system for drones using FAST-LIO and <a href="https://github.com/ZJU-FAST-Lab/ego-planner">ego-planner</a>.
-                  Achieved point cloud map relay sharing during exploration. Designed and built a quad-fisheye-based localization drone inspired by
-                  <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt">OmniNxt</a>, implementing VIO-based localization using <a href="https://docs.openvins.com/">OpenVINS</a>.
+                  Developed an aerial–ground autonomous navigation system for drones using FAST-LIO and
+                  <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>.
+                  Achieved point-cloud map relay sharing during exploration. Designed and built a quad-fisheye-based localization drone inspired by
+                  <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt" target="_blank">OmniNxt</a>, implementing VIO-based localization using
+                  <a href="https://docs.openvins.com/" target="_blank">OpenVINS</a>.
                 </p>
                 <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/Rofly.mp4" type="video/mp4">
@@ -187,22 +345,23 @@ This project involved the development of a ground point cloud perception and gro
             </div>
           </div>
 
-          <!-- Project 4: Autonomous Flight and Swarm -->
+          <!-- Project 8: Autonomous Flight and Swarm -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Autonomous Flight and Swarm
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <p>
-                Deployed lightweight drones equipped with VIO (<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion">VINS-fusion</a>) and autonomous flight using ego-planner.
-                Conducted multi-drone VIO experiments using <a href="https://github.com/VIS4ROB-lab/covins">COVINS-G</a> and tested DM-VIO, ORB SLAM, and ALOAM.
-                Constructed an autonomous drone swarm employing a vision-based <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm">ego-swarm algorithm</a>,
-                enabling independent flight in both outdoor sparse-feature environments and indoor structured settings.
+                Deployed lightweight drones equipped with VIO
+                (<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion" target="_blank">VINS-Fusion</a>) and autonomous flight using EGO-Planner.
+                Conducted multi-drone VIO experiments using <a href="https://github.com/VIS4ROB-lab/covins" target="_blank">COVINS-G</a> and tested DM-VIO,
+                ORB-SLAM, and A-LOAM. Constructed an autonomous drone swarm employing the vision-based
+                <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm" target="_blank">EGO-Swarm</a> algorithm, enabling independent flight in both
+                outdoor sparse-feature environments and indoor structured settings.
               </p>
-              <!-- 两个视频并排显示 -->
               <div class="video-row">
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/AutonomousFlight.mp4" type="video/mp4">
@@ -214,21 +373,21 @@ This project involved the development of a ground point cloud perception and gro
             </div>
           </div>
 
-          <!-- Project 5 -->
+          <!-- Project 9: Signal detection -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
-                Signal detection based on autonomous flight
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Signal Detection Based on Autonomous Flight
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <div class="video-text-container">
                 <p>
-                  Developed a WiFi signal detection software for aerial-ground robots using PyQt and Linux network interfaces.
-                  Aerial-Ground Robot Communication Planning Mesh Networking Problem (Transmission of odometer information as well as map packets)
-                  with bandwidth, communication conditions and UAV energy as constraints for FUEL and ego-planner based UAV cluster exploration problem.
-                  (This idea is inspired by MRS Group of CTU, from Professor Saska's paper)
+                  Developed WiFi signal detection software for aerial–ground robots using PyQt and Linux network interfaces.
+                  Investigated aerial–ground robot communication planning and mesh networking, focusing on transmission of odometry
+                  and map data under constraints of bandwidth, communication quality, and UAV energy. This was coupled with FUEL- and
+                  EGO-Planner–based multi-UAV exploration. The concept was inspired by the MRS group at CTU and Prof. Saska’s work.
                 </p>
                 <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/WIFI.mp4" type="video/mp4">
@@ -237,10 +396,10 @@ This project involved the development of a ground point cloud perception and gro
             </div>
           </div>
 
-          <!-- Project 6 -->
+          <!-- Project 10: HKUST Red Bird Camp -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 2023 HKUST (GZ) Red Bird Challenge Camp
                 <span class="toggle-icon">▼</span>
               </a>
@@ -249,16 +408,18 @@ This project involved the development of a ground point cloud perception and gro
               <div class="video-text-container">
                 <p>
                   The future of unmanned transport technology is rapidly developing, and the scale of unmanned devices is expanding,
-                  while labour costs are rising and demand for logistics is increasing. Against this background, a project was proposed to achieve
-                  efficient logistics and distribution by integrating multiple unmanned devices so that they can operate in concert and relay distribution under different demands.
+                  while labour costs are rising and demand for logistics is increasing. Against this background, we proposed a project
+                  to achieve efficient logistics and distribution by integrating multiple unmanned devices so that they can operate in
+                  concert and relay parcels under different requirements.
                   <br><br>
-                  <strong>Responsible for:</strong><br>
-                  Implemented RRT and RRT* path planning and navigation for a quadruped robot in Gazebo; performed rendering simulations for both drones and quadruped robots using Blender.
-                  Conducted GPS spoofing experiments using HackRF, validated spoofing on simulated target robots, and performed market research on potential solutions.
-                  Also responsible for technical feasibility research and organisational design.
+                  <strong>Responsibilities:</strong><br>
+                  Implemented RRT and RRT* path planning and navigation for a quadruped robot in Gazebo; performed rendering simulations
+                  for both drones and quadrupeds using Blender. Conducted GPS spoofing experiments using HackRF, validated spoofing on
+                  simulated target robots, and performed market research on potential countermeasures. Also responsible for technical
+                  feasibility studies and organizational design.
                   <br><br>
                   <strong>Awards:</strong><br>
-                  2023 Outstanding Camper, Redbird Challenge Camp, HKUST
+                  Outstanding Camper, 2023 Red Bird Challenge Camp, HKUST (GZ)
                 </p>
                 <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/HKUSTrrt.mp4" type="video/mp4">
@@ -267,33 +428,37 @@ This project involved the development of a ground point cloud perception and gro
             </div>
           </div>
 
-          <!-- Project 7: RoboMaster Championship -->
+          <!-- Project 11: RoboMaster Championship -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
-                2021-2023 National University Robotics Competition RoboMaster Championship
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                2021–2023 National University Robotics Competition RoboMaster Championship
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <div class="video-text-container">
                 <p>
-                  Project Introduction: National University Robotics Competition RoboMaster is a robotics event jointly sponsored by several prestigious organizations and hosted by DJI.
+                  <strong>Project Introduction:</strong> The National University Robotics Competition RoboMaster is a robotics event
+                  jointly sponsored by several prestigious organizations and hosted by DJI.
                   <br><br>
-                  <strong>Responsible for:</strong><br>
-                  1. Laboratory creation: Negotiated with leaders and secured funding to build the robotics lab from scratch (collaboration with multiple schools, ~40 people).<br>
-                  2. Team Management: Managed the project using Coding and Feishu; established lab safety systems.<br>
-                  3. Financial management: Established a triple approval process, obtaining motor sponsorship from <a href="https://en.directdrive.com/">DirectDrive</a>.<br>
-                  4. Robot control debugging: Tuned PID parameters under freeRTOS, applied cascaded PID control and inverse kinematics for mecanum/omni wheels.<br>
-                  5. Wiring design: Completed design and actual wiring for Infantry, Hero, and Sentry robots.<br>
-                  6. Algorithm debugging: Assisted in camera selection, calibration, LIDAR and multi-camera fusion, radar calibration, YOLO detection on ROS, 3D printing, and Gazebo simulation.
+                  <strong>Responsibilities:</strong><br>
+                  1. <b>Laboratory creation:</b> Negotiated with university leaders and secured funding to build the robotics lab from scratch
+                  (multi-school collaboration, ~40 members).<br>
+                  2. <b>Team management:</b> Managed the project using Coding and Feishu; established lab safety and management systems.<br>
+                  3. <b>Financial management:</b> Established a triple-approval process and obtained motor sponsorship from
+                  <a href="https://en.directdrive.com/" target="_blank">DirectDrive</a>.<br>
+                  4. <b>Robot control debugging:</b> Tuned PID parameters under FreeRTOS, applied cascaded PID control and inverse kinematics
+                  for mecanum/omni wheels.<br>
+                  5. <b>Wiring design:</b> Completed design and physical wiring for Infantry, Hero, and Sentry robots.<br>
+                  6. <b>Algorithm debugging:</b> Assisted in camera selection and calibration, LiDAR and multi-camera fusion,
+                  radar calibration, YOLO detection on ROS, 3D printing, and Gazebo simulation.
                   <br><br>
                   <strong>Awards:</strong><br>
-                  3rd place in the National <a href="https://www.robomaster.com/en-US">RoboMaster</a> Championship, 2023 (supported by DJI)<br>
-                  2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (supported by DJI)<br>
-                  3rd place in the National RoboMaster 3v3 League, 2022 (supported by DJI)
+                  3rd place in the National <a href="https://www.robomaster.com/en-US" target="_blank">RoboMaster</a> Championship, 2023 (DJI)<br>
+                  2nd place in the National RoboMaster 3v3 League (Shanxi Division), 2023 (DJI)<br>
+                  3rd place in the National RoboMaster 3v3 League, 2022 (DJI)
                 </p>
-                <!-- 6 个视频网格，3 列 2 行 -->
                 <div class="video-grid">
                   <video class="project-video" autoplay loop muted playsinline preload="metadata">
                     <source data-src="videos/7V7.mp4" type="video/mp4">
@@ -318,25 +483,26 @@ This project involved the development of a ground point cloud perception and gro
             </div>
           </div>
 
-          <!-- Project 8 -->
+          <!-- Project 12: FTC -->
           <div class="project-item">
             <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(this)">
-                2018 FIRST Robotics Competition (FTC)
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                2018 FIRST Tech Challenge (FTC)
                 <span class="toggle-icon">▼</span>
               </a>
             </div>
             <div class="project-description">
               <div class="video-text-container">
                 <p>
-                  <strong>Project Description:</strong> A youth robotics event under FIRST, supported by NASA and Qualcomm, to develop robots capable of fetching and grasping specific targets under both automatic and manual control.
+                  <strong>Project Description:</strong> A youth robotics competition under FIRST, supported by NASA and Qualcomm,
+                  where teams develop robots capable of fetching and grasping specific targets under both autonomous and teleoperated modes.
                   <br><br>
                   <strong>Responsibilities:</strong><br>
                   1. External liaison and engineering documentation.<br>
                   2. Participation in mechanical construction and SolidWorks simulation design.
                   <br><br>
                   <strong>Awards:</strong><br>
-                  Individual Award & Incentive Award, 2018 FIRST Robotics Competition (Suzhou)
+                  Individual Award &amp; Incentive Award, 2018 FIRST Tech Challenge (Suzhou)
                 </p>
                 <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/FTC.mp4" type="video/mp4">
@@ -347,16 +513,16 @@ This project involved the development of a ground point cloud perception and gro
 
         </div>
       </section>
-    </div>
+    </main>
   </div>
 
   <!-- Toggle Script -->
   <script>
-    function toggleDescription(element) {
-      event.preventDefault();
+    function toggleDescription(e, element) {
+      e.preventDefault();
       const description = element.closest('.project-item').querySelector('.project-description');
       const toggleIcon = element.querySelector('.toggle-icon');
-      if (description.style.display === 'none') {
+      if (description.style.display === 'none' || description.style.display === '') {
         description.style.display = 'block';
         toggleIcon.textContent = '▲';
       } else {
@@ -364,6 +530,7 @@ This project involved the development of a ground point cloud perception and gro
         toggleIcon.textContent = '▼';
       }
     }
+
     document.addEventListener('DOMContentLoaded', function() {
       const projectDescriptions = document.querySelectorAll('.project-description');
       const toggleIcons = document.querySelectorAll('.toggle-icon');
