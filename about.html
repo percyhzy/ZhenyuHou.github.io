@@ -1,46 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Zhenyu Hou</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font Awesome for icons -->
+  <meta charset="UTF-8" />
+  <title>About — Zhenyu Hou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 描述 / 社交卡片 -->
+  <meta name="description" content="About page of Zhenyu Hou — journey in robotics, competitions, research, and international experiences.">
+  <link rel="icon" href="images/favicon.png">
+  <meta property="og:title" content="About — Zhenyu Hou">
+  <meta property="og:description" content="Journey in robotics, competitions, research, and international experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/og-cover.jpg">
+
+  <!-- 字体（保持和 index 一致） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <!-- 主样式 -->
+
+  <!-- 站点样式 -->
   <link rel="stylesheet" href="style.css">
-  <!-- Lightbox2 CSS (CDN) -->
+
+  <!-- Lightbox2 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-Ef3rQODF1+CnZc3cdw9t1Qu9Onv7DwSS/nrU/y7+6HAsCjdWBYR5fRpU9tFUZlAdXBgJbe0p+uV0a9U3g8O3XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- About 页面局部美化样式 -->
+  <style>
+    .story-container {
+      max-width: 900px;
+      line-height: 1.7;
+    }
+    .story-container h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .thumbnail-instructions {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .thumbnail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .thumbnail-grid img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .about h2 {
+      margin-bottom: 0.75rem;
+    }
+  </style>
 </head>
 <body>
+  <!-- Skip link 和 index 一致 -->
+  <a class="skip-link sr-only" href="#main">Skip to main content</a>
+
   <div class="container">
-    <!-- 侧边栏 -->
-    <div class="sidebar">
+    <!-- 侧栏：结构与 index.html 保持统一 -->
+    <aside class="sidebar">
       <div class="profile-image-container">
-        <img src="images/me.png" alt="Zhenyu Hou" class="profile-image" loading="lazy">
+        <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image" loading="lazy">
       </div>
-      <div class="sidebar-links">
-        <a href="https://scholar.google.com/citations?user=AQu2ugsAAAAJ&hl=en" title="Google Scholar">
-          <i class="fas fa-graduation-cap"></i>
+
+      <nav aria-label="Profile links" class="sidebar-links">
+        <a href="https://scholar.google.com/citations?user=AQu2ugsAAAAJ&hl=en" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i><span class="sr-only">Google Scholar</span>
         </a>
-        <a href="https://github.com/percyhzy" title="GitHub">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/percyhzy" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" title="LinkedIn">
-          <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" aria-label="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
         </a>
-      </div>
-      <br>
-      <a href="index.html" title="Home">Home</a>
-      <br>
-      <a href="project.html" title="Projects">Research Projects</a>
-      <br>
-      <a href="about.html" title="about">About Me</a>
-    </div>
-    
+      </nav>
+
+      <nav aria-label="Site">
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="project.html">Research Projects</a></li>
+          <li><a href="index.html#talks">Talks &amp; Presentations</a></li>
+          <li><a href="about.html" aria-current="page">About Me</a></li>
+        </ul>
+      </nav>
+    </aside>
+
     <!-- 主内容区 -->
-    <div class="main-content">
-      <section class="about">
-        <h2>Journey to the Robotics</h2>
+    <main id="main" class="main-content">
+      <h1>About Me</h1>
+
+      <!-- 第一大段：从童年到 ZJU FASTLAB -->
+      <section class="about" id="journey-robotics">
+        <h2>Journey to Robotics</h2>
         <div class="story-container">
           <p>
             I am a magician who has stolen the power of computers and utilized it to bring my creative ideas to life and satisfy my diverse curiosity. For example, I have worked on ship route planning problems, written corresponding papers, and integrated planning algorithms into unmanned surface vehicles (USVs)/ships under different constraints. I have also used various methods, such as deep learning, machine learning, and embedded systems, to replace manual flame picking and ink smoke monitoring during Huizhou Ink production, contributing my share to the protection of intangible cultural heritage. Most importantly, motivated by a genuine passion for robotics, I founded my university’s first robotics lab and have dedicated myself to robotics research over the years. Now I am pursuing my dream of flying by designing and completing a set of autonomous high-speed flying vehicles with obstacle avoidance capabilities.
@@ -48,16 +107,15 @@
           
           <h3>Remote grassland, Sandstorm, Robotics dream</h3>
           <p class="thumbnail-instructions">Click image to enlarge</p>
-          <!-- 缩略图网格：分组 "childhood" -->
           <div class="thumbnail-grid">
             <a href="images/about/sandStorm.jpg" data-lightbox="childhood" data-title="Sand Storm">
-              <img src="images/about/sandStorm.jpg" alt="sandStorm" loading="lazy">
+              <img src="images/about/sandStorm.jpg" alt="Sand storm in my hometown" loading="lazy">
             </a>
             <a href="images/about/FTC.jpg" data-lightbox="childhood" data-title="FTC Competition">
-              <img src="images/about/FTC.jpg" alt="FTC" loading="lazy">
+              <img src="images/about/FTC.jpg" alt="FTC competition" loading="lazy">
             </a>
             <a href="images/about/FTC-Global.jpg" data-lightbox="childhood" data-title="FTC Global">
-              <img src="images/about/FTC-Global.jpg" alt="FTC Global" loading="lazy">
+              <img src="images/about/FTC-Global.jpg" alt="FTC Global stage" loading="lazy">
             </a>
           </div>
           
@@ -71,20 +129,20 @@
             In the winter of 2019, I was honored to be among the few high school students invited to DJI’s robotics winter camp at their headquarters. There, I was introduced to competitive robotics in an adversarial setting, systematic robot fabrication, embedded systems, and visual algorithms. This invaluable experience not only enriched my technical foundation but also ignited the dream of establishing my very own robotics laboratory and team. I met inspiring peers from across the country and senior engineers from DJI—many of whom are now rising stars pursuing PhDs at top institutions or making groundbreaking contributions at companies like SpaceX, Apple, DJI and even founding multi-million-dollar unicorn startups.
           </p>
           
-          <h3>College Year, Robotics Competition</h3>
+          <h3>College Years, Robotics Competition</h3>
           <p class="thumbnail-instructions">Click image to enlarge</p>
-          <!-- 缩略图网格：分组 "shanghai" -->
           <div class="thumbnail-grid">
-            <a href="images/about/percyhome1.jpg" data-lightbox="shanghai" data-title="Percy RM1">
-              <img src="images/about/percyhome1.jpg" alt="percyRM1" loading="lazy">
+            <a href="images/about/percyhome1.jpg" data-lightbox="shanghai" data-title="RoboMaster Lab 1">
+              <img src="images/about/percyhome1.jpg" alt="RoboMaster lab 1" loading="lazy">
             </a>
-            <a href="images/about/percyhome2.jpg" data-lightbox="shanghai" data-title="Percy RM2">
-              <img src="images/about/percyhome2.jpg" alt="percyRM2" loading="lazy">
+            <a href="images/about/percyhome2.jpg" data-lightbox="shanghai" data-title="RoboMaster Lab 2">
+              <img src="images/about/percyhome2.jpg" alt="RoboMaster lab 2" loading="lazy">
             </a>
-            <a href="images/about/RM1.jpg" data-lightbox="shanghai" data-title="RM1">
-              <img src="images/about/RM1.jpg" alt="RM1" loading="lazy">
+            <a href="images/about/RM1.jpg" data-lightbox="shanghai" data-title="RoboMaster Robot">
+              <img src="images/about/RM1.jpg" alt="RoboMaster robot" loading="lazy">
             </a>
           </div>
+
           <p>
             Armed with the passion and skills nurtured in high school, I went on to university with high hopes. Unfortunately, I soon found myself facing the worst of China’s COVID-19 outbreak, and due to an error choice in my college entrance examination selection system, I ended up at an institution with very limited robotics resources, forcing me to pursue a cybersecurity major—one that did not align with my true interests. So I decided to build my own lab.
           </p>
@@ -125,21 +183,20 @@
             Just as it seemed I had finally realized my long-held dream, fate dealt me a heavy blow. Collaborators with whom I had built the team and company betrayed me for their own gain, colluding with adversaries to sabotage both me and my friends. The resulting losses were immense, and our laboratory collapsed. We eventually had to leave the lab, and I felt as devastated as Steve Jobs did when he was ousted from Apple. As if that were not enough, during this tumultuous period, my dearest relative—my grandfather, who raised me—was diagnosed with terminal liver cancer. His condition deteriorated rapidly, and with no one to care for him, I was informed that he had only a few days left. Overwhelmed by despair, I was forced to return home to recuperate and care for him, putting my studies on hold.
           </p>
           
-          <h3>Journey to the HKUST and ZJU</h3>
+          <h3>Journey to HKUST and ZJU</h3>
           <p class="thumbnail-instructions">Click image to enlarge</p>
-          <!-- 缩略图网格：分组 "journey" -->
           <div class="thumbnail-grid">
-            <a href="images/about/HKUST1.jpg" data-lightbox="journey" data-title="HKUST1">
-              <img src="images/about/HKUST1.jpg" alt="HKUST1" loading="lazy">
+            <a href="images/about/HKUST1.jpg" data-lightbox="journey" data-title="HKUST Summer Camp">
+              <img src="images/about/HKUST1.jpg" alt="HKUST Summer Camp" loading="lazy">
             </a>
-            <a href="images/about/FAST3.jpg" data-lightbox="journey" data-title="FAST3">
-              <img src="images/about/FAST3.jpg" alt="FAST3" loading="lazy">
+            <a href="images/about/FAST3.jpg" data-lightbox="journey" data-title="FASTLAB 3">
+              <img src="images/about/FAST3.jpg" alt="FASTLAB 3" loading="lazy">
             </a>
-            <a href="images/about/FAST4.jpg" data-lightbox="journey" data-title="FAST4">
-              <img src="images/about/FAST4.jpg" alt="FAST4" loading="lazy">
+            <a href="images/about/FAST4.jpg" data-lightbox="journey" data-title="FASTLAB 4">
+              <img src="images/about/FAST4.jpg" alt="FASTLAB 4" loading="lazy">
             </a>
-            <a href="images/about/FAST5.jpg" data-lightbox="journey" data-title="FAST5">
-              <img src="images/about/FAST5.jpg" alt="FAST5" loading="lazy">
+            <a href="images/about/FAST5.jpg" data-lightbox="journey" data-title="FASTLAB 5">
+              <img src="images/about/FAST5.jpg" alt="FASTLAB 5" loading="lazy">
             </a>
           </div>
           
@@ -162,19 +219,20 @@
             Inspired by these mentors, I am determined to keep fighting and push my limits. My ultimate goal after graduation is to work at a university or a research institute, where I will continue to devote myself to scientific research and share my knowledge through teaching. In doing so, I aspire to contribute meaningfully to the advancement of both the industry and society.
           </p>
 
-          <h3>Journey to the Europe: RAS Summer in CTU and ARTS</h3>
+          <h3>Journey to Europe: RAS Summer in CTU and ARTS</h3>
+          <p class="thumbnail-instructions">Click image to enlarge</p>
           <div class="thumbnail-grid">
-            <a href="images/about/FAST1.jpg" data-lightbox="journey" data-title="FAST1">
-              <img src="images/about/FAST1.jpg" alt="FAST1" loading="lazy">
+            <a href="images/about/FAST1.jpg" data-lightbox="ras" data-title="FASTLAB Field Robot">
+              <img src="images/about/FAST1.jpg" alt="FASTLAB field robot" loading="lazy">
             </a>
-            <a href="images/about/FAST2.jpg" data-lightbox="journey" data-title="FAST2">
-              <img src="images/about/FAST2.jpg" alt="FAST2" loading="lazy">
+            <a href="images/about/FAST2.jpg" data-lightbox="ras" data-title="FASTLAB Outdoor">
+              <img src="images/about/FAST2.jpg" alt="FASTLAB outdoor" loading="lazy">
             </a>
-            <a href="images/about/CTU1.jpg" data-lightbox="journey" data-title="CTU1">
-              <img src="images/about/CTU1.jpg" alt="CTU1" loading="lazy">
+            <a href="images/about/CTU1.jpg" data-lightbox="ras" data-title="CTU MRSLab">
+              <img src="images/about/CTU1.jpg" alt="CTU MRSLab" loading="lazy">
             </a>
-            <a href="images/about/MRS.png" data-lightbox="journey" data-title="MRS">
-              <img src="images/about/MRS.png" alt="MRS" loading="lazy">
+            <a href="images/about/MRS.png" data-lightbox="ras" data-title="MRS Lab">
+              <img src="images/about/MRS.png" alt="MRS Lab" loading="lazy">
             </a>
           </div>
           <p>
@@ -183,144 +241,145 @@
           <p>
             Later, in December 2024, I participated in the Autonomous Robot Technology Symposium (ARTS), hosted by our FASTLAB. A highlight was attending the keynote lecture by Prof. Hector Garcia de Marina from Spain, who shared cutting-edge advancements in swarm robotics.
           </p>
-
         </div>
       </section>
-    </div>
-  </div>
 
-  <!-- Imperial Summer School -->
-  <div class="container">
-    <div class="main-content">
-      <h3>Journey to the England: Imperial College Robotics Summer School</h3>
+      <hr>
 
-      <!-- 单独一组，限定为 3 列（= 两行）+ 统一 4:3 比例，不改全局 CSS -->
-      <div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
-        <a href="images/about/andrew.png" data-lightbox="ic" data-title="IC1"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/andrew.png" alt="IC1" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+      <!-- Imperial Summer School -->
+      <section id="imperial-summer">
+        <h2>Journey to England: Imperial College Robotics Summer School</h2>
+        <div class="story-container">
+          <p class="thumbnail-instructions">Click image to enlarge</p>
+          <div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
+            <a href="images/about/andrew.png" data-lightbox="ic" data-title="IC Robotics Summer School 1"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/andrew.png" alt="Imperial College robotics summer school 1" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/group.png" data-lightbox="ic" data-title="IC2"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/group.png" alt="IC2" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/group.png" data-lightbox="ic" data-title="IC Robotics Group"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/group.png" alt="Imperial robotics group" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/pre.png" data-lightbox="ic" data-title="IC3"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/pre.png" alt="IC3" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/pre.png" data-lightbox="ic" data-title="Project Presentation"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/pre.png" alt="Project presentation" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/yiannis.png" data-lightbox="ic" data-title="IC4"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/yiannis.png" alt="IC4" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/yiannis.png" data-lightbox="ic" data-title="With Prof. Yiannis Demiris"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/yiannis.png" alt="With Prof. Yiannis Demiris" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/final.png" data-lightbox="ic" data-title="IC5"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/final.png" alt="IC5" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/final.png" data-lightbox="ic" data-title="Final Demo"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/final.png" alt="Final demo" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/IC.png" data-lightbox="ic" data-title="IC6"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/IC.png" alt="IC6" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
-      </div>
+            <a href="images/about/IC.png" data-lightbox="ic" data-title="Imperial College London"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/IC.png" alt="Imperial College London" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
+          </div>
 
-      <p>
-        I had the amazing opportunity to attend the first Robotics Summer School at Imperial College London, supervised by 
-        <b>Prof. Yiannis Demiris</b> and <b>Dr. Fernando Estévez Casado</b>.
-      </p>
+          <p>
+            I had the amazing opportunity to attend the first Robotics Summer School at Imperial College London, supervised by 
+            <b>Prof. Yiannis Demiris</b> and <b>Dr. Fernando Estévez Casado</b>.
+          </p>
 
-      <p>
-        Together with Andrea D’Antona, Safa Tok, Elisha Okara, and Rob Woolley, I worked on Robot Social Navigation with Boston Dynamics’ Spot. 
-        I proposed and led the development of a ground point cloud perception and ground-obstacle separation algorithm suitable for complex environments. 
-        The algorithm improved point cloud processing efficiency and reduced LiDAR reflection noise by integrating Voxel Downsampling (Fast Voxel Hashing) 
-        with advanced Reflection Noise Removal and Region-wise Vertical Plane Fitting for low structure filtering.
-      </p>
+          <p>
+            Together with Andrea D’Antona, Safa Tok, Elisha Okara, and Rob Woolley, I worked on robot social navigation with Boston Dynamics’ Spot. 
+            I proposed and led the development of a ground point cloud perception and ground–obstacle separation algorithm suitable for complex environments. 
+            The algorithm improved point cloud processing efficiency and reduced LiDAR reflection noise by integrating voxel downsampling (Fast Voxel Hashing) 
+            with advanced reflection noise removal and region-wise vertical plane fitting for low-structure filtering.
+          </p>
 
-      <p>
-        Combined with Local Roughness and Elevation Estimation (LRAE) and an incremental mapping approach from ROG-MAP, our system enabled robust uneven 
-        terrain perception while reducing computational overhead. We validated performance on both datasets (KITTI) and real hardware, achieving stable 
-        real-time operation above 100Hz on Jetson Orin NX, and successfully deploying on Boston Dynamics’ Spot robot.
-      </p>
+          <p>
+            Combined with Local Roughness and Elevation Estimation (LRAE) and an incremental mapping approach from ROG-MAP, our system enabled robust uneven 
+            terrain perception while reducing computational overhead. We validated performance on both datasets (KITTI) and real hardware, achieving stable 
+            real-time operation above 100 Hz on Jetson Orin NX, and successfully deploying on Boston Dynamics’ Spot robot.
+          </p>
 
-      <p>
-        In addition, we integrated a ZED stereo camera and YOLO-based detection and tracking to support human-guided navigation, building upon principles 
-        from the Augmented Social Force Model for Legged Robot Navigation.
-      </p>
+          <p>
+            In addition, we integrated a ZED stereo camera and YOLO-based detection and tracking to support human-guided navigation, building upon principles 
+            from the Augmented Social Force Model for legged robot navigation.
+          </p>
 
-      <p>
-        It was truly exciting to see the pipeline running on Spot and to extend elements of Prof. Demiris’ work in socially aware navigation. 
-        Big thanks to the Imperial Robotics Forum team for organizing this, and to Yiannis and Fernando for their support throughout.
-      </p>
+          <p>
+            It was truly exciting to see the pipeline running on Spot and to extend elements of Prof. Demiris’ work in socially aware navigation. 
+            Big thanks to the Imperial Robotics Forum team for organizing this, and to Yiannis and Fernando for their support throughout.
+          </p>
 
-      <p>Journey still continues...</p>
-    </div>
-  </div>
+          <p>Journey still continues...</p>
+        </div>
+      </section>
 
-  <!-- CoRL & IROS -->
-  <div class="container">
-    <div class="main-content">
-      <h3>Journey to CoRL and IROS</h3>
+      <hr>
 
-      <!-- 单独一组，限定为 3 列 + 统一 4:3 比例 -->
-      <div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
-        <a href="images/about/corl.png" data-lightbox="corl" data-title="CoRL 2025, Seoul"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/corl.png" alt="corl" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+      <!-- CoRL & IROS -->
+      <section id="corl-iros">
+        <h2>Journey to CoRL and IROS</h2>
+        <div class="story-container">
+          <p class="thumbnail-instructions">Click image to enlarge</p>
+          <div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
+            <a href="images/about/corl.png" data-lightbox="corl" data-title="CoRL 2025, Seoul"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/corl.png" alt="CoRL 2025, Seoul" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/fastfire.png" data-lightbox="corl" data-title="Fast-Fire Gathering"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/fastfire.png" alt="fastfire" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/fastfire.png" data-lightbox="corl" data-title="Fast-Fire Gathering"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/fastfire.png" alt="FASTLAB / Fast-Fire gathering" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/mistlab.png" data-lightbox="corl" data-title="MIST Lab"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/mistlab.png" alt="mistlab" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/mistlab.png" data-lightbox="corl" data-title="MIST Lab"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/mistlab.png" alt="MIST Lab" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/IROS-pre.png" data-lightbox="corl" data-title="IROS 2025 Oral"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/IROS-pre.png" alt="IROS-pre" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/IROS-pre.png" data-lightbox="corl" data-title="IROS 2025 Oral Rehearsal"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/IROS-pre.png" alt="IROS 2025 oral rehearsal" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/talk.png" data-lightbox="corl" data-title="IROS Talk"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/talk.png" alt="talk" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
+            <a href="images/about/talk.png" data-lightbox="corl" data-title="IROS 2025 Talk"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/talk.png" alt="IROS 2025 talk" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
 
-        <a href="images/about/hutter.png" data-lightbox="corl" data-title="With Prof. Hutter"
-           style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-          <img src="images/about/hutter.png" alt="hutter" loading="lazy"
-               style="width:100%; height:100%; object-fit:cover;">
-        </a>
-      </div>
+            <a href="images/about/hutter.png" data-lightbox="corl" data-title="With Prof. Hutter"
+               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
+              <img src="images/about/hutter.png" alt="With Prof. Hutter" loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;">
+            </a>
+          </div>
 
-      <p>
-        It was a great privilege to attend CoRL 2025 in Seoul in September, where I immersed myself in the latest learning-based methods and paradigms for robotics. I had a wonderful time there with my collaborators and friends. In October, I traveled to Hangzhou, China, for IROS 2025. I was honored that our work on traversability analysis over uneven terrain was accepted and selected for an oral presentation, which attracted considerable attention from the field robotics and mapping communities. I was especially excited to meet experts working on off-road and uneven-terrain robotics, including my role models Prof. Xuesu Xiao and Prof. Hutter, and to discuss with professors and researchers from MIST Lab. I am deeply grateful to my senior colleagues Senming Tan and Long Xu and my labmate Zhihao Zhang for pushing this project forward together, and to my advisors Dr. Yanjun Cao, Prof. Fei Gao, and Prof. Chao Xu for their continuous guidance and support. I also want to thank senior colleague Songyan Huang for organizing a wonderful dinner that brought many European researchers together and created great networking opportunities.
-      </p>
+          <p>
+            It was a great privilege to attend CoRL 2025 in Seoul in September, where I immersed myself in the latest learning-based methods and paradigms for robotics. I had a wonderful time there with my collaborators and friends. In October, I traveled to Hangzhou, China, for IROS 2025. I was honored that our work on traversability analysis over uneven terrain was accepted and selected for an oral presentation, which attracted considerable attention from the field robotics and mapping communities. I was especially excited to meet experts working on off-road and uneven-terrain robotics, including my role models Prof. Xuesu Xiao and Prof. Hutter, and to discuss with professors and researchers from MIST Lab. I am deeply grateful to my senior colleagues Senming Tan and Long Xu and my labmate Zhihao Zhang for pushing this project forward together, and to my advisors Dr. Yanjun Cao, Prof. Fei Gao, and Prof. Chao Xu for their continuous guidance and support. I also want to thank senior colleague Songyan Huang for organizing a wonderful dinner that brought many European researchers together and created great networking opportunities.
+          </p>
 
-      <p>Journey still continues...</p>
-    </div>
+          <p>Journey still continues...</p>
+        </div>
+      </section>
+    </main>
   </div>
 
   <!-- Lightbox2 JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js" integrity="sha512-9Yw7RvK0aE4WYPQ9P8RGz5bQqs7G3ErH+ybZfyqCkCmZJLdnOjFkMrDXLI4YAlnXrhIRbkIuAeGHGZMRuQ8X1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <!-- Lightbox2 初始化 + 关闭兼容 -->
+  <!-- Lightbox2 初始化 + ESC / 点击遮罩关闭 -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (window.lightbox && lightbox.option) {
@@ -335,14 +394,12 @@
         });
       }
 
-      // 点击黑色遮罩关闭（Lightbox2 的遮罩是 #lightboxOverlay）
       document.addEventListener('click', function (e) {
         if (e.target && (e.target.id === 'lightboxOverlay')) {
           if (window.lightbox && typeof lightbox.end === 'function') lightbox.end();
         }
       });
 
-      // 按 ESC 关闭
       document.addEventListener('keydown', function (e) {
         if ((e.key && e.key.toLowerCase() === 'escape') || e.keyCode === 27) {
           if (window.lightbox && typeof lightbox.end === 'function') lightbox.end();
@@ -351,7 +408,7 @@
     });
   </script>
 
-  <!-- 只作用于 Lightbox 的样式，确保关闭按钮可点且在最上层 -->
+  <!-- 确保 Lightbox 相关元素层级足够高 -->
   <style>
     #lightboxOverlay{ z-index: 10000 !important; }
     #lightbox, .lightbox, .lb-outerContainer{ z-index: 10001 !important; }
