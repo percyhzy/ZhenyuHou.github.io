@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- 描述 / 社交卡片 -->
-  <meta name="description" content="Zhenyu Hou — Robotics research on off-road navigation, trajectory optimization, and SLAM.">
+  <meta name="description" content="Zhenyu Hou — Ph.D. student in Computer Science at George Mason University (RobotiXX Lab), working on field robotics, autonomous navigation, robot learning, and motion planning.">
   <link rel="icon" href="images/favicon.png">
   <meta property="og:title" content="Zhenyu Hou">
-  <meta property="og:description" content="Robotics — off-road navigation, trajectory optimization, and SLAM">
+  <meta property="og:description" content="Ph.D. student at George Mason University — field robotics, autonomous navigation, robot learning, and motion planning">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/og-cover.jpg">
 
@@ -23,73 +23,6 @@
 
   <!-- 站点样式 -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- 内联样式：访客统计 + Talks 区块 -->
-  <style>
-    .site-stats { margin-top: 2rem; }
-    .stats-card{
-      background:#f8f9fa;
-      border:1px solid #eaecef;
-      border-radius:8px;
-      padding:12px;
-      display:grid;
-      grid-template-columns: 260px 1fr; /* 左计数，右地图 */
-      gap:16px;
-      align-items:center;
-    }
-    .stats-counter-label{ color:#2c3e50; margin-right:.5rem; }
-    #visitCount{ font-size:1.25rem; color:#2c3e50; }
-    .stats-map{ min-height:260px; }
-    .stats-map img, .stats-map iframe{ max-width:100%; height:auto; }
-    @media (max-width: 900px){
-      .stats-card{ grid-template-columns: 1fr; }
-      .stats-map{ min-height:220px; }
-    }
-
-    /* Talks & Presentations 样式（仿 xulong） */
-    .talks {
-      margin-top: 2rem;
-    }
-    .talks h2 {
-      margin-bottom: 0.3rem;
-    }
-    .talks-underline {
-      width: 60px;
-      height: 3px;
-      background: #007bff;
-      margin-bottom: 1.8rem;
-    }
-    .talk-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .talk-item {
-      display: grid;
-      grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-    .talk-video iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: 0;
-    }
-    .talk-info h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-    .talk-meta {
-      margin: 0;
-      color: #444;
-    }
-    @media (max-width: 800px){
-      .talk-item {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -99,9 +32,13 @@
   <div class="container">
     <!-- 侧栏 -->
     <aside class="sidebar">
-      <div class="profile-image-container">
+      <div class="profile">
         <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image"
-             width="240" height="240" loading="eager" fetchpriority="high">
+             width="148" height="148" loading="eager" fetchpriority="high">
+        <div class="profile-text">
+          <p class="profile-name">Zhenyu Hou</p>
+          <p class="profile-role">Ph.D. Student<br>George Mason University</p>
+        </div>
       </div>
 
       <!-- 社交 -->
@@ -114,6 +51,9 @@
         </a>
         <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" aria-label="LinkedIn">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="mailto:zhou2@gmu.edu" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span>
         </a>
       </nav>
 
@@ -129,58 +69,270 @@
 
     <!-- 主体 -->
     <main id="main" class="main-content">
-      <h1>Zhenyu Hou — <span lang="zh-CN">侯振宇</span></h1>
+      <h1>Zhenyu Hou <span class="zh-name" lang="zh-CN">侯振宇</span></h1>
 
       <section class="intro">
         <p>
-          I am a <a href="http://zju-fast.com/zhenyu-hou/">research assistant</a> at the
-          <a href="http://zju-fast.com/">FASTLAB</a> of Zhejiang University’s Huzhou Institute,
-          mentored by <a href="https://pages.fast-fire.space/author/yanjun-cao-%E6%9B%B9%E7%87%95%E5%86%9B/">Yanjun Cao</a>,
-          <a href="https://feigao-robotics.com/">Fei Gao</a>,
-          and <a href="https://scholar.google.com/citations?user=IOCO-YQAAAAJ&hl=en">Chao Xu</a>.
-          I graduated with a Bachelor's degree in Cyber Security from the Civil Aviation University of China in <strong>June 2024</strong>, mentored by
-          <a href="https://www.researchgate.net/profile/Zhijun-Wu-6">Zhijun Wu</a>,
-          and I am preparing to apply for PhD or Master of Research programs.
+          I am a Ph.D. student in Computer Science at <a href="https://www.gmu.edu/">George Mason University</a> (GMU),
+          working in the <a href="https://robotixx.cs.gmu.edu/">RobotiXX Lab</a> under the supervision of
+          <a href="https://people.cs.gmu.edu/~xiao/">Prof. Xuesu Xiao</a>.
+          My Ph.D. is co-supervised with <a href="https://www.polymtl.ca/">Polytechnique Montréal</a>
+          (affiliated with <a href="https://www.umontreal.ca/en/">Université de Montréal</a>), with
+          <a href="https://mila.quebec/en/directory/giovanni-beltrame">Prof. Giovanni Beltrame</a> (Mila) as my joint supervisor.
+        </p>
+        <p>
+          Before joining GMU, I was a <a href="http://zju-fast.com/zhenyu-hou/">research assistant</a> at the
+          <a href="http://zju-fast.com/">FASTLAB</a> of Zhejiang University and
+          <a href="https://www.diffrobot.com/">Differential Robotics</a> from December 2023 to August 2026,
+          supervised by <a href="https://feigao-robotics.com/">Prof. Fei Gao</a> and Dr. Jialiang Hou, and collaborating with
+          <a href="https://scholar.google.com/citations?user=IOCO-YQAAAAJ&hl=en">Prof. Chao Xu</a> and
+          <a href="https://pages.fast-fire.space/author/yanjun-cao-%E6%9B%B9%E7%87%95%E5%86%9B/">Dr. Yanjun Cao</a>.
+          I received my Bachelor's degree in Cyber Security from the Civil Aviation University of China in June 2024, mentored by
+          <a href="https://www.researchgate.net/profile/Zhijun-Wu-6">Zhijun Wu</a>.
+        </p>
+        <p class="contact">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:zhou2@gmu.edu">zhou2@gmu.edu</a> ·
+          <a href="mailto:zhenyu.hou@etud.polymtl.ca">zhenyu.hou@etud.polymtl.ca</a>
         </p>
       </section>
 
-      <hr>
-
-      <section class="research-interests">
+      <section id="research">
         <h2>Research Interests</h2>
         <p>
-          My research interests focus on motion planning and SLAM for field ground robots. I am also very interested in aerial robots, humanoid robots, and quadruped robots,
-          and I am also integrating traditional robotic perception and planning with learning based methods recently.
+          My research interests lie in <strong>field robotics, autonomous navigation, robot learning, and motion planning</strong>.
+          I aim to enable ground, legged, and aerial robots to move safely and efficiently through uneven, unstructured, and
+          vertically challenging terrain by combining traversability perception and trajectory optimization with learning-based methods.
         </p>
         <p>
-          I have hands-on experience with a range of robotic platforms, including the
-          <a href="images/fisheye.jpg" data-title="Four-Eyed Fisheye Drone" class="platform-link">Four-Eyed Fisheye Drone</a>,
-          <a href="images/vio.jpg" data-title="VIO-Based Autonomous Drone" class="platform-link">VIO-Based Autonomous Drone</a>,
-          <a href="images/carDDR.jpg" data-title="Autonomous Off-Road Differential Vehicles" class="platform-link">Autonomous Off-Road Differential Vehicles</a>,
-          <a href="images/carAcker.jpg" data-title="Autonomous Off-Road Ackermann Vehicles" class="platform-link">Autonomous Off-Road Ackermann Vehicles</a>,
-          <a href="images/RM.jpg" data-title="Mecanum Wheel Dual Gimbal Robot" class="platform-link">Mecanum Wheel Dual Gimbal Robot</a>,
-          and
-          <a href="images/lio.jpg" data-title="LIO-Based Autonomous Drone" class="platform-link">LIO-Based Autonomous Drone</a>.
+          At FASTLAB, my work spanned real-time traversability assessment for off-road ground robots, learning-based trajectory
+          generation on uneven terrain, collision metrics for trajectory optimization, trajectory planning for tractor–trailer vehicles,
+          and perception and motion planning for aerial robots and large-scale swarms.
         </p>
-        <p>
-          My past research has primarily focused on developing aerial robots motion planning algorithms and perception algorithms,
-          and analyzing the traversability of ground robots on uneven terrain. Currently, I am particularly interested in integrating large vision-language models with traditional trajectory optimization
-          to enable autonomous systems to perform complex, real-world tasks with greater efficiency and adaptability.
-        </p>
-        <p>My current research interests include:</p>
+        <p>My current research directions include:</p>
         <ul>
-          <li>Ground Robots/Embodied intelligence for Uneven Terrain Navigation</li>
-          <li>Embodied intelligence in Aerial robots</li>
+          <li>Off-road autonomous navigation on uneven and vertically challenging terrain</li>
+          <li>Learning-based trajectory generation with differentiable trajectory optimization</li>
+          <li>Reinforcement learning for legged and wheeled-legged robots</li>
+          <li>Cross-embodiment navigation and cooperative aerial–ground navigation</li>
+        </ul>
+
+        <!-- 机器人平台：带图标的点击后弹出照片 -->
+        <p class="chip-label">Robotic platforms I have worked with:</p>
+        <ul class="chip-list">
+          <li><a href="images/fisheye.jpg" data-title="Four-Eyed Fisheye Drone" class="chip platform-link"><i class="fa-regular fa-image" aria-hidden="true"></i>Four-Eyed Fisheye Drone</a></li>
+          <li><a href="images/vio.jpg" data-title="VIO-Based Autonomous Drone" class="chip platform-link"><i class="fa-regular fa-image" aria-hidden="true"></i>VIO-Based Autonomous Drone</a></li>
+          <li><a href="images/lio.jpg" data-title="LIO-Based Autonomous Drone" class="chip platform-link"><i class="fa-regular fa-image" aria-hidden="true"></i>LIO-Based Autonomous Drone</a></li>
+          <li><a href="images/carDDR.jpg" data-title="Autonomous Off-Road Differential Vehicles" class="chip platform-link"><i class="fa-regular fa-image" aria-hidden="true"></i>Off-Road Differential Vehicles</a></li>
+          <li><a href="images/carAcker.jpg" data-title="Autonomous Off-Road Ackermann Vehicles" class="chip platform-link"><i class="fa-regular fa-image" aria-hidden="true"></i>Off-Road Ackermann Vehicles</a></li>
+          <li><a href="images/RM.jpg" data-title="Mecanum Wheel Dual Gimbal Robot" class="chip platform-link"><i class="fa-regular fa-image" aria-hidden="true"></i>Mecanum Wheel Dual Gimbal Robot</a></li>
+          <li><a href="https://github.com/RobotiXX/Verti-Wheelers" class="chip">Verti-Wheelers</a></li>
+          <li><a href="https://robotics.directdrive.com/" class="chip">Direct Drive Tech DIABLO</a></li>
+          <li><a href="https://wlrobo.com/module2" class="chip">Westlake Robotics TITAN O1 Humanoid</a></li>
+          <li><a href="https://www.mirrormetech.com/en/product_1.html" class="chip">MirrorMe Apollo Quadruped</a></li>
+          <li><a href="https://www.agilex.ai/products/scout-mini" class="chip">AgileX SCOUT MINI</a></li>
+          <li><span class="chip">Boston Dynamics Spot</span></li>
+          <li><span class="chip">7 m Tractor–Trailer</span></li>
         </ul>
       </section>
 
-      <hr>
+      <section id="publications" class="publications">
+        <h2>Publications and Patents</h2>
+        <p class="pub-legend"><sup>†</sup>Equal contribution &nbsp;·&nbsp; <sup>*</sup>Corresponding author</p>
 
-      <!-- Talks & Presentations（带两个 YouTube 视频嵌入） -->
+        <h3>Published and Accepted</h3>
+        <ul class="pub-list">
+          <li>
+            <div class="pub-title">Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process</div>
+            <div class="pub-authors">
+              <strong>Zhenyu Hou</strong><sup>†</sup>, Senming Tan<sup>†</sup>, Zhihao Zhang<sup>†</sup>, Long Xu, Mengke Zhang, Chao Xu, Fei Gao, Yanjun Cao<sup>*</sup>
+            </div>
+            <div class="pub-venue">
+              IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)<span class="badge badge-oral">Oral</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.48550/arXiv.2503.04134">Paper</a>
+              <a href="https://youtu.be/T8aI8dNnIBk">Video</a>
+              <a href="https://www.bilibili.com/video/BV13msgztEMX/?share_source=copy_web&vd_source=c281e29c6456ee7bc965eaf485fcb88c">Bilibili</a>
+              <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK">Code</a>
+              <a href="https://percyhzy.github.io/IROS2025-website/">Project Page</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">From Gaussian Processes to Ellipsoidal Obstacles: Safety Control Barrier Functions and Model Predictive Control</div>
+            <div class="pub-authors">
+              Senming Tan, <strong>Zhenyu Hou</strong><sup>*</sup>, Miao Wang
+            </div>
+            <div class="pub-venue">
+              30th International Conference on Automation and Computing (ICAC 2025)<span class="badge badge-oral">Oral</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/11196283">Paper</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">Tracailer: An Efficient Trajectory Planner for Tractor-Trailer Vehicles in Unstructured Environments</div>
+            <div class="pub-authors">
+              Long Xu, Kaixin Chai, Boyuan An, <strong>Zhenyu Hou</strong>, Shuhang Ji, Jiaxiang Gan, Qianhao Wang, Yuan Zhou, Junxiao Lin,
+              Zhichao Han, Xiaoying Li, Ruitong Lin, Chao Xu, Yanjun Cao, Fei Gao<sup>*</sup>
+            </div>
+            <div class="pub-venue">
+              IEEE Transactions on Automation Science and Engineering (T-ASE 2025), presented at ICRA 2026<span class="badge badge-oral">Oral</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1109/TASE.2025.3608827">Paper</a>
+              <a href="https://github.com/Tracailer/Tracailer/">Code</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">FLIP: Real-Time and Resilient Formation Planning for Large-Scale Distributed Swarms via Point Cloud Registration</div>
+            <div class="pub-authors">
+              Yuan Zhou, Guangtong Xu, <strong>Zhenyu Hou</strong>, Jialiang Hou, Fei Gao<sup>*</sup>
+            </div>
+            <div class="pub-venue">
+              IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)<span class="badge badge-accepted">Accepted</span>
+            </div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2605.29704">arXiv</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">A Novel Algorithm for Ship Route Planning Considering Motion Characteristics and ENC Vector Maps</div>
+            <div class="pub-authors">
+              Qinghua He, <strong>Zhenyu Hou</strong>, Xiaoxiao Zhu<sup>*</sup>
+            </div>
+            <div class="pub-venue">Journal of Marine Science and Engineering, 2023, 11(6): 1102</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.3390/jmse11061102">Paper</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">BiCross-UNet: Hierarchical Bidirectional Cross-Conditioning and Privileged Denoising Distillation for Robust Perceptive Locomotion</div>
+            <div class="pub-authors">
+              Senming Tan, Fuyang Liu, <strong>Zhenyu Hou</strong><sup>*</sup>
+            </div>
+            <div class="pub-venue">
+              IEEE International Conference on Advanced Robotics and Mechatronics (IEEE ARM 2026)<span class="badge badge-accepted">Accepted</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">Full-Dimensional Safe and Fast Motion Planning for Mobile Robots on Unknown Uneven Terrain</div>
+            <div class="pub-authors">
+              Xingyang Feng, <strong>Zhenyu Hou</strong>, Hua Cong, Mianhao Qiu<sup>*</sup>
+            </div>
+            <div class="pub-venue">
+              IEEE International Conference on Advanced Robotics and Mechatronics (IEEE ARM 2026)<span class="badge badge-accepted">Accepted</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">ViT-Enhanced Critic for Terrain-Adaptive Bipedal Locomotion via Teacher-Student Reinforcement Learning</div>
+            <div class="pub-authors">
+              Hongjin Fu, Yang Liufu, Xiangsen Zeng, Xinyu Xie, and <strong>Zhenyu Hou</strong><sup>†</sup>
+            </div>
+            <div class="pub-venue">
+              IEEE International Conference on Advanced Robotics and Mechatronics (IEEE ARM 2026)<span class="badge badge-accepted">Accepted</span>
+            </div>
+          </li>
+        </ul>
+
+        <h3>Under Review</h3>
+        <ul class="pub-list">
+          <li>
+            <div class="pub-title">Learning Trajectory Generation on Uneven Terrain with Differentiable Trajectory Optimization</div>
+            <div class="pub-authors">
+              <strong>Zhenyu Hou</strong><sup>†</sup>, Choi Lam Wong<sup>†</sup>, Long Xu<sup>†</sup>, Ze Wang, Senming Tan, Zhihao Zhang, Xiangsen Zeng, Zhenyu Wei,
+              Hongtao Wang, Jialiang Hou, Fei Gao<sup>*</sup>
+            </div>
+            <div class="pub-venue">IEEE Transactions on Robotics (T-RO)</div>
+          </li>
+
+          <li>
+            <div class="pub-title">Smooth Signed Solver-free Distance between Convex Polyhedra: A Scale-based Collision Metric for Motion Planning</div>
+            <div class="pub-authors">
+              Dong Wang, <strong>Zhenyu Hou</strong>, Jialiang Hou<sup>*</sup>, Fei Gao<sup>*</sup>
+            </div>
+            <div class="pub-venue">IEEE Transactions on Robotics (T-RO)</div>
+          </li>
+
+          <li>
+            <div class="pub-title">GuardPIBT: Executor-Aligned Residual Coordination with Counterfactual Gating for Ultra-Large-Scale 3D MAPF</div>
+            <div class="pub-authors">
+              Yuan Zhou<sup>†</sup>, <strong>Zhenyu Hou</strong><sup>†</sup>, Guangtong Xu, Yuqing Tang, Xiaoqiang Ji, Jialiang Hou, Fei Gao<sup>*</sup>
+            </div>
+            <div class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA 2027)</div>
+            <div class="pub-links">
+              <a href="https://guardpibt.github.io/GuardPIBT/">Project Page</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">Rank-Aware Control Allocation with Selective Residual Learning for Reconfigurable Aerial Robots</div>
+            <div class="pub-authors">
+              <strong>Zhenyu Hou</strong><sup>*</sup>, Feilong Lai, Lingxiang Hu, Senming Tan, Miao Wang
+            </div>
+            <div class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA 2027)</div>
+          </li>
+
+          <li>
+            <div class="pub-title">Feasible-by-Construction Four-Bar Path Synthesis: Diffusion Initialization and Exact-Kinematic Refinement</div>
+            <div class="pub-authors">
+              <strong>Zhenyu Hou</strong><sup>*</sup>, Xiangsen Zeng, Can Cui, Pengfei Zhao, Miao Wang
+            </div>
+            <div class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA 2027)</div>
+            <div class="pub-links">
+              <a href="https://anonymousforicra.github.io/Feasible-by-Construction-Diffusion-Initialization-for-Exact-Kinematic-Four-Bar-Path-Synthesis/">Project Page</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="pub-title">VICoM-Map: Globally Consistent Metric Dense SLAM via Visual–Inertial Anchoring</div>
+            <div class="pub-authors">
+              Lingxiang Hu<sup>*</sup>, Zhenjun Zhao, <strong>Zhenyu Hou</strong>, Naima Ait Oufroukh, Fabien Bonardi, Ghandour Raymond
+            </div>
+            <div class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA 2027)</div>
+          </li>
+
+          <li>
+            <div class="pub-title">SINER: A Smart Interference-Aware Neuro-Evolutionary Routing Strategy for Resilient Communication in Urban Unmanned Systems</div>
+            <div class="pub-authors">
+              Can Cui<sup>†</sup>, <strong>Zhenyu Hou</strong><sup>†</sup>, Yushu Zhang, Kaixin Tan, Senming Tan, Xiyuan Wang<sup>*</sup>
+            </div>
+            <div class="pub-venue">IET Cyber-Systems and Robotics</div>
+          </li>
+        </ul>
+
+        <h3>Patents</h3>
+        <ul class="pub-list">
+          <li>
+            <div class="pub-title">An Omnidirectional Wheel-based Aircraft Cargo-Hold Mechanical-Damage Identification Robot</div>
+            <div class="pub-authors"><strong>Zhenyu Hou</strong>, Yu Fu, Yangchen Ding, <em>et al.</em></div>
+            <div class="pub-venue">Chinese Patent CN116238703A</div>
+          </li>
+
+          <li>
+            <div class="pub-title">A Rail-based Terminal Inspection Robot</div>
+            <div class="pub-authors">Linquan Tan, Yutong Fu, <strong>Zhenyu Hou</strong>, <em>et al.</em></div>
+            <div class="pub-venue">Chinese Patent CN116160430A</div>
+          </li>
+
+          <li>
+            <div class="pub-title">A Mecanum Wheel-based Security Patrol Robot</div>
+            <div class="pub-authors">Weixiao Pan, Qinghua He, <strong>Zhenyu Hou</strong></div>
+            <div class="pub-venue">Chinese Patent CN219914181U</div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Talks & Presentations（YouTube 视频嵌入） -->
       <section id="talks" class="talks">
         <h2>Talks &amp; Presentations</h2>
-        <div class="talks-underline"></div>
-
         <div class="talk-list">
           <!-- IROS 2025 Oral -->
           <article class="talk-item">
@@ -189,7 +341,6 @@
                 src="https://www.youtube.com/embed/Stee8LSlMak"
                 title="IROS 2025 Oral Talk — Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process"
                 loading="lazy"
-                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
@@ -210,7 +361,6 @@
                 src="https://www.youtube.com/embed/pDHz1hvGQ_A"
                 title="ICAC 2025 Oral Talk — From Gaussian Processes to Ellipsoidal Obstacles: Safety Control Barrier Functions and Model Predictive Control"
                 loading="lazy"
-                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
@@ -226,142 +376,186 @@
         </div>
       </section>
 
-      <hr>
-
-      <section class="publications">
-        <h2>Publications and Patents</h2>
-        <ul>
+      <section id="education">
+        <h2>Education</h2>
+        <ul class="cv-list">
           <li>
-            <div class="publication-details">
-              <strong>Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process</strong>
-              <div class="publication-authors">
-                <strong>Zhenyu Hou</strong>†, Senming Tan†, Zhihao Zhang†, Long Xu, Mengke Zhang, Chao Xu, Fei Gao, and Yanjun Cao∗<br>
-                † indicates equal contribution (co-first authors)
+            <div>
+              <strong>Ph.D. in Computer Science</strong>, George Mason University
+              <div class="cv-sub">
+                Advisor: Prof. Xuesu Xiao · Co-supervised with Polytechnique Montréal (affiliated with Université de Montréal),
+                Joint Supervisor: Prof. Giovanni Beltrame (Mila) · Expected May 2031
               </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">
-                  International Conference on Intelligent Robots and Systems (IROS), Hangzhou, China, Oct. 2025, Oral.
-                </span>
-                <span class="paper-links">
-                  <a href="https://doi.org/10.48550/arXiv.2503.04134">PDF</a>
-                  <a href="https://www.bilibili.com/video/BV13msgztEMX/?share_source=copy_web&vd_source=c281e29c6456ee7bc965eaf485fcb88c">Video</a>
-                  <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK">Github</a>
-                </span>
+            </div>
+            <span class="cv-date">Aug. 2026 – Present</span>
+          </li>
+          <li>
+            <div>
+              <strong>B.Eng. in Cyber Security</strong>, Civil Aviation University of China
+              <div class="cv-sub">College of Security Science and Engineering</div>
+            </div>
+            <span class="cv-date">Sep. 2020 – Jun. 2024</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <ul class="cv-list">
+          <li>
+            <div>
+              <strong>Graduate Research Assistant</strong>, <a href="https://robotixx.cs.gmu.edu/">RobotiXX Lab</a>, George Mason University
+              <div class="cv-sub">Supervised by Prof. Xuesu Xiao</div>
+            </div>
+            <span class="cv-date">Aug. 2026 – Present</span>
+          </li>
+          <li>
+            <div>
+              <strong>Research Assistant</strong>, <a href="http://zju-fast.com/">FASTLAB</a> &amp; Differential Robotics, Zhejiang University
+              <div class="cv-sub">
+                College of Control Science and Engineering · Mentored by Fei Gao, Jialiang Hou, Yanjun Cao and Chao Xu
+              </div>
+            </div>
+            <span class="cv-date">Dec. 2023 – Aug. 2026</span>
+          </li>
+          <li>
+            <div>
+              <strong>Internship Student</strong>, <a href="https://www.mirrormetech.com/en/">MirrorMe Technology</a>
+              <div class="cv-sub">Mentored by Ze Wang</div>
+            </div>
+            <span class="cv-date">Mar. 2026 – Aug. 2026</span>
+          </li>
+          <li>
+            <div>
+              <strong>Team Leader</strong>, Imperial College Robotics Summer School
+              <div class="cv-sub">Supervised by Prof. Yiannis Demiris and Dr. Fernando E. Casado</div>
+            </div>
+            <span class="cv-date">Jul. 2025 – Aug. 2025</span>
+          </li>
+          <li>
+            <div>
+              <strong>Internship Student</strong>, <a href="https://www.wlrobo.com/">Westlake Robotics</a>
+              <div class="cv-sub">Supervised by Senming Tan and Zhenyu Wei</div>
+            </div>
+            <span class="cv-date">Jan. 2025 – Aug. 2026</span>
+          </li>
+          <li>
+            <div><strong>Team Technical Leader</strong>, 2023 HKUST (GZ) Red Bird Challenge Camp</div>
+            <span class="cv-date">Jul. 2023 – Aug. 2023</span>
+          </li>
+          <li>
+            <div><strong>Team Leader</strong>, 2023 RoboMaster University Championship</div>
+            <span class="cv-date">Nov. 2022 – Jul. 2023</span>
+          </li>
+          <li>
+            <div><strong>Technical Support (Intern)</strong>, Central Division of 2022 RoboMaster, DJI</div>
+            <span class="cv-date">Jun. 2022 – Aug. 2022</span>
+          </li>
+          <li>
+            <div><strong>Team Leader</strong>, 2022 RoboMaster University League</div>
+            <span class="cv-date">Sep. 2021 – Sep. 2022</span>
+          </li>
+          <li>
+            <div><strong>Core Member, Silver Award</strong>, 2022 Challenge Cup (Tianjin Division)</div>
+            <span class="cv-date">May 2022 – Jun. 2022</span>
+          </li>
+        </ul>
+        <p class="section-note">Details of this work are on the <a href="project.html">Research Projects</a> page.</p>
+      </section>
+
+      <section id="service">
+        <h2>Academic Service</h2>
+        <ul class="cv-list">
+          <li>
+            <div>
+              <strong>On-site Session Chair</strong> (nominated), IROS 2026
+              <div class="cv-sub">
+                Special Session “Robotics in Space Exploration” (T2SA01) ·
+                <a href="https://2026.ieee-iros.org/program/contributed-talks/#b80894">Session Program</a>
               </div>
             </div>
           </li>
-
           <li>
-            <div class="publication-details">
-              <strong>Learning Trajectory Generation on Uneven Terrain with Differentiable Trajectory Optimization and Manifold</strong>
-              <div class="publication-authors">
-                 <strong>Zhenyu Hou</strong>†, Long Xu†, Jialiang Hou, Yanjun Cao, Chao Xu, Fei Gao<br>
-                † indicates equal contribution (co-first authors)
-              </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">
-                  On-going project. Optimal and efficient trajectory generation on uneven terrain with differentiable trajectory optimization and manifold.
-                </span>
+            <div>
+              <strong>Workshop Co-Organizer</strong>, ICRA 2027
+              <div class="cv-sub">
+                “1st Workshop on Space Robotics for Planetary Exploration and Resource Prospecting” — pre-proposal submitted ·
+                <a href="https://openreview.net/revisions?id=Mgi5zfzNSH">OpenReview</a>
               </div>
             </div>
           </li>
-
           <li>
-            <div class="publication-details">
-              <strong>From Gaussian Processes to Ellipsoidal Obstacles: Safety Control Barrier Functions and Model Predictive Control</strong>
-              <div class="publication-authors">
-                <strong>Zhenyu Hou∗</strong>, Senming Tan, Miao Wang<br>
-                ∗ indicates corresponding author
-              </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">The 30th International Conference on Automation and Computing (ICAC 2025, Oral)</span>
+            <div>
+              <strong>Special Session Organizer</strong>, IEEE ARM 2026
+              <div class="cv-sub">
+                Special Session “Next-Generation Embodied and Interactive Intelligent Systems” ·
+                <a href="http://www.ieee-arm.org/">Conference Website</a>
               </div>
             </div>
           </li>
-
           <li>
-            <div class="publication-details">
-              <strong>A Novel Algorithm for Ship Route Planning Considering Motion Characteristics and ENC Vector Maps</strong>
-              <div class="publication-authors">
-                Qinghua He, <strong>Zhenyu Hou</strong>, Xiaoxiao Zhu∗
-              </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">J. Mar. Sci. Eng. 2023, 11(6), 1102</span>
-                <span class="paper-links">
-                  <a href="https://doi.org/10.3390/jmse11061102">PDF</a>
-                </span>
-              </div>
+            <div>
+              <strong>Conference Reviewer</strong>
+              <div class="cv-sub">IROS, ICRA, CoRL, AAAI</div>
             </div>
           </li>
-
           <li>
-            <div class="publication-details">
-              <strong>Tracailer: An Efficient Trajectory Planner for Tractor-Trailer Vehicles in Unstructured Environments</strong>
-              <div class="publication-authors">
-                Long Xu, Kaixin Chai, Boyuan An, <strong>Zhenyu Hou</strong>, Shuhang Ji, Jiaxiang Gan, Qianhao Wang, Yuan Zhou, Junxiao Lin, Ruitong Lin, Xiaoying Li, Chao Xu, Yanjun Cao and Fei Gao∗
-              </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">IEEE Transactions on Automation Science and Engineering (<strong>T-ASE</strong>), 2025 — <em>accepted on September 9, 2025</em></span>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="publication-details">
-              <strong>An Omnidirectional Wheel-based Aircraft Cargo Hold Mechanical Damage Identification Robot</strong>
-              <div class="publication-authors">
-                <strong>Zhenyu Hou</strong>, Yu Fu, Yangchen Ding, <em>et al.</em>
-              </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">Chinese Invention Patent (Patent No.: CN116238703A)</span>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="publication-details">
-              <strong>A Rail-based Terminal Inspection Robot</strong>
-              <div class="publication-authors">
-                Linquan Tan, Yutong Fu, <strong>Zhenyu Hou</strong>, <em>et al.</em>
-              </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">Chinese Invention Patent (Patent No.: N116160430A)</span>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="publication-details">
-              <strong>A Mecanum Wheel-based Security Patrol Robot</strong>
-              <div class="publication-authors">
-                Weixiao Pan, Qinghua He, <strong>Zhenyu Hou</strong>
-              </div>
-              <div class="publication-venue-links">
-                <span class="publication-venue">Chinese Invention Patent (Patent No.: CN116238703A)</span>
+            <div>
+              <strong>Journal Reviewer</strong>
+              <div class="cv-sub">
+                IEEE Robotics and Automation Letters (RA-L), IEEE Transactions on Intelligent Transportation Systems (T-ITS),
+                IEEE Transactions on Vehicular Technology (TVT), IEEE Transactions on Automation Science and Engineering (T-ASE)
               </div>
             </div>
           </li>
         </ul>
       </section>
 
-      <!-- 访客统计 -->
-      <section class="site-stats" aria-labelledby="statsTitle">
-        <h2 id="statsTitle">Site Analytics</h2>
-        <div class="stats-card">
-          <div class="stats-counter" aria-live="polite">
-            <span class="stats-counter-label">All-time visits</span>
-            <strong id="visitCount">—</strong>
-          </div>
-          <div class="stats-map" aria-label="Visitor Map">
-            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YRFduDmfKjrjCy3dbGXXkQ4LXpGmcrPwTSDuNLVwkZ0&cl=ffffff&w=a"></script>
-            <noscript>
-              <a href="https://clustrmaps.com/">
-                <img src="//www.clustrmaps.com/map_v2.png" alt="Visitor map snapshot" loading="lazy">
-              </a>
-            </noscript>
-          </div>
-        </div>
+      <section id="awards">
+        <h2>Awards</h2>
+        <ul class="cv-list">
+          <li>
+            <div>Huzhou Institute of Zhejiang University Perseverance Award</div>
+            <span class="cv-date">2024</span>
+          </li>
+          <li>
+            <div>3rd Prize, National Technology Challenge (Autonomous Exploration)</div>
+            <span class="cv-date">2024</span>
+          </li>
+          <li>
+            <div>3rd Place, National RoboMaster Championship (supported by DJI)</div>
+            <span class="cv-date">2023</span>
+          </li>
+          <li>
+            <div>2nd Place, National RoboMaster 3v3 League, Shanxi Division (supported by DJI)</div>
+            <span class="cv-date">2023</span>
+          </li>
+          <li>
+            <div>3rd Place, National RoboMaster 3v3 League (supported by DJI)</div>
+            <span class="cv-date">2022</span>
+          </li>
+          <li>
+            <div>Silver Award, Challenge Cup College Students Business Plan Competition (Tianjin Division)</div>
+            <span class="cv-date">2022</span>
+          </li>
+          <li>
+            <div>3rd Place &amp; Incentive Award, China Robot Conference FIRST Tech Challenge (supported by NASA, Qualcomm, Google)</div>
+            <span class="cv-date">2018</span>
+          </li>
+        </ul>
       </section>
+
+      <!-- 页脚：访客地图 -->
+      <footer class="site-footer">
+        <div class="visitor-map" aria-label="Visitor Map">
+          <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YRFduDmfKjrjCy3dbGXXkQ4LXpGmcrPwTSDuNLVwkZ0&cl=ffffff&w=a"></script>
+          <noscript>
+            <a href="https://clustrmaps.com/">
+              <img src="//www.clustrmaps.com/map_v2.png" alt="Visitor map snapshot" loading="lazy">
+            </a>
+          </noscript>
+        </div>
+      </footer>
     </main>
   </div>
 
@@ -371,50 +565,6 @@
     <p id="modalCaption"></p>
     <button class="close-modal" aria-label="Close image preview">&times;</button>
   </div>
-
-  <!-- 访问计数（全站累积 + 每天额外 +5） -->
-  <script>
-    (function(){
-      const namespace = 'percyhzy.github.io/ZhenyuHou.github.io';
-      const key = 'visits';
-      const el = document.getElementById('visitCount');
-
-      // 基础：每次访问至少 +1
-      let amount = 1;
-
-      // 每个浏览器每天第一次打开时，再额外 +5（页面上不写出来）
-      try {
-        const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-        const bonusFlagKey = 'visitDailyBonusDate';
-        const lastBonusDate = localStorage.getItem(bonusFlagKey);
-
-        if (lastBonusDate !== today) {
-          amount += 5;
-          localStorage.setItem(bonusFlagKey, today);
-        }
-      } catch (e) {
-        // localStorage 不可用就忽略加成
-      }
-
-      // 调用 countapi：全局是累积的
-      fetch(
-        'https://api.countapi.xyz/update/' +
-        encodeURIComponent(namespace) + '/' +
-        key + '?amount=' + amount
-      )
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          el.textContent = (d && d.value ? d.value : amount).toLocaleString();
-        })
-        .catch(function () {
-          // 网络挂了就退回到本地计数（仅当前浏览器）
-          const k = 'localVisitCount';
-          const v = (parseInt(localStorage.getItem(k) || '0', 10) + amount);
-          localStorage.setItem(k, v);
-          el.textContent = v.toLocaleString();
-        });
-    })();
-  </script>
 
   <!-- 弹窗脚本 -->
   <script>

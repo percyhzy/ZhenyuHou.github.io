@@ -24,59 +24,6 @@
   <!-- Main site style -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Page-specific video layout tweaks -->
-  <style>
-    /* 基础：默认按视频原始比例显示，不强制 16:9 */
-    .project .project-video {
-      width: 100%;
-      height: auto;         /* 跟随原视频自身比例 */
-      max-width: 100%;
-      display: block;
-      border-radius: 8px;
-      background: #000;
-      border: none;
-    }
-
-    .project .single-video {
-      max-width: 760px;
-      margin: 0.75rem auto 0;
-    }
-
-    /* 多视频并排（一排 2～3 个） */
-    .project .video-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-      margin-top: 0.75rem;
-    }
-
-    /* 只有在 video-row 里的视频，才强制 16:9 + cover，保证整齐且无黑边 */
-    .project .video-row .project-video {
-      aspect-ratio: 16 / 9;
-      object-fit: cover;   /* 等比放大填满，不会变形，但会裁一点边缘 */
-    }
-
-    /* RoboMaster 六小块网格：只控制网格，不动比例 */
-    .project .video-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 0.75rem;
-      max-width: 960px;
-    }
-
-    @media (max-width: 900px) {
-      .project .video-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 768px) {
-      .project .single-video {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 <body>
   <a class="skip-link sr-only" href="#main">Skip to main content</a>
@@ -84,8 +31,13 @@
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="profile-image-container">
-        <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image" loading="lazy">
+      <div class="profile">
+        <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image"
+             width="148" height="148" loading="lazy">
+        <div class="profile-text">
+          <p class="profile-name">Zhenyu Hou</p>
+          <p class="profile-role">Ph.D. Student<br>George Mason University</p>
+        </div>
       </div>
 
       <nav aria-label="Profile links" class="sidebar-links">
@@ -97,6 +49,9 @@
         </a>
         <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" aria-label="LinkedIn">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="mailto:zhou2@gmu.edu" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span>
         </a>
       </nav>
 
@@ -119,13 +74,80 @@
         </p>
 
         <div class="project-list">
+          <!-- GMU RobotiXX Lab: ongoing research -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Ongoing Research at the RobotiXX Lab, George Mason University
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">George Mason University · Aug. 2026 – Present</div>
+            </div>
+            <div class="project-description">
+              <p>
+                Since August 2026, I have been a graduate research assistant in the
+                <a href="https://robotixx.cs.gmu.edu/" target="_blank">RobotiXX Lab</a> at George Mason University, supervised by
+                <a href="https://people.cs.gmu.edu/~xiao/" target="_blank">Prof. Xuesu Xiao</a>. My ongoing research projects include:
+              </p>
+              <ul>
+                <li>
+                  Building and integrating a <a href="https://github.com/RobotiXX/Verti-Wheelers" target="_blank">Verti-Wheelers</a>-based
+                  robotic platform and developing its autonomous navigation framework for off-road operation on uneven and vertically
+                  challenging terrain.
+                </li>
+                <li>
+                  Developing autonomous navigation for the <a href="https://robotics.directdrive.com/" target="_blank">Direct Drive Tech DIABLO</a>
+                  wheeled-legged robot, with a focus on stair ascent and descent, and integrating equivariant neural networks into
+                  Proximal Policy Optimization (PPO) for learning locomotion control policies.
+                </li>
+                <li>
+                  Developing autonomous navigation methods for tractor–trailer systems on challenging terrain, focusing on motion planning
+                  and control in uneven, unstructured environments.
+                </li>
+                <li>
+                  Developing cooperative aerial–ground navigation over uneven terrain, coordinating unmanned aerial vehicles (UAVs) and
+                  ground robots for autonomous off-road navigation.
+                </li>
+                <li>
+                  Investigating cross-embodiment navigation by learning forward kinodynamic (FKD) models on small-scale robotic vehicles,
+                  with the goal of transferring the learned models to larger vehicle platforms for autonomous navigation.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Learning trajectory generation on uneven terrain (T-RO, under review) -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Learning Trajectory Generation on Uneven Terrain with Differentiable Trajectory Optimization
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">FASTLAB, Zhejiang University · T-RO (under review)</div>
+            </div>
+            <div class="project-description">
+              <p>
+                This project develops a learning-based trajectory generation framework for uneven-terrain navigation by integrating
+                differentiable trajectory optimization with neural networks. Traversable 2-manifold representations are learned to impose
+                safety and kinematic constraints, enabling efficient end-to-end trajectory optimization without handcrafted losses.
+                The end-to-end uneven-terrain navigation framework generalizes across platforms and has been demonstrated on the
+                <a href="https://www.agilex.ai/products/scout-mini" target="_blank">AgileX SCOUT MINI</a> differential-drive robot,
+                the <a href="https://www.mirrormetech.com/en/product_1.html" target="_blank">MirrorMe Apollo</a> quadruped,
+                and the <a href="https://wlrobo.com/module2" target="_blank">Westlake Robotics TITAN O1</a> humanoid robot.
+                <br><br>
+                Paper: IEEE Transactions on Robotics (T-RO), under review.
+              </p>
+            </div>
+          </div>
+
           <!-- Project 1: FSGP-BGK -->
           <div class="project-item">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">FASTLAB, Zhejiang University · IROS 2025 (Oral)</div>
             </div>
             <div class="project-description">
               <p>
@@ -137,6 +159,7 @@
                 Extensive simulations demonstrate significant improvements in accuracy and computational efficiency compared with traditional methods.
                 The framework is integrated into a planner and validated through autonomous navigation experiments on a real robot.
                 <br><br>
+                Paper: <a href="https://doi.org/10.48550/arXiv.2503.04134" target="_blank">arXiv:2503.04134</a> (IROS 2025, Oral)<br>
                 Source code: <a href="https://github.com/ZJU-FAST-Lab/FSGP_BGK" target="_blank">github.com/ZJU-FAST-Lab/FSGP_BGK</a><br>
                 Project website: <a href="https://percyhzy.github.io/IROS2025-website/" target="_blank">IROS 2025 project page</a>
               </p>
@@ -146,13 +169,36 @@
             </div>
           </div>
 
+          <!-- Scale-based collision metric (T-RO, under review) -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Smooth Signed Solver-free Distance between Convex Polyhedra: A Scale-based Collision Metric for Motion Planning
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">FASTLAB, Zhejiang University · T-RO (under review)</div>
+            </div>
+            <div class="project-description">
+              <p>
+                Co-developed a smooth, signed, and solver-free scale-based collision metric for convex polyhedra using vertex enumeration
+                and analytic smoothing, which provides analytic pose gradients even when the scaling center lies inside an obstacle.
+                The metric was integrated into MINCO-based trajectory optimization and validated on a SCOUT MINI robot with FAST-LIO
+                localization and nonlinear MPC tracking, demonstrating collision-free navigation through passages as narrow as 0.66 m
+                and recovery from colliding trajectory configurations where the original LP-based metric failed.
+                <br><br>
+                Paper: IEEE Transactions on Robotics (T-RO), under review.
+              </p>
+            </div>
+          </div>
+
           <!-- Project 2: Tracailer -->
           <div class="project-item">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Tracailer: An Efficient Trajectory Planner for Tractor–Trailer Vehicles in Unstructured Environments
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">FASTLAB, Zhejiang University · T-ASE 2025, ICRA 2026 (Oral)</div>
             </div>
             <div class="project-description">
               <p>
@@ -167,9 +213,99 @@
                 mapping–planning–control loop. Real-world tests—spanning indoor/outdoor transport, loading/unloading, and narrow-aisle navigation—
                 achieved a mean tracking error of ≈ 0.11 m, satisfying industrial-grade precision requirements.
               </p>
+              <p>
+                Paper: <a href="https://doi.org/10.1109/TASE.2025.3608827" target="_blank">IEEE T-ASE 2025</a> (ICRA 2026 Oral)<br>
+                Source code: <a href="https://github.com/Tracailer/Tracailer/" target="_blank">github.com/Tracailer/Tracailer</a>
+              </p>
               <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
                 <source data-src="videos/trailer.mp4" type="video/mp4">
               </video>
+            </div>
+          </div>
+
+          <!-- Large-scale aerial swarm coordination (GuardPIBT / FLIP) -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Large-Scale 3D Aerial Swarm Coordination and Formation Planning
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">FASTLAB, Zhejiang University · IROS 2026, ICRA 2027 (under review)</div>
+            </div>
+            <div class="project-description">
+              <p>
+                Developed large-scale 3D aerial-swarm coordination for low-altitude applications by combining flow matching with
+                multi-agent path finding (MAPF). The framework integrates global flow guidance, local interaction modeling, and
+                PIBT-based conflict resolution, and was evaluated on 1,000- and 10,000-agent simulation benchmarks. I also contributed to
+                <a href="https://arxiv.org/abs/2605.29704" target="_blank">FLIP</a>, a distributed formation-planning framework combining
+                outlier-robust point cloud registration with trajectory optimization for resilient formation flight.
+                <br><br>
+                Related papers: GuardPIBT (ICRA 2027, under review;
+                <a href="https://guardpibt.github.io/GuardPIBT/" target="_blank">project page</a>) and
+                FLIP (IROS 2026; <a href="https://arxiv.org/abs/2605.29704" target="_blank">arXiv</a>).
+              </p>
+            </div>
+          </div>
+
+          <!-- World-model-based cooperative navigation (SeqWM) -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                World-Model-Based Cooperative Navigation for Ground Robots
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">FASTLAB, Zhejiang University</div>
+            </div>
+            <div class="project-description">
+              <p>
+                Designed and deployed a world-model-based cooperative navigation framework for ground robots by extending
+                <a href="https://github.com/zhaozijie2022/seqwm" target="_blank">SeqWM</a>. A memory-aware dynamic agent-ordering mechanism
+                is integrated into sequential prediction and decision-making, using interaction history to adapt the coordination order
+                while retaining explicit inter-agent intention sharing.
+              </p>
+            </div>
+          </div>
+
+          <!-- Ackermann platform (RallyCore) -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                Ackermann-Steered Robotic Platform for F1TENTH and Off-Road Navigation (RallyCore)
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">FASTLAB, Zhejiang University</div>
+            </div>
+            <div class="project-description">
+              <p>
+                Designed and built an Ackermann-steered robotic platform for F1TENTH and off-road navigation research, and developed its
+                ROS 2/Nav2-based autonomous navigation framework. Livox MID-360 sensing, FAST-LIO2 localization with EKF-based state
+                estimation, and VESC-based vehicle control are integrated into a unified mapping–localization–planning–control stack
+                that supports command arbitration between manual and autonomous operation.
+                <br><br>
+                Source code: <a href="https://github.com/EleSheep-moving/RallyCore" target="_blank">RallyCore</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- MirrorMe Apollo quadruped -->
+          <div class="project-item">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                End-to-End Navigation and RL Locomotion on the MirrorMe Apollo Quadruped
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">MirrorMe Technology · Mar. 2026 – Aug. 2026</div>
+            </div>
+            <div class="project-description">
+              <p>
+                During my internship at <a href="https://www.mirrormetech.com/en/" target="_blank">MirrorMe Technology</a>
+                (March–August 2026), mentored by
+                <a href="https://scholar.google.com/citations?user=7iVQ_9sAAAAJ&hl=zh-CN" target="_blank">Ze Wang</a>,
+                I was responsible for developing end-to-end navigation for the
+                <a href="https://www.mirrormetech.com/en/product_1.html" target="_blank">Apollo</a> quadruped robot, focusing on
+                autonomous navigation over uneven terrain. I also deployed reinforcement learning (RL)-based locomotion control policies
+                on Apollo, integrating the learned controllers into the robot’s hardware control stack for real-world quadrupedal locomotion.
+              </p>
             </div>
           </div>
 
@@ -178,10 +314,19 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Humanoid Robot Navigation and Locomotion on Uneven Indoor Terrain (人形机器人的导航与非平坦地形的 locomotion)
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">Westlake Robotics · Jan. 2025 – Aug. 2026</div>
             </div>
             <div class="project-description">
+              <p>
+                During my internship at <a href="https://www.wlrobo.com/" target="_blank">Westlake Robotics</a> (January 2025 – August 2026),
+                supervised by Senming Tan and
+                <a href="https://scholar.google.com/citations?user=jKXf0gQAAAAJ&hl=zh-CN" target="_blank">Zhenyu Wei</a>,
+                I was responsible for autonomous navigation development for the
+                <a href="https://wlrobo.com/module2" target="_blank">Westlake Robotics O1</a> humanoid robot, including the development
+                and integration of an end-to-end navigation framework.
+              </p>
               <p>
                 In this project, I extend our spline-based trajectory optimization navigation framework
                 <a href="https://github.com/MarineRock10/ST-opt-tools" target="_blank">ST-opt-tools</a> to humanoid robots operating in cluttered indoor environments.
@@ -208,19 +353,19 @@
                 The clips below illustrate the progression from early sim-to-real trials with unstable RL behavior,
                 to intermediate locomotion tuning, and finally the fully integrated navigation demo in indoor environments.
               </p>
-              <!-- 上面两段并排 -->
-              <div class="video-row">
-                <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                  <source data-src="videos/human1_mute.mp4" type="video/mp4">
-                </video>
+              <!-- 早期 sim-to-real（横屏） -->
+              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
+                <source data-src="videos/human1_mute.mp4" type="video/mp4">
+              </video>
+              <!-- locomotion 调试 + 最终导航（竖屏，并排） -->
+              <div class="video-row portrait-row">
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/humanRL_mute.mp4" type="video/mp4">
                 </video>
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/humanNav_mute.mp4" type="video/mp4">
+                </video>
               </div>
-              <!-- 最终导航单独一行，按原视频比例 -->
-              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
-                <source data-src="videos/humanNav_mute.mp4" type="video/mp4">
-              </video>
             </div>
           </div>
 
@@ -229,8 +374,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Ground Point Cloud Perception, Obstacle Separation, and Social Navigation
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">Imperial College Robotics Summer School · Jul. 2025 – Aug. 2025</div>
             </div>
             <div class="project-description">
               <p>
@@ -273,14 +419,17 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Quadruped Robot Safety Navigation
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">Westlake Robotics</div>
             </div>
             <div class="project-description">
+              <p>This work was also carried out during my internship at Westlake Robotics.</p>
               <ul>
                 <li>
-                  Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, combining Gaussian Process–based terrain
-                  traversability assessment with Control Barrier Functions, and applied it on a quadruped robot platform.
+                  Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, integrating Gaussian Process–based terrain
+                  traversability assessment with Control Barrier Functions and Model Predictive Control, and deployed it on a
+                  quadruped robot platform.
                 </li>
                 <li>
                   Developed an engineering-grade planning framework for quadrupeds: the global planner adopted hybrid A* with a
@@ -290,7 +439,7 @@
                   and successfully navigated dense indoor environments with obstacle avoidance.
                 </li>
               </ul>
-              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
+              <video class="project-video single-video portrait" autoplay loop muted playsinline preload="metadata">
                 <source data-src="videos/westlake.mp4" type="video/mp4">
               </video>
             </div>
@@ -301,8 +450,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Autonomous Exploration in Simulator
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">FASTLAB, Zhejiang University</div>
             </div>
             <div class="project-description">
               <p>
@@ -327,8 +477,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Aerial-Ground Drone and Quad-Fisheye Drone
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">FASTLAB, Zhejiang University</div>
             </div>
             <div class="project-description">
               <div class="video-text-container">
@@ -339,7 +490,7 @@
                   inspired by <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt" target="_blank">OmniNxt</a>, implementing
                   VIO-based localization using <a href="https://docs.openvins.com/" target="_blank">OpenVINS</a>.
                 </p>
-                <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
+                <video class="project-video project-video-small portrait" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/Rofly.mp4" type="video/mp4">
                 </video>
               </div>
@@ -351,8 +502,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Autonomous Flight and Swarm
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">FASTLAB, Zhejiang University</div>
             </div>
             <div class="project-description">
               <p>
@@ -360,7 +512,7 @@
                 (<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion" target="_blank">VINS-Fusion</a>)
                 and autonomous flight using EGO-Planner. Conducted multi-drone VIO experiments using
                 <a href="https://github.com/VIS4ROB-lab/covins" target="_blank">COVINS-G</a> and tested DM-VIO, ORB-SLAM, and A-LOAM.
-                Constructed an autonomous drone swarm employing the vision-based
+                Constructed an autonomous drone swarm employing a LiDAR-based
                 <a href="https://github.com/ZJU-FAST-Lab/ego-planner-swarm" target="_blank">EGO-Swarm</a> algorithm, enabling independent
                 flight in both outdoor sparse-feature environments and indoor structured settings.
               </p>
@@ -380,8 +532,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Signal Detection Based on Autonomous Flight
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">FASTLAB, Zhejiang University</div>
             </div>
             <div class="project-description">
               <div class="video-text-container">
@@ -403,8 +556,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 2023 HKUST (GZ) Red Bird Challenge Camp
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">HKUST (GZ) · Jul. 2023 – Aug. 2023</div>
             </div>
             <div class="project-description">
               <div class="video-text-container">
@@ -421,7 +575,9 @@
                   feasibility studies and organizational design.
                   <br><br>
                   <strong>Awards:</strong><br>
-                  Outstanding Camper, 2023 Red Bird Challenge Camp, HKUST (GZ)
+                  Outstanding Camper, 2023
+                  <a href="https://www.hkust-gz.edu.cn/academics/education-innovation/red-bird-challenge-camp/" target="_blank">Red Bird Challenge Camp</a>,
+                  HKUST (GZ)
                 </p>
                 <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/HKUSTrrt.mp4" type="video/mp4">
@@ -435,8 +591,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 2021–2023 National University Robotics Competition RoboMaster Championship
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">Civil Aviation University of China · 2021 – 2023</div>
             </div>
             <div class="project-description">
               <p>
@@ -455,6 +612,13 @@
                 5. Wiring design: Completed design and physical wiring for Infantry, Hero, and Sentry robots.<br>
                 6. Algorithm debugging: Assisted in camera selection and calibration, LiDAR and multi-camera fusion, radar calibration,
                 YOLO detection on ROS, 3D printing, and Gazebo simulation.
+              </p>
+              <p>
+                In the 2023 RoboMaster University Championship, I led the CAUC-DGUT-SCU-Tsinghua joint team.
+                Related videos:
+                <a href="https://www.bilibili.com/video/BV1kc411u728/" target="_blank">2023 Video 1</a>,
+                <a href="https://www.bilibili.com/video/BV18P411S7mD/" target="_blank">2023 Video 2</a>,
+                <a href="https://www.bilibili.com/video/BV1dT4y167is/" target="_blank">2022 team video</a>.
               </p>
               <p>
                 <strong>Awards:</strong><br>
@@ -491,8 +655,9 @@
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 2018 FIRST Tech Challenge (FTC)
-                <span class="toggle-icon">▼</span>
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
+              <div class="project-meta">High school · 2018</div>
             </div>
             <div class="project-description">
               <div class="video-text-container">
@@ -523,25 +688,15 @@
   <script>
     function toggleDescription(e, element) {
       e.preventDefault();
-      const description = element.closest('.project-item').querySelector('.project-description');
-      const toggleIcon = element.querySelector('.toggle-icon');
-      if (description.style.display === 'none' || description.style.display === '') {
-        description.style.display = 'block';
-        toggleIcon.textContent = '▲';
-      } else {
-        description.style.display = 'none';
-        toggleIcon.textContent = '▼';
-      }
+      const item = element.closest('.project-item');
+      const collapsed = item.classList.toggle('collapsed');
+      element.setAttribute('aria-expanded', String(!collapsed));
     }
 
+    // 默认全部展开
     document.addEventListener('DOMContentLoaded', function() {
-      const projectDescriptions = document.querySelectorAll('.project-description');
-      const toggleIcons = document.querySelectorAll('.toggle-icon');
-      projectDescriptions.forEach(description => {
-        description.style.display = 'block';
-      });
-      toggleIcons.forEach(icon => {
-        icon.textContent = '▲';
+      document.querySelectorAll('.project-title').forEach(title => {
+        title.setAttribute('aria-expanded', 'true');
       });
     });
 

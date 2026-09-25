@@ -24,38 +24,6 @@
   <!-- 站点样式 -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- About 页面局部样式 -->
-  <style>
-    .story-container {
-      max-width: 900px;
-      line-height: 1.7;
-    }
-    .story-container h3 {
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .thumbnail-instructions {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-    .thumbnail-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-      margin-bottom: 1.5rem;
-    }
-    .thumbnail-grid img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .about h2 {
-      margin-bottom: 0.75rem;
-    }
-  </style>
 </head>
 <body>
   <!-- 和 index 一致的跳转链接 -->
@@ -64,8 +32,13 @@
   <div class="container">
     <!-- 侧栏：结构与 index.html 保持统一 -->
     <aside class="sidebar">
-      <div class="profile-image-container">
-        <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image" loading="lazy">
+      <div class="profile">
+        <img src="images/me.png" alt="Portrait of Zhenyu Hou" class="profile-image"
+             width="148" height="148" loading="lazy">
+        <div class="profile-text">
+          <p class="profile-name">Zhenyu Hou</p>
+          <p class="profile-role">Ph.D. Student<br>George Mason University</p>
+        </div>
       </div>
 
       <nav aria-label="Profile links" class="sidebar-links">
@@ -77,6 +50,9 @@
         </a>
         <a href="https://www.linkedin.com/in/zhenyu-hou-489640299" aria-label="LinkedIn">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span>
+        </a>
+        <a href="mailto:zhou2@gmu.edu" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span>
         </a>
       </nav>
 
@@ -206,7 +182,7 @@
             Aside from competitions, I have developed a strong desire to explore academic research in robotics and other interdisciplinary fields. For instance, in the realm of unmanned surface vehicles (USVs), I am interested in developing autonomous planning systems that establish dynamics and energy constraints, generate trajectories using hybrid A* or RRT* algorithms, transform path planning into convex optimization problems with time-constrained polynomials, and ultimately optimize trajectories through numerical methods to output control variables. Similarly, when multiple USVs engage in coordinated formation patrols and encirclement, I envision employing multi-agent reinforcement learning for effective control.
           </p>
           <p>
-            Now I am at the Huzhou Research Institute of Zhejiang University working as a Research Assistant in the FASTLAB. I independently designed a lightweight unmanned aerial vehicle (UAV) equipped with four fisheye cameras and developed sophisticated algorithms to enable it to fly at high speeds, navigate autonomously, and perform obstacle avoidance in densely mapped environments. I also designed a Lidar-based aerial-ground UAV capable of autonomous navigation in both aerial and ground scenarios, and researched its communication-constrained autonomous exploration algorithm. Moreover, I deployed the exploration algorithm on this versatile UAV in a DARPA-like subterranean environment for detection and mapping (based on improvements to last year's TRO best paper, <em>RACER</em>). In addition, I implemented various localization algorithms (e.g., FASTLIO, ALOAM, LIO-SAM, VINS-Fusion) on UAVs utilizing both visual-inertial odometry (VIO) and LiDAR-inertial odometry (LIO), enabling them to achieve autonomous flight and obstacle avoidance. I further addressed challenges related to relay nodes and ad-hoc network data transmission in UAV swarm exploration. Furthermore, I researched and deployed mapping and navigation algorithms tailored for uneven terrains on both Ackermann and differential-drive vehicles. My goal is to empower off-road robots to execute high-speed autonomous maneuvers on rugged outdoor surfaces, realizing end-to-end high-speed off-road traversal. Currently, I am exploring the integration of conventional optimization methods, SLAM algorithms, and artificial intelligence. I am actively studying stable diffusion and reinforcement learning, with the aim of implementing and deploying these advanced techniques on quadrupedal and humanoid robots in the near future.
+            From December 2023 to August 2026, I worked at the Huzhou Research Institute of Zhejiang University as a Research Assistant in the FASTLAB. I independently designed a lightweight unmanned aerial vehicle (UAV) equipped with four fisheye cameras and developed sophisticated algorithms to enable it to fly at high speeds, navigate autonomously, and perform obstacle avoidance in densely mapped environments. I also designed a Lidar-based aerial-ground UAV capable of autonomous navigation in both aerial and ground scenarios, and researched its communication-constrained autonomous exploration algorithm. Moreover, I deployed the exploration algorithm on this versatile UAV in a DARPA-like subterranean environment for detection and mapping (based on improvements to last year's TRO best paper, <em>RACER</em>). In addition, I implemented various localization algorithms (e.g., FASTLIO, ALOAM, LIO-SAM, VINS-Fusion) on UAVs utilizing both visual-inertial odometry (VIO) and LiDAR-inertial odometry (LIO), enabling them to achieve autonomous flight and obstacle avoidance. I further addressed challenges related to relay nodes and ad-hoc network data transmission in UAV swarm exploration. Furthermore, I researched and deployed mapping and navigation algorithms tailored for uneven terrains on both Ackermann and differential-drive vehicles. My goal is to empower off-road robots to execute high-speed autonomous maneuvers on rugged outdoor surfaces, realizing end-to-end high-speed off-road traversal. I also explored the integration of conventional optimization methods, SLAM algorithms, and artificial intelligence, and studied diffusion models and reinforcement learning—later deploying learning-based navigation and locomotion on quadrupedal and humanoid robots.
           </p>
           <p>
             To conclude, I aim to deepen my studies in cybersecurity, computer science, robotics, and path planning—with a particular focus on fundamental theoretical derivation and hands-on academic practice. My undergraduate projects, while formative, have not yet reached the depth I aspire to, so I am eager to engage in more profound research within a supportive academic environment.
@@ -243,48 +219,34 @@
         </div>
       </section>
 
-      <hr>
-
       <!-- Imperial Summer School -->
       <section id="imperial-summer">
         <h2>Journey to England: Imperial College Robotics Summer School</h2>
         <div class="story-container">
           <p class="thumbnail-instructions">Click image to enlarge</p>
-          <div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
-            <a href="images/about/andrew.png" data-title="IC Robotics Summer School 1"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/andrew.png" alt="Imperial College robotics summer school 1" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+          <div class="thumbnail-grid cols-3">
+            <a href="images/about/andrew.png" data-title="IC Robotics Summer School 1">
+              <img src="images/about/andrew.png" alt="Imperial College robotics summer school 1" loading="lazy">
             </a>
 
-            <a href="images/about/group.png" data-title="IC Robotics Group"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/group.png" alt="Imperial robotics group" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/group.png" data-title="IC Robotics Group">
+              <img src="images/about/group.png" alt="Imperial robotics group" loading="lazy">
             </a>
 
-            <a href="images/about/pre.png" data-title="Project Presentation"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/pre.png" alt="Project presentation" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/pre.png" data-title="Project Presentation">
+              <img src="images/about/pre.png" alt="Project presentation" loading="lazy">
             </a>
 
-            <a href="images/about/yiannis.png" data-title="With Prof. Yiannis Demiris"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/yiannis.png" alt="With Prof. Yiannis Demiris" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/yiannis.png" data-title="With Prof. Yiannis Demiris">
+              <img src="images/about/yiannis.png" alt="With Prof. Yiannis Demiris" loading="lazy">
             </a>
 
-            <a href="images/about/final.png" data-title="Final Demo"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/final.png" alt="Final demo" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/final.png" data-title="Final Demo">
+              <img src="images/about/final.png" alt="Final demo" loading="lazy">
             </a>
 
-            <a href="images/about/IC.png" data-title="Imperial College London"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/IC.png" alt="Imperial College London" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/IC.png" data-title="Imperial College London">
+              <img src="images/about/IC.png" alt="Imperial College London" loading="lazy">
             </a>
           </div>
 
@@ -320,48 +282,34 @@
         </div>
       </section>
 
-      <hr>
-
       <!-- CoRL & IROS -->
       <section id="corl-iros">
         <h2>Journey to CoRL and IROS</h2>
         <div class="story-container">
           <p class="thumbnail-instructions">Click image to enlarge</p>
-          <div class="thumbnail-grid" style="grid-template-columns: repeat(3, 1fr); gap:10px;">
-            <a href="images/about/corl.png" data-title="CoRL 2025, Seoul"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/corl.png" alt="CoRL 2025, Seoul" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+          <div class="thumbnail-grid cols-3">
+            <a href="images/about/corl.png" data-title="CoRL 2025, Seoul">
+              <img src="images/about/corl.png" alt="CoRL 2025, Seoul" loading="lazy">
             </a>
 
-            <a href="images/about/fastfire.png" data-title="Fast-Fire Gathering"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/fastfire.png" alt="FASTLAB / Fast-Fire gathering" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/fastfire.png" data-title="Fast-Fire Gathering">
+              <img src="images/about/fastfire.png" alt="FASTLAB / Fast-Fire gathering" loading="lazy">
             </a>
 
-            <a href="images/about/mistlab.png" data-title="MIST Lab"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden;">
-              <img src="images/about/mistlab.png" alt="MIST Lab" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/mistlab.png" data-title="MIST Lab">
+              <img src="images/about/mistlab.png" alt="MIST Lab" loading="lazy">
             </a>
 
-            <a href="images/about/IROS-pre.png" data-title="IROS 2025 Oral Rehearsal"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden%;">
-              <img src="images/about/IROS-pre.png" alt="IROS 2025 oral rehearsal" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/IROS-pre.png" data-title="IROS 2025 Oral Rehearsal">
+              <img src="images/about/IROS-pre.png" alt="IROS 2025 oral rehearsal" loading="lazy">
             </a>
 
-            <a href="images/about/talk.png" data-title="IROS 2025 Talk"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden%;">
-              <img src="images/about/talk.png" alt="IROS 2025 talk" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/talk.png" data-title="IROS 2025 Talk">
+              <img src="images/about/talk.png" alt="IROS 2025 talk" loading="lazy">
             </a>
 
-            <a href="images/about/hutter.png" data-title="With Prof. Hutter"
-               style="display:block; aspect-ratio:4/3; border-radius:4px; overflow:hidden%;">
-              <img src="images/about/hutter.png" alt="With Prof. Hutter" loading="lazy"
-                   style="width:100%; height:100%; object-fit:cover;">
+            <a href="images/about/hutter.png" data-title="With Prof. Hutter">
+              <img src="images/about/hutter.png" alt="With Prof. Hutter" loading="lazy">
             </a>
           </div>
 
@@ -369,7 +317,15 @@
             It was a great privilege to attend CoRL 2025 in Seoul in September, where I immersed myself in the latest learning-based methods and paradigms for robotics. I had a wonderful time there with my collaborators and friends. In October, I traveled to Hangzhou, China, for IROS 2025. I was honored that our work on traversability analysis over uneven terrain was accepted and selected for an oral presentation, which attracted considerable attention from the field robotics and mapping communities. I was especially excited to meet experts working on off-road and uneven-terrain robotics, including my role models Prof. Xuesu Xiao and Prof. Hutter, and to discuss with professors and researchers from MIST Lab. I am deeply grateful to my senior colleagues Senming Tan and Long Xu and my labmate Zhihao Zhang for pushing this project forward together, and to my advisors Dr. Yanjun Cao, Prof. Fei Gao, and Prof. Chao Xu for their continuous guidance and support. I also want to thank senior colleague Songyan Huang for organizing a wonderful dinner that brought many European researchers together and created great networking opportunities.
           </p>
 
-          <p>Journey still continues...</p>
+          <p>
+            In August 2026, I began my Ph.D. in Computer Science at George Mason University, joining the
+            <a href="https://robotixx.cs.gmu.edu/">RobotiXX Lab</a> under the supervision of
+            <a href="https://people.cs.gmu.edu/~xiao/">Prof. Xuesu Xiao</a>. My Ph.D. is co-supervised with
+            <a href="https://www.polymtl.ca/">Polytechnique Montréal</a>, where
+            <a href="https://mila.quebec/en/directory/giovanni-beltrame">Prof. Giovanni Beltrame</a> (Mila) is my joint supervisor.
+          </p>
+
+          <p>The journey still continues...</p>
         </div>
       </section>
     </main>
