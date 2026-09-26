@@ -280,14 +280,73 @@
             </div>
             <div class="project-description">
               <p>
-                Co-developed a smooth, signed, and solver-free scale-based collision metric for convex polyhedra using vertex enumeration
-                and analytic smoothing, which provides analytic pose gradients even when the scaling center lies inside an obstacle.
-                The metric was integrated into MINCO-based trajectory optimization and validated on a SCOUT MINI robot with FAST-LIO
-                localization and nonlinear MPC tracking, demonstrating collision-free navigation through passages as narrow as 0.66 m
-                and recovery from colliding trajectory configurations where the original LP-based metric failed.
-                <br><br>
-                Paper: IEEE Transactions on Robotics (T-RO), under review.
+                Co-developed a scale-based collision metric for convex polyhedra that is simultaneously <strong>smooth</strong>,
+                <strong>signed</strong>, and <strong>solver-free</strong>. The work traces the nonsmoothness of the original LP-based
+                metric to sudden switches of the active constraint set (corner-to-corner and face-to-face contacts), unifies the metric
+                over positive and negative scales so that it stays well defined even when the robot’s scaling center lies inside an
+                obstacle, and replaces the LP solver with vertex enumeration plus analytic smoothing, yielding a closed-form expression
+                with analytic pose gradients.
               </p>
+              <p>
+                Integrated into MINCO-based trajectory optimization on an AgileX SCOUT MINI with FAST-LIO localization and NMPC tracking,
+                the metric passes constrictions as narrow as 0.66 m where the LP-based metric collides, approaches a goal placed inside
+                an obstacle from the side with minimal intrusion, and supports long-range navigation in cluttered environments.
+              </p>
+              <!-- 实验对比图（论文 Fig. 14、Fig. 15），点击放大 -->
+              <figure class="project-figure">
+                <div class="photo-strip wide">
+                  <figure style="--ar: 0.707">
+                    <a href="images/sdf_corridor.jpg" data-title="Narrow corridor: ours vs. the LP-based metric">
+                      <img src="images/sdf_corridor.jpg" alt="Narrow corridor experiment: our trajectory passes both constrictions while the LP-based metric collides" width="948" height="1341" loading="lazy">
+                    </a>
+                  </figure>
+                  <figure style="--ar: 1.511">
+                    <a href="images/sdf_goal.jpg" data-title="Goal inside an obstacle: ours vs. the LP-based metric">
+                      <img src="images/sdf_goal.jpg" alt="Goal inside obstacle experiment: our trajectory approaches from the side while the LP-based metric cuts straight through" width="1058" height="700" loading="lazy">
+                    </a>
+                  </figure>
+                </div>
+                <figcaption>
+                  Real-world comparisons with Wang’s LP-based metric: narrow corridor (left) and goal inside an obstacle (right). In the videos below, each real-robot run is paired with its simulation (inset).
+                </figcaption>
+              </figure>
+              <!-- 长距离导航：真机 + 全局地图 / 规划器画中画 -->
+              <figure class="project-figure">
+                <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/sdf_longrange.mp4" type="video/mp4">
+                </video>
+                <figcaption>
+                  Long-range navigation with our metric in a cluttered environment (real robot; insets: global map and planner view).
+                </figcaption>
+              </figure>
+              <!-- 对比实验：真机 + 仿真画中画；左列我们的方法，右列 Wang 的 LP 方法 -->
+              <div class="video-grid cols-2">
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/sdf_corridor_ours.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Narrow gaps · ours (passes both constrictions)</figcaption>
+                </figure>
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/sdf_corridor_lp.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Narrow gaps · Wang’s LP-based metric (collision)</figcaption>
+                </figure>
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/sdf_goal_ours.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Goal inside obstacle · ours (side approach, minimal intrusion)</figcaption>
+                </figure>
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/sdf_goal_lp.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Goal inside obstacle · Wang’s LP-based metric (cuts straight through)</figcaption>
+                </figure>
+              </div>
+              <p class="project-note">Paper: IEEE Transactions on Robotics (T-RO), under review.</p>
             </div>
           </div>
 

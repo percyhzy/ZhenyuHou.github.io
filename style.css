@@ -638,6 +638,17 @@ a.chip {
   color: var(--muted);
 }
 
+/* 两列视频宫格（对比实验） */
+.video-grid.cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* 论文对比图并排：占满卡片宽度（外层 .project-figure 负责间距和图注） */
+.photo-strip.wide {
+  max-width: none;
+  margin: 0;
+}
+
 /* RoboMaster 3×2 视频网格 */
 .video-grid {
   display: grid;
