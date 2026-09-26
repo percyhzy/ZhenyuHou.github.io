@@ -138,7 +138,7 @@
           </div>
 
           <!-- Learning trajectory generation on uneven terrain (T-RO, under review) -->
-          <div class="project-item">
+          <div class="project-item" id="difftom">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Learning Trajectory Generation on Uneven Terrain with Differentiable Trajectory Optimization
@@ -399,11 +399,41 @@
                 During my internship at <a href="https://www.mirrormetech.com/en/" target="_blank">MirrorMe Technology</a>
                 (March–August 2026), mentored by
                 <a href="https://scholar.google.com/citations?user=7iVQ_9sAAAAJ&hl=zh-CN" target="_blank">Ze Wang</a>,
-                I was responsible for developing end-to-end navigation for the
-                <a href="https://www.mirrormetech.com/en/product_1.html" target="_blank">Apollo</a> quadruped robot, focusing on
-                autonomous navigation over uneven terrain. I also deployed reinforcement learning (RL)-based locomotion control policies
-                on Apollo, integrating the learned controllers into the robot’s hardware control stack for real-world quadrupedal locomotion.
+                I worked on the <a href="https://www.mirrormetech.com/en/product_1.html" target="_blank">Apollo</a> quadruped robot
+                in two directions:
               </p>
+              <ul>
+                <li>
+                  <strong>End-to-end navigation:</strong> developing end-to-end navigation for Apollo with a focus on autonomous
+                  navigation over uneven terrain, built on our <a href="#difftom">DiffTOM</a> framework (T-RO, under review),
+                  e.g., avoiding obstacles between trees in a forest.
+                </li>
+                <li>
+                  <strong>RL locomotion:</strong> deploying reinforcement learning (RL)-based locomotion control policies on Apollo and
+                  integrating the learned controllers into the robot’s hardware control stack for real-world quadrupedal locomotion,
+                  such as climbing stairs.
+                </li>
+              </ul>
+              <div class="video-grid">
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/e2e2.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>End-to-end navigation · forest</figcaption>
+                </figure>
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/loco1.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>RL locomotion · stair climbing</figcaption>
+                </figure>
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/loco2.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>RL locomotion · stair climbing (wide view)</figcaption>
+                </figure>
+              </div>
             </div>
           </div>
 

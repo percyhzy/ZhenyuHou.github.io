@@ -811,3 +811,8 @@ a.chip {
   font-size: 0.75em;
   line-height: 0;
 }
+
+/* 页内锚点跳转到项目卡片时，顶部留一点空隙 */
+.project-item {
+  scroll-margin-top: 16px;
+}
