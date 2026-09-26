@@ -821,3 +821,21 @@ a.chip {
 .project-video.framed {
   border: 1px solid var(--border);
 }
+
+/* 图片和视频：禁止拖拽、选中和手机长按弹出的保存菜单 */
+img,
+video {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* 页脚版权声明 */
+.main-content p.copyright {
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--muted);
+}
