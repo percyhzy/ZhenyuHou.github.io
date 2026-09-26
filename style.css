@@ -443,20 +443,17 @@ a.chip {
   color: var(--muted);
 }
 
-/* ---------- 首页：页脚访客地图 ---------- */
+/* ---------- 页脚：访问统计 + 版权 ---------- */
 .site-footer {
   margin-top: 3.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
-.visitor-map {
-  max-width: 320px;
-  margin: 0 auto;
-}
-.visitor-map img,
-.visitor-map iframe {
-  max-width: 100%;
-  height: auto;
+.main-content p.visit-stats {
+  margin: 0;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--muted);
 }
 
 /* ---------- 项目页 ---------- */
@@ -587,7 +584,8 @@ a.chip {
   opacity: 0.88;
 }
 .photo-strip figcaption,
-.video-grid figcaption {
+.video-grid figcaption,
+.video-row figcaption {
   margin-top: 0.3rem;
   font-size: 0.78rem;
   line-height: 1.3;
@@ -595,8 +593,9 @@ a.chip {
   color: var(--muted);
 }
 
-/* 视频宫格里带标注的格子 */
-.video-grid figure {
+/* 视频宫格 / 并排视频里带标注的格子 */
+.video-grid figure,
+.video-row figure {
   min-width: 0;
   margin: 0;
 }
