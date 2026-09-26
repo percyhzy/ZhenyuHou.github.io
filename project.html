@@ -463,6 +463,9 @@
                 <br><br>
                 Source code: <a href="https://github.com/EleSheep-moving/RallyCore" target="_blank">RallyCore</a>
               </p>
+              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
+                <source data-src="videos/rallycore.mp4" type="video/mp4">
+              </video>
             </div>
           </div>
 
@@ -646,27 +649,50 @@
             </div>
           </div>
 
-          <!-- Project 7: Aerial-Ground & quad-fisheye -->
+          <!-- 空地两栖无人机：导航 + 通信感知探索 + 四鱼眼定位（合并） -->
           <div class="project-item">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
-                Aerial-Ground Drone and Quad-Fisheye Drone
+                Aerial–Ground Drones: Exploration, Communication, and Localization
                 <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
               <div class="project-meta">FASTLAB, Zhejiang University</div>
             </div>
             <div class="project-description">
-              <div class="video-text-container">
-                <p>
-                  Developed an aerial–ground autonomous navigation system for drones using FAST-LIO and
-                  <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>.
-                  Achieved point-cloud map relay sharing during exploration. Designed and built a quad-fisheye-based localization drone
-                  inspired by <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt" target="_blank">OmniNxt</a>, implementing
-                  VIO-based localization using <a href="https://docs.openvins.com/" target="_blank">OpenVINS</a>.
-                </p>
-                <video class="project-video project-video-small portrait" autoplay loop muted playsinline preload="metadata">
-                  <source data-src="videos/Rofly.mp4" type="video/mp4">
-                </video>
+              <ul>
+                <li>
+                  <strong>Aerial–ground navigation:</strong> developed an autonomous navigation system for aerial–ground drones using
+                  FAST-LIO and <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>, with point-cloud
+                  map relay sharing during exploration.
+                </li>
+                <li>
+                  <strong>Communication-aware exploration:</strong> developed Wi-Fi signal detection software with PyQt and Linux
+                  network interfaces, and investigated communication planning and mesh networking for transmitting odometry and map
+                  data under bandwidth, link-quality, and UAV energy constraints, coupled with
+                  <a href="https://github.com/HKUST-Aerial-Robotics/FUEL" target="_blank">FUEL</a>- and EGO-Planner-based multi-UAV
+                  exploration. The concept was inspired by the <a href="https://mrs.fel.cvut.cz/" target="_blank">MRS group</a> at CTU
+                  and Prof. Martin Saska’s work.
+                </li>
+                <li>
+                  <strong>Quad-fisheye localization:</strong> designed and built a quad-fisheye localization drone inspired by
+                  <a href="https://github.com/HKUST-Aerial-Robotics/OmniNxt" target="_blank">OmniNxt</a>, implementing VIO-based
+                  localization with <a href="https://docs.openvins.com/" target="_blank">OpenVINS</a>.
+                </li>
+              </ul>
+              <!-- 横屏 + 竖屏视频并排，高度一致 -->
+              <div class="video-strip">
+                <figure style="--ar: 1.778">
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/WIFI.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Wi-Fi signal detection software</figcaption>
+                </figure>
+                <figure class="portrait" style="--ar: 0.5625">
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/Rofly.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Aerial–ground drone · tunnel exploration</figcaption>
+                </figure>
               </div>
             </div>
           </div>
@@ -696,30 +722,6 @@
                 </video>
                 <video class="project-video" autoplay loop muted playsinline preload="metadata">
                   <source data-src="videos/Swarm.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 9: Signal detection -->
-          <div class="project-item">
-            <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
-                Signal Detection Based on Autonomous Flight
-                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
-              </a>
-              <div class="project-meta">FASTLAB, Zhejiang University</div>
-            </div>
-            <div class="project-description">
-              <div class="video-text-container">
-                <p>
-                  Developed WiFi signal detection software for aerial–ground robots using PyQt and Linux network interfaces.
-                  Investigated aerial–ground robot communication planning and mesh networking, focusing on transmission of odometry
-                  and map data under constraints of bandwidth, communication quality, and UAV energy. This was coupled with FUEL- and
-                  EGO-Planner–based multi-UAV exploration. The concept was inspired by the MRS group at CTU and Prof. Saska’s work.
-                </p>
-                <video class="project-video project-video-small" autoplay loop muted playsinline preload="metadata">
-                  <source data-src="videos/WIFI.mp4" type="video/mp4">
                 </video>
               </div>
             </div>
