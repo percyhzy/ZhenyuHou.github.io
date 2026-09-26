@@ -241,7 +241,7 @@
           </div>
 
           <!-- Project 1: FSGP-BGK -->
-          <div class="project-item">
+          <div class="project-item" id="fsgp">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
                 Real-time Spatial-temporal Traversability Assessment via Feature-based Sparse Gaussian Process
@@ -518,62 +518,58 @@
             </div>
           </div>
 
-          <!-- Project 3: Humanoid -->
+          <!-- Westlake Robotics：人形 + 四足导航（合并） -->
           <div class="project-item">
             <div class="project-header">
               <a href="#" class="project-title" onclick="toggleDescription(event, this)">
-                Humanoid Robot Navigation and Locomotion on Uneven Indoor Terrain (人形机器人的导航与非平坦地形的 locomotion)
+                Autonomous Navigation for Humanoid and Quadruped Robots
                 <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
               </a>
               <div class="project-meta">Westlake Robotics · Jan. 2025 – Aug. 2026</div>
             </div>
             <div class="project-description">
               <p>
-                During my internship at <a href="https://www.wlrobo.com/" target="_blank">Westlake Robotics</a> (January 2025 – August 2026),
-                supervised by Senming Tan and
-                <a href="https://scholar.google.com/citations?user=jKXf0gQAAAAJ&hl=zh-CN" target="_blank">Zhenyu Wei</a>,
-                I was responsible for autonomous navigation development for the
-                <a href="https://wlrobo.com/module2" target="_blank">Westlake Robotics O1</a> humanoid robot, including the development
-                and integration of an end-to-end navigation framework.
-              </p>
-              <p>
-                In this project, I extend our spline-based trajectory optimization navigation framework
-                <a href="https://github.com/MarineRock10/ST-opt-tools" target="_blank">ST-opt-tools</a> to humanoid robots operating in cluttered indoor environments.
-                ST-opt-tools is a trajectory-optimization stack built on top of the high-performance
-                <a href="https://github.com/Bziyue/SplineTrajectory" target="_blank">SplineTrajectory</a> library, providing an end-to-end pipeline:
+                During my internship at <a href="https://www.wlrobo.com/" target="_blank">Westlake Robotics</a>, supervised by
+                Senming Tan and <a href="https://scholar.google.com/citations?user=jKXf0gQAAAAJ&hl=zh-CN" target="_blank">Zhenyu Wei</a>,
+                I developed autonomous navigation for legged robots in cluttered indoor environments:
               </p>
               <ul>
-                <li>ESDF environment mapping → A* path planning → L-BFGS trajectory optimization</li>
-                <li>Integrated obstacle-avoidance and dynamics constraints for safe, feasible trajectories</li>
-                <li>High-performance optimization leveraging SplineTrajectory’s fast evaluation</li>
-                <li>Clean, plug-and-play APIs for robots, UAVs, and autonomous driving applications</li>
+                <li>
+                  <strong>Humanoid navigation:</strong> developed and integrated an end-to-end navigation framework for the
+                  <a href="https://wlrobo.com/module2" target="_blank">Westlake Robotics O1</a> humanoid. Our
+                  <a href="#fsgp">FSGP-BGK</a> traversability module builds a dense local traversability map from point clouds;
+                  the <a href="https://github.com/MarineRock10/ST-opt-tools" target="_blank">ST-opt-tools</a> stack plans on it with
+                  ESDF mapping, A* search, and L-BFGS trajectory optimization on the
+                  <a href="https://github.com/Bziyue/SplineTrajectory" target="_blank">SplineTrajectory</a> backend, jointly optimizing
+                  waypoints and duration under obstacle-clearance, velocity, and smoothness penalties; and an
+                  <a href="https://github.com/leggedrobotics/rsl_rl" target="_blank">rsl_rl</a>-based locomotion policy tracks the
+                  resulting trajectories.
+                </li>
+                <li>
+                  <strong>Quadruped safe navigation:</strong> designed and deployed a <b>GP-CBF-MPC</b> algorithm that combines
+                  Gaussian Process–based terrain traversability assessment with Control Barrier Functions and Model Predictive Control.
+                </li>
+                <li>
+                  <strong>Quadruped planning framework:</strong> built a navigation stack with a hybrid A* global planner, an
+                  <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>-inspired finite-state machine,
+                  and an <a href="https://github.com/hanruihua/RDA-planner" target="_blank">RDA Planner</a>-based local planner,
+                  validated on real hardware for obstacle avoidance in cluttered indoor environments.
+                </li>
               </ul>
-              <p>
-                For perception, the humanoid uses our FSGP-BGK traversability module
-                (see the IROS 2025 work and demo:
-                <a href="https://youtu.be/T8aI8dNnIBk?si=xg7XUXs8BODYZxe9" target="_blank">video</a>)
-                to build a dense local traversability map from point clouds. This map feeds into the ST-opt-tools navigation layer,
-                which generates safe, dynamically feasible trajectories in real time.
-              </p>
-              <p>
-                At the control level, we employ an
-                <a href="https://github.com/leggedrobotics/rsl_rl" target="_blank">rsl_rl</a>-based locomotion policy
-                to track the optimized trajectories and handle contact-rich legged locomotion on uneven indoor terrain.
-                The clips below illustrate the progression from early sim-to-real trials with unstable RL behavior,
-                to intermediate locomotion tuning, and finally the fully integrated navigation demo in indoor environments.
-              </p>
-              <!-- 早期 sim-to-real（横屏） -->
-              <video class="project-video single-video" autoplay loop muted playsinline preload="metadata">
-                <source data-src="videos/human1_mute.mp4" type="video/mp4">
-              </video>
-              <!-- locomotion 调试 + 最终导航（竖屏，并排） -->
+              <!-- 两个竖屏视频并排 -->
               <div class="video-row portrait-row">
-                <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                  <source data-src="videos/humanRL_mute.mp4" type="video/mp4">
-                </video>
-                <video class="project-video" autoplay loop muted playsinline preload="metadata">
-                  <source data-src="videos/humanNav_mute.mp4" type="video/mp4">
-                </video>
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/humanNav_mute.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Humanoid · indoor navigation</figcaption>
+                </figure>
+                <figure>
+                  <video class="project-video" autoplay loop muted playsinline preload="metadata">
+                    <source data-src="videos/westlake.mp4" type="video/mp4">
+                  </video>
+                  <figcaption>Quadruped · indoor obstacle avoidance</figcaption>
+                </figure>
               </div>
             </div>
           </div>
@@ -620,37 +616,6 @@
                   <source data-src="videos/IC2.mp4" type="video/mp4">
                 </video>
               </div>
-            </div>
-          </div>
-
-          <!-- Project 5: Quadruped safety navigation -->
-          <div class="project-item">
-            <div class="project-header">
-              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
-                Quadruped Robot Safety Navigation
-                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
-              </a>
-              <div class="project-meta">Westlake Robotics</div>
-            </div>
-            <div class="project-description">
-              <p>This work was also carried out during my internship at Westlake Robotics.</p>
-              <ul>
-                <li>
-                  Designed and deployed a <b>GP-CBF-MPC</b> safe navigation algorithm, integrating Gaussian Process–based terrain
-                  traversability assessment with Control Barrier Functions and Model Predictive Control, and deployed it on a
-                  quadruped robot platform.
-                </li>
-                <li>
-                  Developed an engineering-grade planning framework for quadrupeds: the global planner adopted hybrid A* with a
-                  state-machine structure inspired by
-                  <a href="https://github.com/ZJU-FAST-Lab/ego-planner" target="_blank">EGO-Planner</a>, while the local planner integrated the
-                  <a href="https://github.com/hanruihua/RDA-planner" target="_blank">RDA Planner</a>. The system was deployed on real hardware
-                  and successfully navigated dense indoor environments with obstacle avoidance.
-                </li>
-              </ul>
-              <video class="project-video single-video portrait" autoplay loop muted playsinline preload="metadata">
-                <source data-src="videos/westlake.mp4" type="video/mp4">
-              </video>
             </div>
           </div>
 
