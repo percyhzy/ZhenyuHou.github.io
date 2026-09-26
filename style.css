@@ -449,6 +449,17 @@ a.chip {
   padding-top: 1.5rem;
   border-top: 1px solid var(--border);
 }
+/* 访客地图（图片版，居中；不要懒加载，否则只有滚到底部才会计数） */
+.visitor-map {
+  margin: 0 0 0.9rem;
+  text-align: center;
+}
+.visitor-map img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
 .main-content p.visit-stats {
   margin: 0;
   font-size: 0.8rem;
