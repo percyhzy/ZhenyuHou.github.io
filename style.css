@@ -816,3 +816,8 @@ a.chip {
 .project-item {
   scroll-margin-top: 16px;
 }
+
+/* 白底视频加细边框，避免和白色卡片融在一起 */
+.project-video.framed {
+  border: 1px solid var(--border);
+}
