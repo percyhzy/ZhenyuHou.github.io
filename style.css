@@ -563,6 +563,37 @@ a.chip {
   aspect-ratio: 9 / 16;
 }
 
+/* 照片并排：每张按自身比例分配宽度，所以高度一致且不裁切；
+   限制总宽度，桌面端高度约 200px */
+.photo-strip {
+  display: flex;
+  gap: 8px;
+  max-width: 560px;
+  margin: 0.75rem auto 0;
+}
+.photo-strip figure {
+  flex: var(--ar, 1) 1 0;
+  min-width: 0;
+  margin: 0;
+}
+.photo-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+}
+.photo-strip a:hover img {
+  opacity: 0.88;
+}
+.photo-strip figcaption {
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--muted);
+}
+
 /* RoboMaster 3×2 视频网格 */
 .video-grid {
   display: grid;
