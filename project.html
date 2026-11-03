@@ -139,6 +139,57 @@
             </div>
           </div>
 
+          <!-- MOSU2: long-range outdoor navigation (IJRR, under review) -->
+          <div class="project-item" id="mosu2">
+            <div class="project-header">
+              <a href="#" class="project-title" onclick="toggleDescription(event, this)">
+                MOSU2: Long-range Navigation System with Multi-modal Scene Understanding
+                <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
+              </a>
+              <div class="project-meta">RobotiXX Lab, George Mason University · IJRR (under review)</div>
+            </div>
+            <div class="project-description">
+              <p>
+                <strong>MOSU2</strong> is a long-range outdoor navigation system for robots traveling through public spaces, where they
+                must stay on terrain suited to their mobility and decide when to proceed, yield, or detour around pedestrians, cyclists,
+                vehicles, traffic signals, and temporary restrictions. Building on MOSU, it follows GPS subgoals from a public routing
+                service, generates candidate trajectories from LiDAR, and filters them with RGB-based semantic traversability, without
+                a prebuilt metric map. It runs on wheeled, legged, and wheeled-legged robots (Husky, Unitree Go2, and DIABLO).
+              </p>
+              <ul>
+                <li>
+                  <strong>VLM-retrievable local map:</strong> geometric and dynamic map layers let vision-language models (VLMs)
+                  retrieve the positions and velocities of surrounding road users and relate them to the social and traffic cues seen
+                  in RGB images.
+                </li>
+                <li>
+                  <strong>Two-stage reasoning:</strong> the first stage screens the current scene and handles routine
+                  subgoal-directed navigation; only when an interaction remains unresolved does it trigger the second stage, which
+                  analyzes recent frames together with the retrieved geometry and motion to select a trajectory and velocity mode.
+                </li>
+              </ul>
+              <p>
+                In real-world experiments spanning stop gestures, construction sites, signalized crosswalks, and roads shared with
+                vehicles, cyclists, and pedestrians, MOSU2 raises mean navigation success from 61.8% to 94.2% and condition-detection
+                accuracy from 72.2% to 91.4% over its single-image predecessor MOSU, at about 2.2 times its mean decision latency.
+              </p>
+              <p>
+                Paper: <a href="https://jinggm.github.io/mosu2/mosu2_paper.pdf" target="_blank">PDF</a>
+                (International Journal of Robotics Research, Special Issue: ISER 2025, under review)<br>
+                Project website: <a href="https://jinggm.github.io/mosu2/" target="_blank">jinggm.github.io/mosu2</a>
+              </p>
+              <figure class="project-figure">
+                <video class="project-video single-video framed" autoplay loop muted playsinline preload="metadata">
+                  <source data-src="videos/mosu2.mp4" type="video/mp4">
+                </video>
+                <figcaption>
+                  System overview, long-range navigation on wheeled and legged robots, and real-world interactions: a signalized
+                  crossing, a construction zone, a stop gesture, and yielding to cars.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
           <!-- Learning trajectory generation on uneven terrain (T-RO, under review) -->
           <div class="project-item" id="difftom">
             <div class="project-header">
